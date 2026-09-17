@@ -48,11 +48,11 @@
 
 完整接线和电气边界见 [WIRING.md](WIRING.md)。顶层输出仅为 rpwm、lpwm、r_en、l_en；PWM/DIR/EN 只作为内部信号，不作为驱动板外部接口。
 
-clock_only.cst 保留历史文件名，内容已增加 PMOD0：rpwm=T6、lpwm=P6、r_en=T7、l_en=R8，均为 LVCMOS33。必须经非反相 HCT/AHCT 3.3V→5V 转换接 IBT-2。R_IS/L_IS 不使用。
+clock_only.cst 保留历史文件名，内容已增加 PMOD0：rpwm=T6、lpwm=P6、r_en=T7、l_en=R8，均为 LVCMOS33。当前采用 SN74LVC4245A（CJMCU-245）：FPGA→B侧3.3V→A侧5V→IBT-2，DIR接地。OE以10kΩ上拉至VCA，常开手动开关接地允许输出；四路输入和驱动端分别下拉，详见WIRING.md。此前HCT/AHCT为备选方案。R_IS/L_IS 不使用。
 
 STOP、复位、未解锁和等待时四路为零；运行时两 EN 为 1，仅选中方向输出 PWM。注册输出延迟一拍，不改变周期和占空比；方向变化时至少一个完整时钟空白周期。原有 1 秒换向等待与重新解锁保持。
 
-控制输入管脚、同步与防抖、转换器具体封装和 /OE 外部电路仍为 TODO，因此不执行布局布线或生成下载位流。FPGA 配置前和断电时的驱动禁止须由硬件电路保证。
+控制输入管脚、同步与防抖、OE自动控制和急停仍为 TODO；转换器型号、通道分配及手动OE/下拉电路已确定设计但尚未实测，因此不执行布局布线或生成下载位流。FPGA 配置前和断电时的驱动禁止须由硬件电路保证。
 
 ## 复现
 
