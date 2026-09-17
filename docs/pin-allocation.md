@@ -9,7 +9,7 @@
 
 | 资源 | 负责人 | 本轮安排 |
 |---|---|---|
-| PMOD0 | A | 两路编码器 + 采集扩展预留；不接麦克风阵列 |
+| PMOD0 | A | 旋转臂编码器 + ADS1115 I2C；不接麦克风阵列 |
 | PMOD1 的 M14/M15/J14/J16 | B | IBT-2 四路数字控制；不接 DVP 摄像头 |
 | PMOD1 的 T11/P11/T12/R11 | 暂不使用 | 与板载 USB PHY 数据线共用，不能视为空闲 GPIO |
 | PMOD2、PMOD3、RGB LCD 接口 | C | 显示扩展资源预留，不另分给 A/B；不是已完成的屏幕接线方案 |
@@ -24,16 +24,15 @@ C 的控制算法通过 FPGA 内部信号连接 A/B，不需要额外外部排�
 |---|---|---|---|---|
 | position_enc_a | T6 | PMOD0 | 输入 | 旋转臂 A 相 |
 | position_enc_b | P6 | PMOD0 | 输入 | 旋转臂 B 相 |
-| angle_enc_a | T7 | PMOD0 | 输入 | 摆杆 A 相 |
-| angle_enc_b | R8 | PMOD0 | 输入 | 摆杆 B 相 |
-| sensor_aux0 / 候选 i2c_scl | T8 | PMOD0 | 待接口确定 | 采集扩展 |
-| sensor_aux1 / 候选 i2c_sda | P8 | PMOD0 | 待接口确定 | 采集扩展 |
+| 暂不使用 | T7 | PMOD0 | — | 预留；WDD35D4 不是 A/B 编码器 |
+| 暂不使用（R6/R8 待核） | R6/R8 | PMOD0 | — | PDF 与实物记录冲突，当前避开 |
+| ads_scl | T8 | PMOD0 | 开漏时钟输出 | ADS1115 I2C SCL |
+| ads_sda | P8 | PMOD0 | 开漏双向 | ADS1115 I2C SDA |
 | 暂不使用 | P9 | PMOD0 | — | 留空；麦克风 LED 时钟共用线 |
 | 板载 RGB LED 预留 | T9 | PMOD0 | — | 不作为传感器输入，已连接 WS2812 数据输入 |
 
-这四个输入与已提交 sensor_state 端口名一致。若实物不是 A/B 编码器，
-由 A 在 PMOD0 范围内重新定义接口，并更新此表，不擅自占用 B/C 的资源。
-候选 I²C 尚未实现；需开漏驱动和已确认的上拉电压，不得直接接带 5 V 上拉的模块。
+摆杆角度采用 WDD35D4 模拟输出，经 ADS1115 读取，不占用第二组 A/B 输入。
+I²C 尚未实现；需开漏驱动和已确认的上拉电压，不得直接接带 5 V 上拉的模块。
 
 ## B：电机驱动数字控制
 
@@ -72,8 +71,8 @@ PMOD3 的 A11/B11/N6/D11/N9/N7/L9/N8 全部留给 C。
 
 ```text
 T6   P6     旋转臂 A / B
-T7   R8     摆杆 A / B
-T8   P8     采集扩展
+T7   R6/R8  预留（右脚标记仍待核对）
+T8   P8     ADS1115 SCL / SDA
 P9   T9     本轮不接传感器
 GND  GND
 3V3  3V3
