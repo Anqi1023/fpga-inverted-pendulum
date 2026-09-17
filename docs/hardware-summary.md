@@ -85,12 +85,14 @@
 
 芯片开关输出脚不等于模块的稳压输出端；模块实际输出电压和负载能力须在接入负载前确认。
 
-## 6. 8 路双向电平转换模块
+## 6. 电平转换模块：CJMCU-245 / SN74LVC4245A
 
-- 既有近照识别：**TI SN74LVC8T245**，8 位双电源总线收发器。
-- 模块接口记录：A 侧 `VCCA、GND、OE、DIR、A1–A8`；B 侧 `VCCB、GND、B1–B8`。
-- `DIR` 用于方向控制，`OE` 用于输出使能；两侧供电、有效电平和模块实际电路需按对应资料核对。
-- 模块厂家料号待确认。本文不沿用早期“74LVC245A”泛称，也不将它视为自动双向转换模块。
+- 用户抄录芯片丝印：`LJ245A / 06KG4 / AV4V`；TI 官方标记资料将 LJ245A 对应到 **SN74LVC4245A**。此前 SN74LVC8T245 的识别错误，现更正；不据丝印推断原厂真伪或完整订货后缀。
+- 用户提供的商家接线截图标有 SN74LVC4245A，端子为 VCA、VCB、GND、OE、DIR、A1–A8、B1–B8；截图真值表确认 OE=0、DIR=0 时 B 输入、A 输出。
+- **VCA=5V，VCB=3.3V；FPGA接B侧，IBT-2接A侧，DIR接GND。**此前 A侧接FPGA 的暂拟方案作废。
+- OE用10kΩ上拉至VCA，常开手动开关闭合时将OE接地；B1–B4与IBT-2四路输入分别用10kΩ下拉。完整表见 [电机接线计划](../fpga/motor/WIRING.md)。
+- 当前为已确定的手动测试电路设计，尚未测量或实机验收。OE外部节点涉及5V，不直接连接FPGA；自动上电联锁和急停仍待设计。
+- 资料：[TI丝印记录](https://www.ti.com/quality-reliability-packaging-download/de-de/report?opn=SN74LVC4245APWT)、[TI数据手册](https://www.ti.com/lit/ds/symlink/sn74lvc4245a.pdf)。商家截图由用户在对话中提供，不虚构商品链接。
 
 ## 7. 急停按钮
 
