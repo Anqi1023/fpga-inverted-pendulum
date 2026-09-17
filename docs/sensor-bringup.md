@@ -13,6 +13,10 @@
 
 ## 资料核对与接线表
 
+更新：用户已授权统一分配 A/B/C 资源，FPGA 侧的初版分配见
+[pin-allocation.md](pin-allocation.md)。下表保留原始待确认接线项；其中 FPGA 侧
+四路信号现已预留为 T6/P6/T7/R8，传感器端子、电平及上电验证仍未完成。
+
 来源：[项目硬件汇总](hardware-summary.md)、
 [Sipeed 官方板卡介绍与硬件资料入口](https://wiki.sipeed.com/hardware/zh/tang/tang-primer-20k/primer-20k.html)、
 [官方示例仓库](https://github.com/sipeed/TangPrimer-20K-example)。

@@ -29,6 +29,10 @@ RTL 的标量端口没有总线维度，仿真端口连接及上述断言通过�
 
 ## 未通过或尚未执行的项目
 
+后续补充：用户在 ModelSim GUI 执行 run_sensor.do 后反馈“通过了”。
+据用户反馈 GUI 仿真已通过；以下命令行许可证进程报错保留为原始运行记录，
+不代表 ModelSim GUI 无法使用。尚未收集该次 GUI 的日志作为归档证据。
+
 - 本机 ModelSim 2020.1 执行 `vsim -c -do sim/run_sensor.do` 时出现
   `Fatal: Exiting VSIM license process.`，未进入测试。保留 .do 脚本，但没有宣称
   ModelSim 已通过，也未生成可交付的 ModelSim WLF。
