@@ -1,0 +1,10 @@
+# Gowin generated files
+gowin_project/inverted_pendulum/impl/
+
+# Gowin local user settings
+*.gprj.user
+
+# Temporary files
+*.log
+*.tmp
+*.bak
