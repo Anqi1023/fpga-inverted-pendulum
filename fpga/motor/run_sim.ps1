@@ -7,4 +7,7 @@ try {
         throw 'Simulation did not reach PASS. Read simulation.log.'
     }
     Write-Host 'HENGXIN_MOTOR_OFFLINE_PASS'
+    if (-not (Select-String simulation.log -Pattern '^# HENGXIN_IBT2_ADAPTER_PASS$' -Quiet)) {
+        throw 'IBT-2 adapter test did not reach PASS.'
+    }
 } finally { Pop-Location }

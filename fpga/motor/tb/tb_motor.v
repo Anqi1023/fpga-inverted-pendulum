@@ -1,5 +1,7 @@
 `timescale 1ns/1ps
 module tb_motor;
+    wire adapter_done;
+    tb_ibt2_adapter adapter_checks(.done(adapter_done));
     reg clk=0, rst_n=0, arm=1, permit=1;
     reg [1:0] command=1;
     reg [6:0] duty=10;
@@ -13,14 +15,17 @@ module tb_motor;
         .clk(clk),.rst_n(rst_n),.command(command),.arm(arm),.permit(permit),
         .duty_pct(duty),.motor_pwm(pwm),.motor_dir(dir),.motor_en(en),.state_o(state));
     ibt2_adapter #(.INTERFACE_CONFIRMED(1)) model (
+        .clk(clk),.rst_n(rst_n),
         .pwm(pwm),.dir(dir),.en(en),.rpwm(rp),.lpwm(lp),.r_en(re),.l_en(le));
-    ibt2_adapter locked (
+    ibt2_adapter #(.INTERFACE_CONFIRMED(0)) locked (
+        .clk(clk),.rst_n(rst_n),
         .pwm(pwm),.dir(dir),.en(en),.rpwm(locked_rp),.lpwm(locked_lp),
         .r_en(locked_re),.l_en(locked_le));
     always #18.5185185 clk=~clk;
     task step; input integer n; begin repeat(n) @(negedge clk); end endtask
     task quiet; begin
-        if (en !== 0 || pwm !== 0) $fatal(1,"Outputs not stopped");
+        if (en !== 0 || pwm !== 0 || {rp,lp,re,le} !== 0)
+            $fatal(1,"Outputs not stopped");
     end endtask
     task unlock; begin
         command=0; arm=0; step(30); arm=1; step(1); arm=0; step(1);
@@ -31,7 +36,7 @@ module tb_motor;
         // Allow previous cycle to end and new duty to latch.
         step(2800);
         highs=0;
-        repeat(1350) begin @(negedge clk); if(pwm) highs=highs+1; end
+        repeat(1350) begin @(negedge clk); if(rp || lp) highs=highs+1; end
         if(highs != 1350*pct/100) $fatal(1,"Duty %0d: got %0d high ticks",pct,highs);
         if(pct > 0) begin
             while(pwm) @(negedge clk);
@@ -47,6 +52,9 @@ module tb_motor;
         if((rp && lp) || ((locked_rp|locked_lp|locked_re|locked_le) !== 0))
             $fatal(1,"Adapter interlock failure");
         if(pwm && !en) $fatal(1,"PWM outside enable");
+        if ((rp || lp) && (!re || !le)) $fatal(1,"IBT PWM outside enables");
+        if (re !== le) $fatal(1,"Enable mismatch");
+        if ((rp && dir) || (lp && !dir)) $fatal(1,"Wrong IBT direction");
         if(dir != previous_dir && previous_en) $fatal(1,"DIR changed without disabled interval");
         previous_dir=dir; previous_en=en;
     end
@@ -78,6 +86,7 @@ module tb_motor;
         unlock; command=2; step(10);
         rst_n=0; #1; quiet; step(3); rst_n=1; step(40); quiet;
         $display("INVALID_DUTY_PERMIT_COMMAND_RESET_PASS");
+        if(!adapter_done) $fatal(1,"Adapter checks incomplete");
         $display("HENGXIN_MOTOR_OFFLINE_PASS"); $finish;
     end
     initial begin #5000000; $fatal(1,"TIMEOUT"); end

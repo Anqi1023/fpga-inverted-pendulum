@@ -10,10 +10,10 @@
 |---|---|
 | rtl/pwm_gen.v | 参数化 PWM；占空比输入 0–100，周期边界更新；停用立即置零 |
 | rtl/motor_driver.v | STOP/正转/反转控制，手动解锁，许可输入，占空比上限 30% |
-| rtl/ibt2_adapter.v | 待确认的 IBT-2 双 PWM 接口模型；默认锁定禁用 |
-| rtl/motor_test_top.v | 离线综合顶层，默认占空比 10%，物理接口锁定 |
+| rtl/ibt2_adapter.v | IBT-2 注册四路输出、方向变化空白周期和互锁 |
+| rtl/motor_test_top.v | 四路输出顶层，默认占空比 10%，控制输入仍待板级集成 |
 | tb/tb_motor.v | 自动检查顺序、占空比、周期及异常关断 |
-| constraints/ | 仅已确认的时钟约束；其余引脚留空 TODO |
+| constraints/ | H11 时钟与 T6/P6/T7/R8 输出；控制输入仍为 TODO |
 
 ## 频率和占空比
 
@@ -44,22 +44,15 @@
 
 配置时寄存器初始化用于高云综合；它不能保证 FPGA 配置之前、下载期间或失去供电时外部驱动的状态。后续必须确认硬件下拉、驱动使能和急停电路。
 
-## 接口边界与 TODO（不是接线表）
+## 四路接口与 TODO
 
-| 逻辑/外部信号 | FPGA 管脚 | 驱动端 | 方向 | 有效电平 | 待确认 |
-|---|---|---|---|---|---|
-| clk | H11 | 不接驱动 | 输入 | LVCMOS33 | 已沿用点灯基线 |
-| motor_pwm/dir/en | 不分配 | 内部抽象接口 | 内部 | en=1 表示逻辑许可 | 不直接接 IBT-2 |
-| rpwm | TODO | RPWM | 输出 | TODO | 板级真值表、Bank 和电平转换 |
-| lpwm | TODO | LPWM | 输出 | TODO | 同上 |
-| r_en | TODO | R_EN | 输出 | TODO | 使能电平、硬件默认状态 |
-| l_en | TODO | L_EN | 输出 | TODO | 使能电平、硬件默认状态 |
-| command/arm/permit/rst_n | TODO | 不接驱动 | 输入 | 仅逻辑语义确定 | 按键有效电平、同步、防抖、急停方案 |
-| VCC/GND/B+/B−/M+/M− | 不作为 FPGA GPIO | 模块电源/电机端 | — | TODO | 供电、共地、动力线识别 |
+完整接线和电气边界见 [WIRING.md](WIRING.md)。顶层输出仅为 rpwm、lpwm、r_en、l_en；PWM/DIR/EN 只作为内部信号，不作为驱动板外部接口。
 
-IBT-2 模型在 INTERFACE_CONFIRMED=1 时暂按高有效请求转换：dir=0 使用 RPWM，dir=1 使用 LPWM，两个 EN 同步使能；这仅用于仿真，未确认实物方向、使能极性或缓冲电路。综合顶层将此参数固定为 0，四路均锁为零；不把锁零宣称为未知电路的安全电平。
+clock_only.cst 保留历史文件名，内容已增加 PMOD0：rpwm=T6、lpwm=P6、r_en=T7、l_en=R8，均为 LVCMOS33。必须经非反相 HCT/AHCT 3.3V→5V 转换接 IBT-2。R_IS/L_IS 不使用。
 
-还需核实 PMOD0 的 R6/R8 资料差异、按键 T10 的功能与极性、PMOD/LCD 复用、IO Bank 电压、74HC244D 输入门限和实际模块连接。禁止给这些信号自动分配引脚。新时序文件没有将电机端口设为 false path；外部接口时序待设计。
+STOP、复位、未解锁和等待时四路为零；运行时两 EN 为 1，仅选中方向输出 PWM。注册输出延迟一拍，不改变周期和占空比；方向变化时至少一个完整时钟空白周期。原有 1 秒换向等待与重新解锁保持。
+
+控制输入管脚、同步与防抖、转换器具体封装和 /OE 外部电路仍为 TODO，因此不执行布局布线或生成下载位流。FPGA 配置前和断电时的驱动禁止须由硬件电路保证。
 
 ## 复现
 
@@ -88,7 +81,9 @@ build_synth.tcl 只执行综合。可以在云源打开 motor_offline.gprj 查�
 - STOP → FORWARD → STOP → REVERSE → STOP。
 - 两方向 10%、20%、30% 的高电平拍数和 1350 拍周期；0% 无脉冲。
 - 直接反向、等待中解锁、占空比 31%、permit 撤销、11 命令、运行中复位。
-- DIR 改变之前已有禁用间隔；PWM 不越过逻辑 EN；两路 PWM 不同时有效；默认接口锁定。
+- DIR 改变之前已有禁用间隔；PWM 不越过逻辑 EN；两路 PWM 不同时有效；默认禁用选项及实际四路输出检查。
 - 未覆盖实物电流、转速、机械停稳、按键抖动和电平兼容性。
 
 电机资料暂按用户提供规格：12 V 永磁有刷、额定 360 mA、堵转 2.8 A、1:20 减速。没有使用未知的动力线线序。
+
+新增 tb_ibt2_adapter.v：PWM 有效时直接改变方向，检查空白周期、恢复、撤销使能和复位。完整仿真必须同时出现 HENGXIN_MOTOR_OFFLINE_PASS 与 HENGXIN_IBT2_ADAPTER_PASS。
