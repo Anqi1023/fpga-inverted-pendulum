@@ -28,3 +28,7 @@ vsim -c -l reset_simulation.log -do run_reset.do
 ```
 
 成功标记HENGXIN_RESET_GUARD_PASS，错误数0。出错时提供终端最后一屏。仿真不模拟亚稳态概率；复位释放的物理时序与同步器约束须在后续板级综合/布局布线时检查。
+
+## 第五步更新
+
+原始复位现在只驱动两级release_sync；计数器及reset_n改由第二级同步信号复位，避免原始按键直接释放下游异步复位。N+2释放周期不变。结构和恢复/移除时序复核已通过，详见[CDC_RESET_REVIEW.md](CDC_RESET_REVIEW.md)。
