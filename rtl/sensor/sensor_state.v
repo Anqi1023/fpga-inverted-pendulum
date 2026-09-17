@@ -1,48 +1,29 @@
 `timescale 1ns/1ps
-// A-group standalone acquisition wrapper, not the system top.
-// Both sensors are provisionally quadrature encoders; actual types unconfirmed.
-// position means rotary ARM count; angle means PENDULUM count (not mm/radians).
-// TODO: replace with calibrated scaling parameters.
-// A count error latches sensor_valid low until reset; no timeout detection yet.
-module sensor_state #(
-    parameter integer WIDTH = 32,
-    parameter integer SAMPLE_CYCLES = 100000
-) (
-    input wire clk, input wire rst_n,
-    input wire position_enc_a, input wire position_enc_b,
-    input wire angle_enc_a, input wire angle_enc_b,
-    output wire signed [WIDTH-1:0] angle,
-    output wire signed [WIDTH-1:0] angle_vel,
-    output wire signed [WIDTH-1:0] position,
-    output wire signed [WIDTH-1:0] position_vel,
-    output wire sensor_valid
+// Outputs are signed Q16.16: theta/alpha in rad, derivatives in rad/s.
+// One state update follows each 16-sample ADC average (nominally 50 Hz).
+module sensor_state(
+    input wire clk,input wire rst_n,input wire encoder_a,input wire encoder_b,
+    input wire signed [15:0] adc_sample,input wire adc_sample_valid,
+    input wire adc_ready,input wire adc_fault,
+    output wire signed [31:0] theta,theta_dot,alpha,alpha_dot,
+    output wire sensor_valid,output reg state_update
 );
-    wire position_ready, angle_ready, position_error, angle_error;
-    wire position_velocity_valid, angle_velocity_valid;
-    wire acquisition_ready = position_ready & angle_ready;
-    wire estimator_rst_n = rst_n & acquisition_ready;
-    reg fault;
-    quadrature_decoder #(.COUNT_WIDTH(WIDTH)) position_decoder (
-        .clk(clk), .rst_n(rst_n), .enc_a(position_enc_a), .enc_b(position_enc_b),
-        .position_count(position), .ready(position_ready),
-        .illegal_transition(position_error)
-    );
-    quadrature_decoder #(.COUNT_WIDTH(WIDTH)) angle_decoder (
-        .clk(clk), .rst_n(rst_n), .enc_a(angle_enc_a), .enc_b(angle_enc_b),
-        .position_count(angle), .ready(angle_ready), .illegal_transition(angle_error)
-    );
-    velocity_estimator #(.WIDTH(WIDTH), .SAMPLE_CYCLES(SAMPLE_CYCLES)) position_speed (
-        .clk(clk), .rst_n(estimator_rst_n), .position(position),
-        .velocity(position_vel), .valid(position_velocity_valid), .sample_tick()
-    );
-    velocity_estimator #(.WIDTH(WIDTH), .SAMPLE_CYCLES(SAMPLE_CYCLES)) angle_speed (
-        .clk(clk), .rst_n(estimator_rst_n), .position(angle),
-        .velocity(angle_vel), .valid(angle_velocity_valid), .sample_tick()
-    );
-    always @(posedge clk or negedge rst_n) begin
-        if (!rst_n) fault <= 0;
-        else if (position_error | angle_error) fault <= 1;
+    wire signed [31:0] encoder_count;wire encoder_ready,encoder_error;
+    reg signed [31:0] adc_sum;reg signed [31:0] next_sum;reg [4:0] adc_count;reg signed [15:0] adc_average;
+    wire math_valid;reg fault_latched;
+    quadrature_decoder #(.COUNT_WIDTH(32)) enc(.clk(clk),.rst_n(rst_n),.enc_a(encoder_a),.enc_b(encoder_b),
+        .position_count(encoder_count),.ready(encoder_ready),.illegal_transition(encoder_error));
+    sensor_math math(.clk(clk),.rst_n(rst_n),.encoder_count(encoder_count),.adc_average(adc_average),
+        .update(state_update),.theta(theta),.theta_dot(theta_dot),.alpha(alpha),.alpha_dot(alpha_dot),.valid(math_valid));
+    always @(posedge clk or negedge rst_n)begin
+        if(!rst_n)begin adc_sum<=0;next_sum<=0;adc_count<=0;adc_average<=0;state_update<=0;fault_latched<=0;end
+        else begin state_update<=0;if(encoder_error||adc_fault)fault_latched<=1;
+            if(!adc_ready)begin adc_sum<=0;adc_count<=0;end
+            else if(adc_sample_valid)begin
+                if(adc_count==15)begin next_sum=adc_sum+adc_sample;adc_average<=next_sum[19:4];adc_sum<=0;adc_count<=0;state_update<=1;end
+                else begin adc_sum<=adc_sum+adc_sample;adc_count<=adc_count+1'b1;end
+            end
+        end
     end
-    assign sensor_valid = rst_n & acquisition_ready & position_velocity_valid &
-                          angle_velocity_valid & ~fault & ~position_error & ~angle_error;
+    assign sensor_valid=adc_ready&encoder_ready&math_valid&~fault_latched&~adc_fault;
 endmodule

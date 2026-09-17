@@ -1,127 +1,47 @@
-# A 组：编码器采集与仿真交付
+# A 组旋转倒立摆采集与实机验收
 
-日期：2026-09-17。目标分支：`feature/sensor`。
+本工程采集两种传感器：电机输出轴霍尔 A/B 编码器用于旋转臂角 `theta`，WDD35D4
+经 ADS1115 用于摆杆角 `alpha`。四个状态均为 signed 32-bit Q16.16，单位 rad/rad/s，
+50 Hz 更新；`sensor_valid` 表示 ADC、编码器和换算链路均已建立且没有锁存故障。
 
-## 当前结论
+## 软件组成
 
-项目已有资料只有 README 与 hardware-summary，没有可复用 RTL 或 A/C 位宽约定。
-主控已确认 Tang Primer 20K + Dock、GW2A-LV18PG256C8/I7。
-机构已纠正为旋转倒立摆。旋转臂采用电机输出轴霍尔 A/B 编码器；摆杆采用
-WDD35D4 模拟角位移传感器，经 ADS1115 I2C 读取。当前双路 A/B 实现只能复用其中的
-旋转臂通道；摆杆通道必须重构，尚不能声称完成实物接入。
-若实物输出是模拟电压、SPI、I²C 或差分信号，应增加相应采集/电气适配，
-不能将它们直接作为 A/B 输入。ADS1115 是 ADC，清单中有 ADC 不代表角度传感器已经确定。
-
-## 资料核对与接线表
-
-更新：用户已授权统一分配 A/B/C 资源，FPGA 侧的初版分配见
-[pin-allocation.md](pin-allocation.md)。下表保留原始待确认接线项；其中 FPGA 侧
-信号现预留为编码器 T6/P6、ADS1115 SCL/SDA T8/P8，电平及上电验证仍未完成。
-
-来源：[项目硬件汇总](hardware-summary.md)、
-[Sipeed 官方板卡介绍与硬件资料入口](https://wiki.sipeed.com/hardware/zh/tang/tang-primer-20k/primer-20k.html)、
-[官方示例仓库](https://github.com/sipeed/TangPrimer-20K-example)。
-官方介绍提供规格书、原理图和点位图入口，并说明 bank 0/1/7 默认供电为 3.3 V；
-这不代表所有引脚都允许直接输入传感器输出电压。仍需匹配实际 PCB 版本和所选 bank。
-
-以下是**逻辑接线规划，不是可直接照接的物理接线表**。暂不生成含猜测管脚的 CST。
-
-| 测量对象/信号 | RTL 端口 | 传感器端子 | Dock 排针位置 | FPGA 封装管脚 | 电气适配 |
-|---|---|---|---|---|---|
-| 旋转臂 A 相（若有） | position_enc_a | 待型号确认 | 待确认 | 待确认 | 待输出电平/类型确认 |
-| 旋转臂 B 相（若有） | position_enc_b | 待型号确认 | 待确认 | 待确认 | 同上 |
-| 摆杆角度模拟输出 | 待新增 ADS1115 采集接口 | WDD35D4 输出端 -> AIN0 | ADS1115 经 I2C | T8/P8 | 需确认 SDA/SCL 上拉为 3.3 V |
-| ADS1115 地址 | 待新增 ADS1115 采集接口 | ADDR 暂定接 GND | 无独立 FPGA IO | 地址 0x48 | 实机确认 |
-| 传感器电源 | 无 | VCC 定义待确认 | 不预先指定 | 不使用普通 IO 供电 | 电压/电流待确认 |
-| 信号参考地 | 无 | GND 定义待确认 | GND 位置待核对 | 不分配逻辑 IO | 单端接口需公共参考地 |
-| 系统时钟 | clk | 板载时钟 | 按板卡原理图 | 待版本核对 | 频率与时序约束待确认 |
-| 系统复位 | rst_n | 按键/复位电路待确认 | 待确认 | 待确认 | 低有效，板级异步置位、同步释放 |
-
-补齐步骤：取得两只传感器标签/规格书及端子图，确认推挽/开漏/差分输出和电压；
-核对 Dock 版本、排针方向与封装球号；与 B/C 排除管脚冲突；再填写 CST 的 IO_LOC/IO_PORT。
-不要把排针序号直接当 FPGA 球号，不要将 5 V 信号直接接到未核实耐压的 FPGA IO。
-CJMCU-245 实物芯片顶标 LJ245A，对应 TI SN74LVC4245A。用于编码器 5 V 到 FPGA
-3.3 V 降压时，VCA=5 V、VCB=3.3 V、DIR=VCA、OE=GND，编码器接 A1/A2，
-FPGA 接 B1/B2；接 FPGA 前先测量 B 侧高电平。
-
-还需确认：PPR/CPR 是否包含四倍频、最高转速/边沿率、减速比及编码器安装轴、
-零点与正方向、是否有 Z 相、机械范围、时钟频率、采样周期、最终单位/定点格式。
-旋转臂的 position 是旋转位置，不是小车位移。
-
-## RTL 与 A/C 接口
-
-全部 RTL 为 Verilog-2001，不使用 real。WIDTH/COUNT_WIDTH 默认 32，允许 >=2；
-这只是新模块默认值，不是团队已确认的接口。SAMPLE_CYCLES 为正整数，默认 100000
-仅是可覆盖的时钟周期数，不代表已确定的控制周期。
-
-| 模块 | 职责 |
+| 文件 | 作用 |
 |---|---|
-| quadrature_decoder | 双级同步、四倍频计数、启动基线、非法跳变脉冲 |
-| velocity_estimator | 固定间隔差分，可用于任意同宽有符号采集值 |
-| sensor_state | 双路采集，实例化两次速度估计，输出五个统一状态信号 |
+| `rtl/sensor/i2c_byte_master.v` | 100 kHz 开漏 I2C 字节操作 |
+| `rtl/sensor/ads1115_reader.v` | 配置并读取 ADS1115 AIN0 |
+| `rtl/sensor/quadrature_decoder.v` | 编码器同步、四倍频和非法跳变检测 |
+| `rtl/sensor/sensor_math.v` | 1040 count/rev 与厂家 WDD35D4 标定换算 |
+| `rtl/sensor/sensor_state.v` | 16 点平均、20 ms 更新、故障锁存 |
+| `rtl/sensor/sensor_uart_packet.v` | 20 字节 UART 调试帧 |
+| `fpga/sensor/uart_monitor.py` | 电脑端显示 rad/rad/s |
 
-向 C 提供 angle、angle_vel、position、position_vel（signed [WIDTH-1:0]），以及 sensor_valid。
-angle/position 目前就是相对上电/复位的原始 count，**不是绝对角度，也不是 rad/degree/mm**。
-angle_vel/position_vel 是每 SAMPLE_CYCLES 个 clk 内的 count 增量；单位 count/sample。
-物理速度换算需已确认的时钟和标定参数。没有实现速度滤波与精确标定。
+## 仿真与构建
 
-{A,B} 的正序为 00→01→11→10→00，每个合法跳变 +1，一轮 +4；反序 -1。
-计数按固定位宽自然回绕。差分采用模运算，要求每个采样窗口真实位移绝对值小于半个计数范围。
-同步器不是去抖滤波器，也不保证捕获任意窄脉冲；每个相位需要稳定足够多个 clk。
-测试以至少 5 个 clk 的相位保持时间输入，不代表已经测得硬件最高速率。
+仓库根目录运行：
 
-复位清零；第三个 clk 建立真实相位基线，避免静止在 01/10/11 时产生假计数。
-初始化期间运动不保证被计入，应保持机构静止。
-速度第一次采样只建基线，第二次才输出有效差分，因此启动不会把已有偏移当速度。
-position/angle 每拍可能更新，速度在采样点更新并保持，C 必须在 clk 域读取。
-sensor_valid 表示两路初始化和速度启动完成，**不表示完成物理标定或传感器在线检测**。
-
-两个比特同时变化的非法转换不计数，重建相位并输出一个 clk 错误脉冲。
-sensor_state 遇任一路错误便锁存无效，直到复位。错误后 count 可能已丢步，
-不自动恢复有效；复位后还需由应用重新建立机械零点。尚不能检测断线、超时或全部漏采情况。
-
-底层解码与差分各自独立；更换传感器时替换采集部分，并保留速度模块。
-当前没有加入系统 top、驱动/控制代码、ADC 驱动、UART 或实际管脚约束。
-
-## 仿真与观察
-
-ModelSim 中执行（把路径替换为实际仓库）：
-
-```tcl
-do C:/Users/hp/Documents/ChatGPT/FPGA/sim/run_sensor.do
+```powershell
+./sim/run_iverilog.ps1
 ```
 
-命令行：`vsim -c -do sim/run_sensor.do`。
-脚本按 Verilog-2001 编译，运行三个自检 Testbench；任一 errors 非零返回失败。
-生成 sim/sensor-tests.log 与每个 Testbench 的 WLF，输出不会提交到 Git。
-GUI 中可用 `vsim -view tb_sensor_state.wlf` 打开保存的波形，再 `add wave -r /*`、`wave zoom full`。
-将 position、angle 及速度设置为 signed decimal。
+ModelSim GUI 可运行 `do C:/Users/hp/Documents/ChatGPT/FPGA/sim/run_sensor.do`。测试覆盖
+正交解码、速度、物理量换算、ADS1115 正常应答/采样、NACK 故障和完整状态路径。
 
-整体波形包括 clk、rst_n、position_ab[1:0]、angle_ab[1:0]、position、position_vel、
-angle、angle_vel、sensor_valid。AB[1] 为 A，AB[0] 为 B。所有驱动在非采样沿改变，
-仿真只能验证逻辑，不模拟真实亚稳态。
+在 `fpga/sensor` 运行 `gw_sh build.tcl` 会执行综合、布局布线、时序和比特流生成。
 
-也可使用 Icarus Verilog：在仓库根目录执行 `./sim/run_iverilog.ps1`；工具不在 PATH 时，
-传入 `-ToolBin '包含iverilog.exe和vvp.exe的目录'`。脚本强制 `-g2001`，
-检查编译退出码和所有 PASS/FAIL，生成 VCD 与 sim/icarus-tests.log。
-VCD 可在兼容的波形查看器中打开，ModelSim WLF 则需要实际运行上述 ModelSim 脚本生成。
+## UART 帧
 
-| 测试 | 主要验收 |
-|---|---|
-| tb_quadrature_decoder | 全 16 种状态转换、各初始相位、静止、正反转、非法跳变恢复、8 bit 回绕 |
-| tb_velocity_estimator | SAMPLE_CYCLES=1/3、逐周期比较、非零基线、正负差分、停止与回绕、复位 |
-| tb_sensor_state | 双路相反方向运动、正反速度、停止、启动有效性、两路非法跳变锁存、复位恢复 |
+每帧 20 字节：`A5 5A`、theta、theta_dot、alpha、alpha_dot、valid、异或校验。
+四个数均按 little-endian signed int32 发送。串口为 115200、8N1。
 
-## 实机验收记录（待执行）
+## 实机顺序
 
-取得传感器型号与接线资料后再制作板级测试工程，复用 quadrature_decoder；
-将 count 接入 Gowin 在线逻辑分析仪，或经确认的 LED/UART 接口显示。
-本次用仿真完成软件验证，不将其写作“手转实物已经成功”。
+1. 按 `fpga/sensor/WIRING.md` 先做断电电阻和上电电压测量。
+2. 电平合格后接 PMOD1，下载 `fpga/sensor/output/sensor_acquisition.fs`。
+3. 启动 `python fpga/sensor/uart_monitor.py COMx`。
+4. 静止两次更新后 valid 应变为 1；转旋转臂观察 theta，转摆杆观察 alpha。
+5. 编码器整圈应约 2π rad。方向相反时交换 A/B，不改比例。
+6. 记录摆杆竖直向上的 alpha 及两个已知角度，用于最后修正零点和比例。
 
-1. 复位且机构静止，确认 count=0，启动不误计数。
-2. 手动正转/反转旋转臂，分别记录 count 增加/减少及实际方向。
-3. 独立手动转动摆杆，确认另一通道不会同步误变。
-4. 静止时确认 count 稳定；连续转动检查非法跳变和漏计。
-5. 记录板卡/传感器型号、接线照片、比特流版本、波形/视频及实际计数。
-
-以上硬件结果目前均未执行；图片中的“手转机构，FPGA 计数变化”成功标准仍待实机完成。
+I2C NACK 或编码器非法跳变会让 valid 锁存为 0，排除接线问题后按复位键恢复。这种
+锁存避免控制器在已经可能丢计数时自动恢复为“有效”。

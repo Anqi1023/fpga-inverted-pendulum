@@ -7,8 +7,8 @@ onbreak {resume}
 transcript file sensor-tests.log
 if {![file isdirectory work]} {vlib work}
 vmap work work
-vlog -vlog01compat ../rtl/sensor/quadrature_decoder.v ../rtl/sensor/velocity_estimator.v ../rtl/sensor/sensor_state.v tb_quadrature_decoder.v tb_velocity_estimator.v tb_sensor_state.v
-foreach bench {tb_quadrature_decoder tb_velocity_estimator tb_sensor_state} {
+vlog -vlog01compat ../rtl/sensor/*.v tb_quadrature_decoder.v tb_velocity_estimator.v tb_sensor_math.v tb_ads1115_reader.v tb_sensor_state.v tb_sensor_uart_packet.v
+foreach bench {tb_quadrature_decoder tb_velocity_estimator tb_sensor_math tb_ads1115_reader tb_sensor_state tb_sensor_uart_packet} {
     vsim -onfinish stop -voptargs=+acc -wlf ${bench}.wlf work.$bench
     log -r /*
     if {![batch_mode]} {add wave -r /*}

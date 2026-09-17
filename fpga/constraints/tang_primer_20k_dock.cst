@@ -1,0 +1,5 @@
+// Sources and evidence are recorded in docs/hardware_review.md.
+IO_LOC "clk" H11;
+IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+IO_LOC "led_n" L14;
+IO_PORT "led_n" IO_TYPE=LVCMOS33 DRIVE=4 PULL_MODE=NONE;

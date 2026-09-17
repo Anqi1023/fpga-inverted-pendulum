@@ -1,0 +1,16 @@
+// Tang Primer 20K + Dock. B team owns PMOD0; A team uses PMOD1.
+IO_LOC "clk" H11;
+IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+// C7 is a 1.5 V silicone-key input with a board pull-up; pressed = low.
+IO_LOC "rst_n" C7;
+IO_PORT "rst_n" IO_TYPE=LVCMOS15 PULL_MODE=NONE;
+IO_LOC "encoder_a" M14;
+IO_LOC "encoder_b" M15;
+IO_PORT "encoder_a" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+IO_PORT "encoder_b" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+IO_LOC "ads_scl" J14;
+IO_LOC "ads_sda" J16;
+IO_PORT "ads_scl" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+IO_PORT "ads_sda" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+IO_LOC "uart_tx_o" M11;
+IO_PORT "uart_tx_o" IO_TYPE=LVCMOS33 DRIVE=4 PULL_MODE=UP;

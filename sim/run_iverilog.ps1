@@ -4,9 +4,9 @@ $compiler = if ($ToolBin) { Join-Path $ToolBin 'iverilog.exe' } else { 'iverilog
 $runtime = if ($ToolBin) { Join-Path $ToolBin 'vvp.exe' } else { 'vvp' }
 Push-Location $PSScriptRoot
 try {
-    $rtl = @('../rtl/sensor/quadrature_decoder.v', '../rtl/sensor/velocity_estimator.v', '../rtl/sensor/sensor_state.v')
+    $rtl = Get-ChildItem (Join-Path $PSScriptRoot '../rtl/sensor/*.v') | ForEach-Object FullName
     $allOutput = @()
-    foreach ($bench in @('tb_quadrature_decoder', 'tb_velocity_estimator', 'tb_sensor_state')) {
+    foreach ($bench in @('tb_quadrature_decoder', 'tb_velocity_estimator', 'tb_sensor_math', 'tb_ads1115_reader', 'tb_sensor_state', 'tb_sensor_uart_packet')) {
         & $compiler -g2001 -Wall -s $bench -o "$bench.vvp" @rtl "$bench.v"
         if ($LASTEXITCODE -ne 0) { throw "Compilation failed: $bench" }
         $output = @(& $runtime "$bench.vvp" +vcd)
