@@ -1,6 +1,6 @@
 `default_nettype none
 // Ordinary human command button only; NOT the emergency-stop path.
-// rst_n must be released synchronously to clk by the future board wrapper.
+// rst_n must be released synchronously to clk by the board reset_guard wrapper.
 module button_input #(
     parameter integer STABLE_CYCLES = 270000, // 10 ms at confirmed 27 MHz
     parameter integer ACTIVE_LEVEL = 0
@@ -12,7 +12,8 @@ module button_input #(
     output reg press_pulse = 0
 );
     localparam integer CW = STABLE_CYCLES > 1 ? $clog2(STABLE_CYCLES) : 1;
-    reg sync_meta = 0, sync_value = 0;
+    reg sync_meta /* synthesis syn_preserve=1 */ = 0;
+    reg sync_value /* synthesis syn_preserve=1 */ = 0;
     reg [1:0] valid = 0;
     reg candidate = 0;
     reg [CW-1:0] count = 0;

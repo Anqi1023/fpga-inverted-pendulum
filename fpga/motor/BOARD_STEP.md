@@ -35,7 +35,9 @@ T10是SSPI复用管脚。构建脚本设`use_sspi_as_gpio=1`、`use_jtag_as_gpio
 
 测试顶层permit固定1，只表示无电机测试时允许普通按键控制；没有外部许可/急停输入，不能作为可直接接电机的最终顶层。OE及外部下拉仍按独立接线计划，配置前安全不由RTL保证。
 
-## 验证结果
+## 第四步原始验证结果（PR #10）
+
+第五步已进一步修正复位分发、加入同步链约束并重新验证；当前结果见[CDC_RESET_REVIEW.md](CDC_RESET_REVIEW.md)。
 
 - ModelSim：`HENGXIN_DOCK_MOTOR_TEST_PASS`，0错误、0警告。用户于2026-09-18确认已复现通过。
 - 覆盖完整复位链、上电按住启动、两方向10% PWM（135/1350拍）、停止、LED指示、运行中异步复位及复位后按住启动。
@@ -60,4 +62,4 @@ cd D:\FPGA\hengxin\motor-dev\fpga\motor\board
 gw_sh build.tcl
 ```
 
-下一步先完成同步器/复位约束复核，再单独安排FPGA按键和LED实板验证；急停和电机联调另行完成。
+同步器/复位约束复核已完成，记录见CDC_RESET_REVIEW.md。下一步单独安排FPGA按键和LED实板验证；急停和电机联调另行完成。
