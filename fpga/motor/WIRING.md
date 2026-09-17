@@ -51,3 +51,9 @@ FPGA 管脚使用 LVCMOS33、4mA、内部下拉；IBT-2 VCC 计划接稳压 5V�
 - [Infineon BTS7960 数据手册](https://www.infineon.com/assets/row/public/documents/10/57/infineon-bts7960-ds-en.pdf)：INH/IN 真值表。
 - [Nexperia 74HC125/74HCT125](https://www.nexperia.com/products/analog-logic-ics/logic/buffers-inverters-transceivers/series/74HC125-74HCT125.html)：HCT 为 TTL 输入，/OE 控制三态输出。
 - [Nexperia 74AHC125/74AHCT125](https://www.nexperia.com/products/analog-logic-ics/logic/buffers-inverters-transceivers/buffers/serie/74ahc125-74ahct125)：AHCT 为 TTL 输入版本。
+
+## 机构更换说明（2026-09-17）
+
+团队确认旋转款与误购的直线款共用电机、摆杆角度传感器及接线/使用资料。保留本文 FPGA → 非反相电平转换 → IBT-2 的四路接线方案和 PMOD0 分配，不因机械结构更换而改用三线接口。
+
+共用资料不替代实物线序核对。最终机械正反向、运动范围、传感器安装零点、旋转臂传动关系及急停/边界保护安排仍待确认。商品图标称的 WDD35D4 摆杆传感器不等同于电机霍尔编码器；未据图片新增传感器管脚或猜测端子定义。仍禁止未核对情况下进行电机通电测试。
