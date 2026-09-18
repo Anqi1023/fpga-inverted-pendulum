@@ -1,0 +1,73 @@
+*** GOWIN Tcl Command Line Console  *** 
+Open project D:/FPGA/hengxin/sensor-review-dev/fpga/sensor/sensor_acquisition.gprj finished
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\FPGA\hengxin\sensor-review-dev\rtl\sensor\i2c_byte_master.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\sensor-review-dev\rtl\sensor\ads1115_reader.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\sensor-review-dev\rtl\sensor\quadrature_decoder.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\sensor-review-dev\rtl\sensor\sensor_math.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\sensor-review-dev\rtl\sensor\sensor_state.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\sensor-review-dev\rtl\sensor\uart_tx.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\sensor-review-dev\rtl\sensor\sensor_uart_packet.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\sensor-review-dev\rtl\sensor\sensor_top.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\sensor-review-dev\fpga\sensor\rtl\sensor_hw_top.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\sensor-review-dev\fpga\sensor\rtl\sensor_raw_debug_top.v'
+Compiling module 'sensor_raw_debug_top'("D:\FPGA\hengxin\sensor-review-dev\fpga\sensor\rtl\sensor_raw_debug_top.v":3)
+Compiling module 'sensor_hw_top(RAW_DEBUG=1)'("D:\FPGA\hengxin\sensor-review-dev\fpga\sensor\rtl\sensor_hw_top.v":3)
+Compiling module 'sensor_top(RAW_DEBUG=1)'("D:\FPGA\hengxin\sensor-review-dev\rtl\sensor\sensor_top.v":2)
+Compiling module 'ads1115_reader'("D:\FPGA\hengxin\sensor-review-dev\rtl\sensor\ads1115_reader.v":4)
+Compiling module 'i2c_byte_master'("D:\FPGA\hengxin\sensor-review-dev\rtl\sensor\i2c_byte_master.v":4)
+Compiling module 'sensor_state'("D:\FPGA\hengxin\sensor-review-dev\rtl\sensor\sensor_state.v":4)
+Compiling module 'quadrature_decoder'("D:\FPGA\hengxin\sensor-review-dev\rtl\sensor\quadrature_decoder.v":8)
+Compiling module 'sensor_math'("D:\FPGA\hengxin\sensor-review-dev\rtl\sensor\sensor_math.v":3)
+Compiling module 'sensor_uart_packet(RAW_DEBUG=1)'("D:\FPGA\hengxin\sensor-review-dev\rtl\sensor\sensor_uart_packet.v":3)
+Compiling module 'uart_tx'("D:\FPGA\hengxin\sensor-review-dev\rtl\sensor\uart_tx.v":2)
+NOTE  (EX0101) : Current top module is "sensor_raw_debug_top"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "D:\FPGA\hengxin\sensor-review-dev\fpga\sensor\impl\gwsynthesis\sensor_acquisition.vg" completed
+[100%] Generate report file "D:\FPGA\hengxin\sensor-review-dev\fpga\sensor\impl\gwsynthesis\sensor_acquisition_syn.rpt.html" completed
+GowinSynthesis finish
+Reading netlist file: "D:\FPGA\hengxin\sensor-review-dev\fpga\sensor\impl\gwsynthesis\sensor_acquisition.vg"
+Parsing netlist file "D:\FPGA\hengxin\sensor-review-dev\fpga\sensor\impl\gwsynthesis\sensor_acquisition.vg" completed
+Processing netlist completed
+Reading constraint file: "D:\FPGA\hengxin\sensor-review-dev\fpga\sensor\constraints\sensor.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "D:\FPGA\hengxin\sensor-review-dev\fpga\sensor\impl\pnr\sensor_acquisition.power.html" completed
+Generate file "D:\FPGA\hengxin\sensor-review-dev\fpga\sensor\impl\pnr\sensor_acquisition.pin.html" completed
+Generate file "D:\FPGA\hengxin\sensor-review-dev\fpga\sensor\impl\pnr\sensor_acquisition.rpt.html" completed
+Generate file "D:\FPGA\hengxin\sensor-review-dev\fpga\sensor\impl\pnr\sensor_acquisition.rpt.txt" completed
+Generate file "D:\FPGA\hengxin\sensor-review-dev\fpga\sensor\impl\pnr\sensor_acquisition.tr.html" completed
+Fri Sep 18 09:49:42 2026
+

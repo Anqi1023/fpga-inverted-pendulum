@@ -1,43 +1,35 @@
-# A 组仿真验证记录
+# A 组当前验证记录
 
-日期：2026-09-17；分支 feature/sensor。
+2026-09-18，基于feature/sensor，新增可选原始数据串口模式。原有早期双编码器/三项测试记录已归档至[历史记录](history/sensor-tests-initial-2026-09-17.md)。9月17日的六项测试构建记录保留为历史快照；以下为本次实际重新运行结果。
 
-## 实际运行
+## 本次执行结果
 
-- 仿真器：Icarus Verilog 10.1 stable（FPGAwars 发布的便携 Windows 构建）。
-- 语言开关：`-g2001 -Wall`，没有启用 SystemVerilog。
-- 复现命令：`./sim/run_iverilog.ps1 -ToolBin 'C:\Users\hp\.cache\fpga-sensor-tools\bin'`。
-  其他电脑按实际安装目录替换 ToolBin，或将工具加入 PATH 后省略该参数。
-- 结果：三个自检 Testbench 的 errors 均为 0，脚本成功退出。
+- ModelSim Intel FPGA Edition 2020.1：原有六个Testbench全部PASS，另以RAW_DEBUG_TEST执行原始串口帧测试PASS；0错误、0警告。
+- sensor_state测试增加编码器计数、ADC末次样本与16次平均值快照检查，使用变化样本区分原始值和平均值。
+- 串口测试逐字节验证正常/调试帧、有符号负值及校验；Python两项测试覆盖分片接收、正常帧兼容、坏校验后重新同步。
+- Gowin V1.9.12.03：正常及raw两种顶层均完成综合、布局布线及位流生成。
+- 正常模式1572条、raw模式1169条已分析路径；setup/hold违例均0。SDC只有时钟约束，不代表外部电气/CDC已验收。
 
-```text
-PASS tb_quadrature_decoder
-PASS tb_velocity_estimator
-PASS tb_sensor_state
-PASS all sensor tests
+原始文本证据：[evidence/2026-09-18](../fpga/sensor/evidence/2026-09-18)。包含ModelSim记录、两种构建控制台/布局布线/完整时序文本报告、Python测试记录。报告中的本机路径仅标识运行环境。
+
+## 复现
+
+从仓库sim目录运行：
+
+```powershell
+vsim -c -l review-tests.log -do run_review.do
 ```
 
-解码器测试枚举全部 16 种转换，验证正向累计 +40、反向回到 -40，
-以及 8 bit 计数 127/-128 两侧回绕。整体测试验证旋转臂 +24、摆杆 -24，
-随后反转返回 0，速度方向随之反转；停止后两路速度归零。
-还验证两路分别单独运动，任一路非法跳变均使 sensor_valid 保持低直到复位。
+从fpga/sensor目录运行：
 
-该版本 Icarus 在严格 2001 + Wall 下报告标量端口的
-`Port declaration ... inherits dimensions from var/net` 警告；无编译错误。
-RTL 的标量端口没有总线维度，仿真端口连接及上述断言通过。
-详细运行输出和 VCD 在 sim 目录重新运行可生成，未把生成物加入仓库。
+```powershell
+python -m unittest test_uart_monitor.py
+gw_sh build.tcl
+gw_sh build_raw.tcl
+```
 
-## 未通过或尚未执行的项目
+完整PASS还需检查测试输出标记。原run_sensor.do首次批处理尝试遇到许可证进程退出；新增run_review.do从sim目录成功执行，不能将前次失败算作通过。原GUI脚本保留。
 
-后续补充：用户在 ModelSim GUI 执行 run_sensor.do 后反馈“通过了”。
-据用户反馈 GUI 仿真已通过；以下命令行许可证进程报错保留为原始运行记录，
-不代表 ModelSim GUI 无法使用。尚未收集该次 GUI 的日志作为归档证据。
+## 未完成的验收
 
-- 本机 ModelSim 2020.1 执行 `vsim -c -do sim/run_sensor.do` 时出现
-  `Fatal: Exiting VSIM license process.`，未进入测试。保留 .do 脚本，但没有宣称
-  ModelSim 已通过，也未生成可交付的 ModelSim WLF。
-- 没有执行 Gowin 综合、布局布线、时序收敛或下载。
-- 没有实机传感器、电气接线、最大边沿率或机械计数验证。
-- Icarus 的数字仿真不验证真实亚稳态、抖动、电压适配及板级时序。
-
-下一步硬件工作与接线待确认表见 [sensor-bringup.md](sensor-bringup.md)。
+未下载、未接传感器或电机。原始值只是读取链路的调试入口，不证明实际接线、比例、方向或零点正确。已知待办仍包括角度回绕求导、真实更新间隔、板卡版本/C7电平核对及复位/CDC复核。本PR不修改这些策略。
