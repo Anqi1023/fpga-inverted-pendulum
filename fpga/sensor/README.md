@@ -22,3 +22,16 @@ gw_sh build_synth.tcl
 仿真从仓库根目录运行 `sim/run_iverilog.ps1`，包括正交解码、换算、ADS1115 ACK/读取、
 NACK 故障和完整状态路径。UART 为 115200、8N1；安装 pyserial 后运行
 `python uart_monitor.py COMx`。
+
+
+## 原始数据调试（2026-09-18）
+
+默认正常模式保持A5 5A、20字节协议不变。`gw_sh build_raw.tcl`选择sensor_raw_debug_top，输出A5 5B调试帧。两种构建写入同一个impl目录，最后构建的模式覆盖前者；下载前务必检查顶层和构建日志。本次没有执行下载。
+
+调试帧20字节：0–1=A5 5B；2–5=有符号32位编码器计数；6–7=有符号16位ADC末次样本；8–9=有符号16位ADC平均值；10–17保留0；18=valid；19=从FF开始异或前19字节。多字节均小端。
+
+三个值在状态计算更新时锁存，ADC末次样本属于刚完成的16样本窗口，平均值为该窗口算术右移4位的结果。不是每个ADC样本都输出；采样停止时不会持续生成调试帧。没有收到帧不能解释为原始值为0。
+
+同一`python uart_monitor.py COMx`自动识别两种帧。live串口需安装pyserial；离线解析测试无需该依赖。调试示例：`encoder=-12345 count adc=-1234 raw average=19985 raw valid=1`。
+
+当前验证与原始报告见[测试记录](../../docs/sensor-test-results.md)。旧output/sensor_acquisition.fs仅为历史产物；当前位流在impl/pnr/sensor_acquisition.fs，本次不提交新二进制文件。

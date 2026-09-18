@@ -6,7 +6,9 @@ module sensor_state(
     input wire signed [15:0] adc_sample,input wire adc_sample_valid,
     input wire adc_ready,input wire adc_fault,
     output wire signed [31:0] theta,theta_dot,alpha,alpha_dot,
-    output wire sensor_valid,output reg state_update
+    output wire sensor_valid,output reg state_update,
+    output reg signed [31:0] raw_encoder,
+    output reg signed [15:0] raw_adc,raw_adc_average
 );
     wire signed [31:0] encoder_count;wire encoder_ready,encoder_error;
     reg signed [31:0] adc_sum;reg signed [31:0] next_sum;reg [4:0] adc_count;reg signed [15:0] adc_average;
@@ -23,6 +25,15 @@ module sensor_state(
                 if(adc_count==15)begin next_sum=adc_sum+adc_sample;adc_average<=next_sum[19:4];adc_sum<=0;adc_count<=0;state_update<=1;end
                 else begin adc_sum<=adc_sum+adc_sample;adc_count<=adc_count+1'b1;end
             end
+        end
+    end
+    // Snapshot at the same update edge as sensor_math; UART latches one edge later.
+    reg signed [15:0] window_last_adc;
+    always @(posedge clk or negedge rst_n) begin
+        if(!rst_n) begin window_last_adc<=0;raw_encoder<=0;raw_adc<=0;raw_adc_average<=0;end
+        else begin
+            if(adc_ready && adc_sample_valid && adc_count==15) window_last_adc<=adc_sample;
+            if(state_update) begin raw_encoder<=encoder_count;raw_adc<=window_last_adc;raw_adc_average<=adc_average;end
         end
     end
     assign sensor_valid=adc_ready&encoder_ready&math_valid&~fault_latched&~adc_fault;

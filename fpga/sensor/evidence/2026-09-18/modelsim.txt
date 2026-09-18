@@ -1,0 +1,125 @@
+# do run_review.do
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:51:45 on Sep 18,2026
+# vlog -vlog01compat ../rtl/sensor/ads1115_reader.v ../rtl/sensor/i2c_byte_master.v ../rtl/sensor/quadrature_decoder.v ../rtl/sensor/sensor_math.v ../rtl/sensor/sensor_state.v ../rtl/sensor/sensor_top.v ../rtl/sensor/sensor_uart_packet.v ../rtl/sensor/uart_tx.v ../rtl/sensor/velocity_estimator.v tb_ads1115_reader.v tb_quadrature_decoder.v tb_sensor_math.v tb_sensor_state.v tb_sensor_uart_packet.v tb_velocity_estimator.v 
+# -- Compiling module ads1115_reader
+# -- Compiling module i2c_byte_master
+# -- Compiling module quadrature_decoder
+# -- Compiling module sensor_math
+# -- Compiling module sensor_state
+# -- Compiling module sensor_top
+# -- Compiling module sensor_uart_packet
+# -- Compiling module uart_tx
+# -- Compiling module velocity_estimator
+# -- Compiling module tb_ads1115_reader
+# -- Compiling module tb_quadrature_decoder
+# -- Compiling module tb_sensor_math
+# -- Compiling module tb_sensor_state
+# -- Compiling module tb_sensor_uart_packet
+# -- Compiling module tb_velocity_estimator
+# 
+# Top level modules:
+# 	sensor_top
+# 	tb_ads1115_reader
+# 	tb_quadrature_decoder
+# 	tb_sensor_math
+# 	tb_sensor_state
+# 	tb_sensor_uart_packet
+# 	tb_velocity_estimator
+# End time: 09:51:45 on Sep 18,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop work.tb_quadrature_decoder 
+# Start time: 09:51:45 on Sep 18,2026
+# Loading work.tb_quadrature_decoder
+# Loading work.quadrature_decoder
+# PASS tb_quadrature_decoder
+# ** Note: $finish    : tb_quadrature_decoder.v(74)
+#    Time: 17980 ns  Iteration: 1  Instance: /tb_quadrature_decoder
+# Break in Module tb_quadrature_decoder at tb_quadrature_decoder.v line 74
+# Stopped at tb_quadrature_decoder.v line 74
+# End time: 09:51:46 on Sep 18,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop work.tb_velocity_estimator 
+# Start time: 09:51:46 on Sep 18,2026
+# Loading work.tb_velocity_estimator
+# Loading work.velocity_estimator
+# PASS tb_velocity_estimator
+# ** Note: $finish    : tb_velocity_estimator.v(50)
+#    Time: 381 ns  Iteration: 0  Instance: /tb_velocity_estimator
+# Break in Module tb_velocity_estimator at tb_velocity_estimator.v line 50
+# Stopped at tb_velocity_estimator.v line 50
+# End time: 09:51:46 on Sep 18,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop work.tb_sensor_math 
+# Start time: 09:51:47 on Sep 18,2026
+# Loading work.tb_sensor_math
+# Loading work.sensor_math
+# PASS tb_sensor_math
+# ** Note: $finish    : tb_sensor_math.v(18)
+#    Time: 90 ns  Iteration: 1  Instance: /tb_sensor_math
+# Break in Module tb_sensor_math at tb_sensor_math.v line 18
+# Stopped at tb_sensor_math.v line 18
+# End time: 09:51:47 on Sep 18,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop work.tb_ads1115_reader 
+# Start time: 09:51:47 on Sep 18,2026
+# Loading work.tb_ads1115_reader
+# Loading work.ads1115_reader
+# Loading work.i2c_byte_master
+# PASS tb_ads1115_reader
+# ** Note: $finish    : tb_ads1115_reader.v(22)
+#    Time: 7850 ns  Iteration: 1  Instance: /tb_ads1115_reader
+# Break in Module tb_ads1115_reader at tb_ads1115_reader.v line 22
+# Stopped at tb_ads1115_reader.v line 22
+# End time: 09:51:48 on Sep 18,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop work.tb_sensor_state 
+# Start time: 09:51:48 on Sep 18,2026
+# Loading work.tb_sensor_state
+# Loading work.sensor_state
+# Loading work.quadrature_decoder
+# Loading work.sensor_math
+# PASS tb_sensor_state
+# ** Note: $finish    : tb_sensor_state.v(32)
+#    Time: 1350 ns  Iteration: 1  Instance: /tb_sensor_state
+# Break in Module tb_sensor_state at tb_sensor_state.v line 32
+# Stopped at tb_sensor_state.v line 32
+# End time: 09:51:48 on Sep 18,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop work.tb_sensor_uart_packet 
+# Start time: 09:51:48 on Sep 18,2026
+# Loading work.tb_sensor_uart_packet
+# Loading work.sensor_uart_packet
+# Loading work.uart_tx
+# PASS tb_sensor_uart_packet
+# ** Note: $finish    : tb_sensor_uart_packet.v(37)
+#    Time: 8475 ns  Iteration: 0  Instance: /tb_sensor_uart_packet
+# Break in Module tb_sensor_uart_packet at tb_sensor_uart_packet.v line 37
+# Stopped at tb_sensor_uart_packet.v line 37
+# End time: 09:51:49 on Sep 18,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:51:49 on Sep 18,2026
+# vlog -vlog01compat "+define+RAW_DEBUG_TEST" tb_sensor_uart_packet.v 
+# -- Compiling module tb_sensor_uart_packet
+# 
+# Top level modules:
+# 	tb_sensor_uart_packet
+# End time: 09:51:49 on Sep 18,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -onfinish stop work.tb_sensor_uart_packet 
+# Start time: 09:51:49 on Sep 18,2026
+# Loading work.tb_sensor_uart_packet
+# Loading work.sensor_uart_packet
+# Loading work.uart_tx
+# PASS tb_sensor_uart_packet
+# ** Note: $finish    : tb_sensor_uart_packet.v(37)
+#    Time: 8475 ns  Iteration: 0  Instance: /tb_sensor_uart_packet
+# Break in Module tb_sensor_uart_packet at tb_sensor_uart_packet.v line 37
+# Stopped at tb_sensor_uart_packet.v line 37
+# 0
+# End time: 09:51:49 on Sep 18,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

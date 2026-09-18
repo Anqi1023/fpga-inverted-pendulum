@@ -13,6 +13,7 @@
     <File path="../../rtl/sensor/sensor_uart_packet.v" type="file.verilog" enable="1"/>
     <File path="../../rtl/sensor/sensor_top.v" type="file.verilog" enable="1"/>
     <File path="rtl/sensor_hw_top.v" type="file.verilog" enable="1"/>
+    <File path="rtl/sensor_raw_debug_top.v" type="file.verilog" enable="1"/>
     <File path="constraints/sensor.cst" type="file.cst" enable="1"/>
     <File path="constraints/timing.sdc" type="file.sdc" enable="1"/>
   </FileList>
