@@ -34,4 +34,6 @@ NACK 故障和完整状态路径。UART 为 115200、8N1；安装 pyserial 后�
 
 同一`python uart_monitor.py COMx`自动识别两种帧。live串口需安装pyserial；离线解析测试无需该依赖。调试示例：`encoder=-12345 count adc=-1234 raw average=19985 raw valid=1`。
 
-当前验证与原始报告见[测试记录](../../docs/sensor-test-results.md)。旧output/sensor_acquisition.fs仅为历史产物；当前位流在impl/pnr/sensor_acquisition.fs，本次不提交新二进制文件。
+当前验证与原始报告见[测试记录](../../docs/sensor-test-results.md)。2026-09-18 已按最新代码
+重新完成正常模式构建，`output/sensor_acquisition.fs` 是可直接下载的正常状态输出版本；
+SHA-256 为 `D45A140111503EE32EE02820E35FCBEEB18EB97E6AE4CCC6284E98434F18B81E`。
