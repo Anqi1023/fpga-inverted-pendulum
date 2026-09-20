@@ -36,4 +36,10 @@ NACK 故障和完整状态路径。UART 为 115200、8N1；安装 pyserial 后�
 
 当前验证与原始报告见[测试记录](../../docs/sensor-test-results.md)。2026-09-18 已按最新代码
 重新完成正常模式构建，`output/sensor_acquisition.fs` 是可直接下载的正常状态输出版本；
-SHA-256 为 `D45A140111503EE32EE02820E35FCBEEB18EB97E6AE4CCC6284E98434F18B81E`。
+2026-09-20 已在 Tang Primer 20K + Dock 实机完成 SRAM 下载，最终状态为
+`0x00002020`（DONE=1）。本板应选择 `USB Debugger A`、Location `609`，JTAG 频率使用
+`1 MHz`；默认 `2.5 MHz` 会传输到 100% 但 DONE 不置位。当前文件 SHA-256 为
+`1ED343867287610327AF0F2F19261C833CAFC3794F53E0F810207A8D1C1C3CE3`。
+
+详细操作和成功判据见 [PROGRAMMING.md](PROGRAMMING.md)。SRAM 下载断电后会丢失；需要
+上电自动运行时，再按板卡官方流程写入外部 Flash。
