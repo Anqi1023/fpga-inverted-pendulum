@@ -91,7 +91,7 @@
 - 用户提供的商家接线截图标有 SN74LVC4245A，端子为 VCA、VCB、GND、OE、DIR、A1–A8、B1–B8；截图真值表确认 OE=0、DIR=0 时 B 输入、A 输出。
 - **VCA=5V，VCB=3.3V；FPGA接B侧，IBT-2接A侧，DIR接GND。**此前 A侧接FPGA 的暂拟方案作废。
 - OE用10kΩ上拉至VCA，常开手动开关闭合时将OE接地；B1–B4与IBT-2四路输入分别用10kΩ下拉。完整表见 [电机接线计划](../fpga/motor/WIRING.md)。
-- 当前为已确定的手动测试电路设计，尚未测量或实机验收。OE外部节点涉及5V，不直接连接FPGA；自动上电联锁和急停仍待设计。
+- 2026-09-21 已复测电平转换器至 IBT-2 的逻辑输入，见[台架记录](../fpga/motor/BENCH_TEST_2026-09-21.md)；未进行电机带载测试。OE 外部节点涉及 5 V，不直接连接 FPGA；自动上电联锁和急停仍待设计。
 - 资料：[TI丝印记录](https://www.ti.com/quality-reliability-packaging-download/de-de/report?opn=SN74LVC4245APWT)、[TI数据手册](https://www.ti.com/lit/ds/symlink/sn74lvc4245a.pdf)。商家截图由用户在对话中提供，不虚构商品链接。
 
 ## 7. 急停按钮
