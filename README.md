@@ -5,6 +5,7 @@ FPGA-based inverted pendulum control system for competition
 
 - [衡芯项目硬件信息汇总](docs/hardware-summary.md)：主控、驱动、采集、电源、安全与扩展模块的型号、接口及待确认项。
 - [A 组旋转倒立摆采集工程](fpga/sensor/README.md)：ADS1115、霍尔编码器、Q16.16 状态、最终接线和下载文件。
+- [Block A 实机验证版](fpga/block_a_verified/README.md)：2026-09-22 完成四状态 UART、方向、静止、运动及摆杆跨界验证的稳定检查点。
 
 ## FPGA 点灯基线
 
@@ -16,5 +17,7 @@ FPGA-based inverted pendulum control system for competition
 
 ## 机构更换进度（2026-09-17）
 
-项目目标为旋转倒立摆。A 组已经依据厂家旋转版 STM32 原始代码完成 FPGA 采集工程、
-仿真、布局布线和比特流；机械正方向、WDD35D4 安装零点及接口电压仍需实物验收。
+项目目标为旋转倒立摆。A 组已于 2026-09-22 在实物上完成 `theta / theta_dot / alpha /
+alpha_dot` 联合验证：CCW 为正、CW 为负，静止速度回零，摆杆角度和角速度（含 ±π
+跨界修正）工作正常。当前稳定版本保存在 `fpga/block_a_verified`，下一阶段进入不接电机的
+LQR 输出验证。

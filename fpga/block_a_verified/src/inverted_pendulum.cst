@@ -1,0 +1,20 @@
+IO_LOC "clk" H11;
+IO_PORT "clk" IO_TYPE=LVCMOS33;
+
+IO_LOC "enc_a" P9;
+IO_PORT "enc_a" IO_TYPE=LVCMOS33;
+
+IO_LOC "enc_b" P8;
+IO_PORT "enc_b" IO_TYPE=LVCMOS33;
+
+IO_LOC "led" N16;
+IO_PORT "led" IO_TYPE=LVCMOS33;
+
+IO_LOC "uart_tx_o" M11;
+IO_PORT "uart_tx_o" IO_TYPE=LVCMOS33;
+
+IO_LOC "i2c_sda" R8;
+IO_PORT "i2c_sda" IO_TYPE=LVCMOS33;
+
+IO_LOC "i2c_scl" T7;
+IO_PORT "i2c_scl" IO_TYPE=LVCMOS33;
