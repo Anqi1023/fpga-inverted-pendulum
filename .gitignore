@@ -1,6 +1,15 @@
 # Gowin generated files
 gowin_project/inverted_pendulum/impl/
 
+# Gowin generated output and local caches (all projects)
+**/impl/
+**/synthesis/
+**/pnr/
+**/bitstream/
+**/.cache/
+**/temp/
+**/tmp/
+
 # Gowin local user settings
 *.gprj.user
 
@@ -8,3 +17,14 @@ gowin_project/inverted_pendulum/impl/
 *.log
 *.tmp
 *.bak
+*.jou
+*.history
+
+# Simulation and Python-generated files
+__pycache__/
+*.pyc
+*.vvp
+*.vcd
+*.wlf
+modelsim.ini
+**/work/

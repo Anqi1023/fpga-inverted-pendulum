@@ -5,11 +5,16 @@
     <Version>5</Version>
     <Device name="GW2A-18C" pn="GW2A-LV18PG256C8/I7">gw2a18c-011</Device>
     <FileList>
-        <File path="C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/control_fsm.v" type="file.verilog" enable="1"/>
-        <File path="C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/control_tick.v" type="file.verilog" enable="1"/>
-        <File path="C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/monitor/uart_packet.v" type="file.verilog" enable="1"/>
-        <File path="C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/monitor/uart_tx.v" type="file.verilog" enable="1"/>
-        <File path="C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/top.v" type="file.verilog" enable="1"/>
-        <File path="C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/constraints/inverted_pendulum.cst" type="file.cst" enable="1"/>
+        <File path="src/ads1115_i2c.v" type="file.verilog" enable="1"/>
+        <File path="src/alpha_velocity.v" type="file.verilog" enable="1"/>
+        <File path="src/angle_sensor.v" type="file.verilog" enable="1"/>
+        <File path="src/calibration.v" type="file.verilog" enable="1"/>
+        <File path="src/encoder.v" type="file.verilog" enable="1"/>
+        <File path="src/state_uart.v" type="file.verilog" enable="1"/>
+        <File path="src/theta_calc.v" type="file.verilog" enable="1"/>
+        <File path="src/theta_velocity.v" type="file.verilog" enable="1"/>
+        <File path="src/top.v" type="file.verilog" enable="1"/>
+        <File path="src/uart_tx.v" type="file.verilog" enable="1"/>
+        <File path="src/inverted_pendulum.cst" type="file.cst" enable="1"/>
     </FileList>
 </Project>
