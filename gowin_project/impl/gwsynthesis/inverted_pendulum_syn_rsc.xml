@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top" Register="9" Alu="7" Lut="5" T_Register="84(9)" T_Alu="7(7)" T_Lut="246(5)">
+ <SubModule name="u_uart_tx" Lut="1" T_Lut="1(1)"/>
+ <SubModule name="u_sensor" T_Register="75(0)" T_Lut="240(0)">
+  <SubModule name="adc" Register="38" Lut="101" T_Register="75(38)" T_Lut="240(101)">
+   <SubModule name="engine" Register="37" Lut="139" T_Register="37(37)" T_Lut="139(139)"/>
+  </SubModule>
+ </SubModule>
+</Module>

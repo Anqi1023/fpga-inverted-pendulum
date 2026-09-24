@@ -1,0 +1,64 @@
+{
+    "Device": "GW2A-18C",
+    "Files": [
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/top.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/control_fsm.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/control_tick.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/sensor/ads1115_reader.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/sensor/i2c_byte_master.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/sensor/quadrature_decoder.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/sensor/sensor_math.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/sensor/sensor_state.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/sensor/sensor_top.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/sensor/velocity_estimator.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/monitor/uart_packet.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/monitor/uart_tx.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/monitor/sensor_packet.v",
+            "Type": "verilog"
+        }
+    ],
+    "IncludePath": [
+    ],
+    "LoopLimit": 2000,
+    "ResultFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/gowin_project/impl/temp/rtl_parser.result",
+    "Top": "top",
+    "VerilogStd": "verilog_2001",
+    "VhdlStd": "vhdl_93"
+}

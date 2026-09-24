@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW2A-18C" package="PBGA256" speed="8" partNumber="GW2A-LV18PG256C8/I7"/>
+    <FileList>
+        <File path="C:\Users\21889\Desktop\FPGA\program\fpga-inverted-pendulum\rtl\top.v" type="verilog"/>
+        <File path="C:\Users\21889\Desktop\FPGA\program\fpga-inverted-pendulum\rtl\control_fsm.v" type="verilog"/>
+        <File path="C:\Users\21889\Desktop\FPGA\program\fpga-inverted-pendulum\rtl\control_tick.v" type="verilog"/>
+        <File path="C:\Users\21889\Desktop\FPGA\program\fpga-inverted-pendulum\rtl\sensor\ads1115_reader.v" type="verilog"/>
+        <File path="C:\Users\21889\Desktop\FPGA\program\fpga-inverted-pendulum\rtl\sensor\i2c_byte_master.v" type="verilog"/>
+        <File path="C:\Users\21889\Desktop\FPGA\program\fpga-inverted-pendulum\rtl\sensor\quadrature_decoder.v" type="verilog"/>
+        <File path="C:\Users\21889\Desktop\FPGA\program\fpga-inverted-pendulum\rtl\sensor\sensor_math.v" type="verilog"/>
+        <File path="C:\Users\21889\Desktop\FPGA\program\fpga-inverted-pendulum\rtl\sensor\sensor_state.v" type="verilog"/>
+        <File path="C:\Users\21889\Desktop\FPGA\program\fpga-inverted-pendulum\rtl\sensor\sensor_top.v" type="verilog"/>
+        <File path="C:\Users\21889\Desktop\FPGA\program\fpga-inverted-pendulum\rtl\sensor\velocity_estimator.v" type="verilog"/>
+        <File path="C:\Users\21889\Desktop\FPGA\program\fpga-inverted-pendulum\rtl\monitor\uart_packet.v" type="verilog"/>
+        <File path="C:\Users\21889\Desktop\FPGA\program\fpga-inverted-pendulum\rtl\monitor\uart_tx.v" type="verilog"/>
+        <File path="C:\Users\21889\Desktop\FPGA\program\fpga-inverted-pendulum\rtl\monitor\sensor_packet.v" type="verilog"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="0"/>
+        <Option type="dsp_style" value="auto"/>
+        <Option type="global_freq" value="100.000"/>
+        <Option type="looplimit" value="2000"/>
+        <Option type="map_option" value="1"/>
+        <Option type="max_fanout" value="1000"/>
+        <Option type="netlist_hierarchy" value="1"/>
+        <Option type="opt_goal" value="auto"/>
+        <Option type="output_file" value="C:\Users\21889\Desktop\FPGA\program\fpga-inverted-pendulum\gowin_project\impl\gwsynthesis\inverted_pendulum.vg"/>
+        <Option type="print_all_synthesis_warning" value="0"/>
+        <Option type="ram_rw_check" value="0"/>
+        <Option type="ram_style" value="auto"/>
+        <Option type="rom_style" value="auto"/>
+        <Option type="shift_reg" value="auto"/>
+        <Option type="top_module" value="top"/>
+        <Option type="vcc" value="1.0"/>
+        <Option type="verilog_language" value="verilog-2001"/>
+        <Option type="vhdl_language" value="vhdl-1993"/>
+    </OptionList>
+</Project>

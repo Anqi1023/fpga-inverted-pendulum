@@ -1,5 +1,16 @@
-module top (
-    input  wire clk,
+module top(
+
+    input wire clk,
+
+    // encoder
+    input wire encoder_a,
+    input wire encoder_b,
+
+    // ADS1115
+    inout wire ads_scl,
+    inout wire ads_sda,
+
+    // UART
     output wire uart_tx_o
 );
 
@@ -30,6 +41,13 @@ module top (
     wire [7:0] uart_data;
     wire       uart_start;
     wire       uart_busy;
+    wire signed [31:0] theta;
+    wire signed [31:0] theta_dot;
+
+    wire signed [31:0] alpha;
+    wire signed [31:0] alpha_dot;
+
+    wire sensor_valid;
 
 
     // =========================================================
@@ -56,7 +74,7 @@ module top (
     // =========================================================
     // UART Packet
     // =========================================================
-    uart_packet u_uart_packet (
+         sensor_packet u_sensor_packet (
         .clk          (clk),
         .rst_n        (rst_n),
 
@@ -66,7 +84,12 @@ module top (
         .uart_busy_i  (uart_busy),
 
         .uart_data_o  (uart_data),
-        .uart_start_o (uart_start)
+        .uart_start_o (uart_start),
+        .theta(theta),
+        .theta_dot(theta_dot),
+
+        .alpha(alpha),
+        .alpha_dot(alpha_dot)
     );
 
 
@@ -83,6 +106,27 @@ module top (
     .start_i  (uart_start),
     .tx_o     (uart_tx_o),
     .busy_o   (uart_busy)
+);
+       
+     //sensor_top
+     sensor_top u_sensor(
+
+    .clk(clk),
+    .rst_n(rst_n),
+
+    .encoder_a(encoder_a),
+    .encoder_b(encoder_b),
+
+    .ads_scl(ads_scl),
+    .ads_sda(ads_sda),
+
+    .theta(theta),
+    .theta_dot(theta_dot),
+
+    .alpha(alpha),
+    .alpha_dot(alpha_dot),
+
+    .sensor_valid(sensor_valid)
 );
 
 endmodule
