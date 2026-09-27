@@ -1,0 +1,40 @@
+# do run_sim.do
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Copying D:/FPGA/ModelSim-20.1.1-full/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:15 on Sep 26,2026
+# vlog -sv rtl/pwm_gen.v rtl/motor_driver.v rtl/ibt2_adapter.v rtl/button_input.v rtl/motor_buttons_top.v rtl/reset_guard.v rtl/dock_motor_test.v tb/tb_motor_1khz.v 
+# -- Compiling module pwm_gen
+# -- Compiling module motor_driver
+# -- Compiling module ibt2_adapter
+# -- Compiling module button_input
+# -- Compiling module motor_buttons_top
+# -- Compiling module reset_guard
+# -- Compiling module dock_motor_test
+# -- Compiling module tb_motor_1khz
+# 
+# Top level modules:
+# 	tb_motor_1khz
+# End time: 21:14:15 on Sep 26,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.tb_motor_1khz 
+# Start time: 21:14:15 on Sep 26,2026
+# Loading sv_std.std
+# Loading work.tb_motor_1khz
+# Loading work.dock_motor_test
+# Loading work.reset_guard
+# Loading work.motor_buttons_top
+# Loading work.button_input
+# Loading work.motor_driver
+# Loading work.pwm_gen
+# Loading work.ibt2_adapter
+# PASS: direction=0, period=27000 clocks, width=2700 clocks, duty=10%
+# PASS: direction=1, period=27000 clocks, width=2700 clocks, duty=10%
+# PASS: direction=0, period=27000 clocks, width=2700 clocks, duty=10%
+# MOTOR_1KHZ_10PCT_TEST_PASS
+# ** Note: $finish    : tb/tb_motor_1khz.v(59)
+#    Time: 17024814004 ps  Iteration: 0  Instance: /tb_motor_1khz
+# End time: 21:14:18 on Sep 26,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0

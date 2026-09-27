@@ -1,0 +1,69 @@
+*** GOWIN Tcl Command Line Console  *** 
+Open project D:/FPGA/hengxin/motor-protection-jog-ab-led3/motor_protection_jog_ab_led3.gprj finished
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\FPGA\hengxin\motor-protection-jog-ab-led3\rtl\pwm_gen.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\motor-protection-jog-ab-led3\rtl\motor_driver.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\motor-protection-jog-ab-led3\rtl\ibt2_adapter.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\motor-protection-jog-ab-led3\rtl\protection.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\motor-protection-jog-ab-led3\rtl\motor_protected.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\motor-protection-jog-ab-led3\rtl\button_input.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\motor-protection-jog-ab-led3\rtl\reset_guard.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\motor-protection-jog-ab-led3\rtl\dock_motor_protection.v'
+Compiling module 'dock_motor_protection'("D:\FPGA\hengxin\motor-protection-jog-ab-led3\rtl\dock_motor_protection.v":7)
+Compiling module 'reset_guard'("D:\FPGA\hengxin\motor-protection-jog-ab-led3\rtl\reset_guard.v":4)
+Compiling module 'button_input'("D:\FPGA\hengxin\motor-protection-jog-ab-led3\rtl\button_input.v":4)
+Compiling module 'motor_protected'("D:\FPGA\hengxin\motor-protection-jog-ab-led3\rtl\motor_protected.v":5)
+Compiling module 'protection'("D:\FPGA\hengxin\motor-protection-jog-ab-led3\rtl\protection.v":6)
+Compiling module 'motor_driver(PWM_HZ=1000)'("D:\FPGA\hengxin\motor-protection-jog-ab-led3\rtl\motor_driver.v":4)
+Compiling module 'pwm_gen(PWM_HZ=1000)'("D:\FPGA\hengxin\motor-protection-jog-ab-led3\rtl\pwm_gen.v":3)
+Compiling module 'ibt2_adapter'("D:\FPGA\hengxin\motor-protection-jog-ab-led3\rtl\ibt2_adapter.v":4)
+NOTE  (EX0101) : Current top module is "dock_motor_protection"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "D:\FPGA\hengxin\motor-protection-jog-ab-led3\impl\gwsynthesis\motor_protection_jog_ab_led3.vg" completed
+[100%] Generate report file "D:\FPGA\hengxin\motor-protection-jog-ab-led3\impl\gwsynthesis\motor_protection_jog_ab_led3_syn.rpt.html" completed
+GowinSynthesis finish
+Reading netlist file: "D:\FPGA\hengxin\motor-protection-jog-ab-led3\impl\gwsynthesis\motor_protection_jog_ab_led3.vg"
+Parsing netlist file "D:\FPGA\hengxin\motor-protection-jog-ab-led3\impl\gwsynthesis\motor_protection_jog_ab_led3.vg" completed
+Processing netlist completed
+Reading constraint file: "D:\FPGA\hengxin\motor-protection-jog-ab-led3\dock_motor_protection.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "D:\FPGA\hengxin\motor-protection-jog-ab-led3\impl\pnr\motor_protection_jog_ab_led3.power.html" completed
+Generate file "D:\FPGA\hengxin\motor-protection-jog-ab-led3\impl\pnr\motor_protection_jog_ab_led3.pin.html" completed
+Generate file "D:\FPGA\hengxin\motor-protection-jog-ab-led3\impl\pnr\motor_protection_jog_ab_led3.rpt.html" completed
+Generate file "D:\FPGA\hengxin\motor-protection-jog-ab-led3\impl\pnr\motor_protection_jog_ab_led3.rpt.txt" completed
+Generate file "D:\FPGA\hengxin\motor-protection-jog-ab-led3\impl\pnr\motor_protection_jog_ab_led3.tr.html" completed
+Sun Sep 27 16:10:49 2026
+

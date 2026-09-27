@@ -1,0 +1,50 @@
+Reading pref.tcl
+
+# 2020.1
+
+# set test_top tb_protection_board
+# tb_protection_board
+#  do run.do
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Copying D:/FPGA/ModelSim-20.1.1-full/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:10:51 on Sep 27,2026
+# vlog -sv rtl/pwm_gen.v rtl/motor_driver.v rtl/ibt2_adapter.v rtl/protection.v rtl/motor_protected.v rtl/button_input.v rtl/reset_guard.v rtl/dock_motor_protection.v tb/tb_protection_board.v tb/tb_protection_board_pwm.v 
+# -- Compiling module pwm_gen
+# -- Compiling module motor_driver
+# -- Compiling module ibt2_adapter
+# -- Compiling module protection
+# -- Compiling module motor_protected
+# -- Compiling module button_input
+# -- Compiling module reset_guard
+# -- Compiling module dock_motor_protection
+# -- Compiling module tb_protection_board
+# -- Compiling module tb_protection_board_pwm
+# 
+# Top level modules:
+# 	tb_protection_board
+# 	tb_protection_board_pwm
+# End time: 11:10:52 on Sep 27,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim work.tb_protection_board 
+# Start time: 11:10:52 on Sep 27,2026
+# Loading sv_std.std
+# Loading work.tb_protection_board
+# Loading work.dock_motor_protection
+# Loading work.reset_guard
+# Loading work.button_input
+# Loading work.motor_protected
+# Loading work.protection
+# Loading work.motor_driver
+# Loading work.pwm_gen
+# Loading work.ibt2_adapter
+# BOARD_BOOT_CLEAR_TIMEOUT_HELD_START_PASS
+# BOARD_S2_ESTOP_LATCH_NO_RESTART_PASS
+# BOARD_S3_FAULT_AND_SIMULTANEOUS_TRIP_PASS
+# PROTECTION_BOARD_CONTROLS_PASS
+# ** Note: $finish    : tb/tb_protection_board.v(73)
+#    Time: 54661 ns  Iteration: 0  Instance: /tb_protection_board
+# End time: 11:10:52 on Sep 27,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
