@@ -1,6 +1,6 @@
 # A/B/C 合板前共同确认清单
 
-日期：2026-09-27。依据本会话实测反馈、feature/sensor=f53d9c8e6c9299a4514080da2c99f52ca0982f45、feature/control=ebf1cc127b0bc761914266abd03cd96a99931c44 和 B 的 motor_protection_jog_ab_led3。以下建议尚未得到队友共同确认，不代表已经集成。
+日期：2026-09-27。依据本会话实测反馈、feature/sensor=f53d9c8e6c9299a4514080da2c99f52ca0982f45、feature/control=ebf1cc127b0bc761914266abd03cd96a99931c44 和 B 的 motor_protection_jog_ab_led3。A/C 源码快照为此前核对依据。C→B 接口已由用户随后转交并确认，最新实现为 motor_control_v1_100ms；以下已相应更新，不代表已完成三人联合控制。
 
 ## 已确定且不重复要求测量
 
@@ -14,7 +14,7 @@
 
 ### 1. 唯一整合工程和资源分配（A/B/C）
 
-保留以上已复查的信号引脚，整合时只保留一个顶层和一份统一 CST/SDC。核对基线 main@623c288 中的 B 仍是旧版，不能据此恢复 T7/R8 的电机输出。本次成果以 motor_protection_jog_ab_led3 为 B 当前独立测试版本。
+保留以上已复查的信号引脚，整合时只保留一个顶层和一份统一 CST/SDC。核对基线 main@623c288 中的 B 仍是旧版，不能据此恢复 T7/R8 的电机输出。B 当前独立测试版本为 motor_control_v1_100ms，沿用相同新引脚；motor_protection_jog_ab_led3 是旧实测基线。
 
 实际发现 N16 冲突后，用户明确选择调整 B：A 保留 LED2/N16，B 就绪灯改为 LED3/N14，运行灯 LED4/L14、锁定灯 LED5/L16。独立工程 motor_protection_jog_ab_led3 已完成构建、实际引脚报告检查、用户下载后的锁定/清除检查，以及实际点动“转动后停下，CV”；不需再次挪电机线。此前“把 N16 留给 B、取消 A 编码器灯”的建议被此用户选择取代。UART TX M11 仍应只有一个统一发送模块驱动。T9 已占用板载 RGB 数据功能，外部 MIC 阵列保持不接。
 
@@ -28,13 +28,15 @@
 
 ### 3. 采样、状态快照与控制周期（A/C，B知悉）
 
-C 的 rtl/control_tick.v 默认 1000 Hz（1 ms），A 的两路速度更新周期为 20 ms，ADC 为 128 SPS。不同周期本身不必然错误，但需要 C 明确实际闭环周期、旧数据保持方式、四状态同一快照的 state_valid/时间基准，并使控制增益与离散周期对应。B PWM 的 1 kHz 是载波频率，不能作为 C 控制周期已经确定的依据。
+用户已经确认 C 正常每 20 ms 产生一次 control_valid，不再询问。此前检出的 C rtl/control_tick.v 默认 1000 Hz（1 ms），集成时需核对实际工程采用已约定的 20 ms；A 两路速度更新 20 ms、ADC 128 SPS，四状态快照与 state_valid 仍需统一。B 的 1 kHz 是 PWM 载波频率。
 
 ### 4. C→B control_u 接口与执行模式（B/C）
 
-尚未确定 control_u 的有符号位宽、单位（占空比/电压/力矩之一）、数值范围、更新有效信号、过期处理、零值的停机方式、饱和限制和方向约定。
+已确认：signed[15:0] control_u，单位 0.1% PWM，范围 -300～+300；每 20 ms 的 control_valid 为 1 个 27 MHz 时钟周期；motor_enable=0 必须停止。补充约定采用 abs(control_u)/10 整数截断、100 ms 无有效更新停止，fault/estop/protection_locked 优先。
 
-B 当前 motor_protected 的真实接口是 command[1:0]+arm+duty_pct[6:0]，还不是最终 control_u 接口。台架 wrapper 限定 200 ms 点动；motor_driver 停止/换向后等待 1 s，并需新的 arm。保护限制 duty_pct>30 触发锁定。不能把这些台架策略直接当成连续闭环执行器。需共同约定闭环适配，再实现和验证；不能直接删除保护或未经验证缩短换向间隔。
+新 motor_control_v1 已实现上述接口，核心无 200 ms 运行上限；独立 dock_motor_control_v1 顶层仍模拟 C 做正向 10%/200 ms 点动。旧 motor_protected 的 command/arm/duty_pct 端口不是新的 C 接口。四项仿真及构建通过；新版用户点动反馈“符合预期，CV”。
+
+须随包交接的 B 规则：超时锁定且人工清除；禁用清掉旧命令，再使能须新的 control_valid；小于 1% 的有效占空比请求按停止处理。**1 秒停止/换向等待仍保留**，进入平衡控制前必须共同确定并验证新的换向策略。机械正方向尚未定义。详细约定见 [C→B V1.0](CONTROL_INTERFACE_V1_2026-09-27.md)。
 
 ### 5. 方向和标定统一（A/B/C）
 

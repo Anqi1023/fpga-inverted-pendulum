@@ -1,7 +1,7 @@
 # B 实验程序归档与当前入口
 
 完整保留上次 PR #15 后的独立工程、位流、测试平台和现有报告。
-**当前接线只使用 [motor_protection_jog_ab_led3](motor_protection_jog_ab_led3/README.md)。**
+**最新交接与独立测试入口为 [motor_control_v1_100ms](motor_control_v1_100ms/README.md)。** motor_protection_jog_ab_led3 保留为旧实测基线，两者使用相同新引脚。
 各子目录包含自己的源码和约束，不可混用工程或只替换一个 .v 文件。
 
 | 工程目录 | 用途及状态 | 引脚版本 |
@@ -17,7 +17,8 @@
 | motor_protection_board | 最长 5 秒信号测试，CH1 关闭；S2/S3 锁定和四路归零通过 | 旧 EN T7/R8、就绪 N16 |
 | motor_protection_jog_200ms | 带保护 1 kHz/10%、200 ms，实际点动及禁止启动通过 | 同上 |
 | motor_protection_jog_ab_pins | 新 EN T8/T9；点动及 S2/S3 禁止启动复测通过 | EN T8/T9、旧就绪 N16 |
-| **motor_protection_jog_ab_led3** | **当前基线；LED3 就绪、实际转动后停下、CV** | **EN T8/T9、就绪 N14** |
+| motor_protection_jog_ab_led3 | 旧点动基线；LED3 就绪、实际转动后停下、CV | EN T8/T9、就绪 N14 |
+| **motor_control_v1_100ms** | **C→B V1.0；20 ms 更新、100 ms 超时、整数截断；新版点动反馈符合预期、CV** | **EN T8/T9、就绪 N14** |
 
 S3 在早期无保护程序中是换向，在保护程序中是模拟故障；不能混用操作。
 5 秒信号版仅用于 CH1 关闭时的逻辑测试，不是当前带载点动程序。

@@ -1,0 +1,32 @@
+*** GOWIN Tcl Command Line Console  *** 
+Open project D:/FPGA/hengxin/motor-control-v1-100ms/motor_control_v1_core.gprj finished
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\FPGA\hengxin\motor-control-v1-100ms\rtl\pwm_tenths.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\motor-control-v1-100ms\rtl\protection.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\motor-control-v1-100ms\rtl\ibt2_adapter.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\motor-control-v1-100ms\rtl\motor_control_v1.v'
+Compiling module 'motor_control_v1'("D:\FPGA\hengxin\motor-control-v1-100ms\rtl\motor_control_v1.v":7)
+Compiling module 'protection'("D:\FPGA\hengxin\motor-control-v1-100ms\rtl\protection.v":6)
+Compiling module 'pwm_tenths'("D:\FPGA\hengxin\motor-control-v1-100ms\rtl\pwm_tenths.v":4)
+Compiling module 'ibt2_adapter'("D:\FPGA\hengxin\motor-control-v1-100ms\rtl\ibt2_adapter.v":4)
+NOTE  (EX0101) : Current top module is "motor_control_v1"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "D:\FPGA\hengxin\motor-control-v1-100ms\impl\gwsynthesis\motor_control_v1_core.vg" completed
+[100%] Generate report file "D:\FPGA\hengxin\motor-control-v1-100ms\impl\gwsynthesis\motor_control_v1_core_syn.rpt.html" completed
+GowinSynthesis finish

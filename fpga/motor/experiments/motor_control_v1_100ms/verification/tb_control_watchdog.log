@@ -1,0 +1,42 @@
+# set test_top tb_control_watchdog
+# tb_control_watchdog
+#  do run.do
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:31:49 on Sep 27,2026
+# vlog -sv rtl/pwm_tenths.v rtl/protection.v rtl/ibt2_adapter.v rtl/motor_control_v1.v rtl/button_input.v rtl/reset_guard.v rtl/dock_motor_control_v1.v tb/tb_motor_control_v1.v tb/tb_control_watchdog.v tb/tb_control_board.v tb/tb_control_board_pwm.v 
+# -- Compiling module pwm_tenths
+# -- Compiling module protection
+# -- Compiling module ibt2_adapter
+# -- Compiling module motor_control_v1
+# -- Compiling module button_input
+# -- Compiling module reset_guard
+# -- Compiling module dock_motor_control_v1
+# -- Compiling module tb_motor_control_v1
+# -- Compiling module tb_control_watchdog
+# -- Compiling module tb_control_board
+# -- Compiling module tb_control_board_pwm
+# 
+# Top level modules:
+# 	tb_motor_control_v1
+# 	tb_control_watchdog
+# 	tb_control_board
+# 	tb_control_board_pwm
+# End time: 21:31:49 on Sep 27,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.tb_control_watchdog 
+# Start time: 21:31:49 on Sep 27,2026
+# Loading sv_std.std
+# Loading work.tb_control_watchdog
+# Loading work.motor_control_v1
+# Loading work.protection
+# Loading work.pwm_tenths
+# Loading work.ibt2_adapter
+# CONTROL_20MS_HEARTBEAT_PASS cycles=540000
+# CONTROL_100MS_WATCHDOG_PASS cycles=2700000
+# ** Note: $finish    : tb/tb_control_watchdog.v(67)
+#    Time: 700021015888 ps  Iteration: 0  Instance: /tb_control_watchdog
+# End time: 21:33:27 on Sep 27,2026, Elapsed time: 0:01:38
+# Errors: 0, Warnings: 0

@@ -20,4 +20,4 @@ FPGA-based inverted pendulum control system for competition
 
 ## B 电机执行链路进展（2026-09-27）
 
-已完成 1 kHz 实物正反转/停止、20%/30% 点动、启动死区初测、保护模块及实板保护检查；最新版本解决 A/B 使能引脚和 LED 冲突，并通过实际点动。源码、可下载位流和测试记录见 [B 成果汇总](fpga/motor/PROGRESS_2026-09-27.md)。下一步为 C→B control_u 接口与闭环集成，尚未验收闭环控制。
+已完成 1 kHz 实物正反转/停止、20%/30% 点动、启动死区初测、保护模块及实板保护检查；最新版本解决 A/B 使能引脚和 LED 冲突，并通过实际点动。源码、可下载位流和测试记录见 [B 成果汇总](fpga/motor/PROGRESS_2026-09-27.md)。新增 [C→B V1.0 工程](fpga/motor/experiments/motor_control_v1_100ms/README.md)：20 ms 更新、100 ms 超时、整数百分比截断；四项仿真及高云构建通过，新版点动用户反馈“符合预期，CV”。下一步为真实 C 接入及联合验证；仍保留 1 秒停止/换向等待，尚未验收闭环控制。
