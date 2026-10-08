@@ -1,0 +1,8 @@
+**/work/
+**/impl/
+**/modelsim.ini
+**/transcript
+**/*.wlf
+**/*.vcd
+**/*.gprj.user
+!**/verification/*.log

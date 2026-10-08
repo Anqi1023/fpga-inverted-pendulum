@@ -1,0 +1,1594 @@
+{
+  "base_commit": "623c2886686761f4c267f626b5cc49fb0c6d76f4",
+  "note": "All added/modified deliverables except this manifest itself. Includes C-B V1.0 supplement; no removals.",
+  "checks": {
+    "unchanged_imports": 241,
+    "relative_project_references": 12,
+    "a_b_shared_pin_only": "H11",
+    "simulation_entries_passed": 5,
+    "control_v1_supplement": {
+      "simulation_entries_passed": 4,
+      "core_synthesis": "PASS",
+      "board_setup_hold_violations": [
+        0,
+        0
+      ],
+      "board_fmax_mhz": 116.575,
+      "user_smoke_test": "符合预期，CV",
+      "hardware_watchdog_truncation_measured": false,
+      "project_references_checked": 2
+    }
+  },
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "552de52adfa432e3009e0e4ff7b1e0b49822e07bcafbd43804a9e1c8cb383927",
+      "bytes": 90
+    },
+    {
+      "path": "README.md",
+      "sha256": "671f6709d9d8ff2b3604e0ac1598894fb8f7d74293ac4c09e512e25a6de72695",
+      "bytes": 1956
+    },
+    {
+      "path": "docs/A-GITHUB-AUDIT-2026-09-27.md",
+      "sha256": "ed0a2dfdbec5ac5a4b27611fdc4748c0ccf1f16edc07453614cf744cb02a00bd",
+      "bytes": 5855
+    },
+    {
+      "path": "docs/ABC-COORDINATION-2026-09-27.md",
+      "sha256": "1dcf14e3c11464337b281a38a001e2812ce01d06b5ee6a3699f6f9dec8846bfd",
+      "bytes": 6902
+    },
+    {
+      "path": "docs/CONTROL_INTERFACE_V1_2026-09-27.md",
+      "sha256": "5ebc9f41574a4c732c40f405f648b8feb2606bcee6f3684a26d128ffac231080",
+      "bytes": 3228
+    },
+    {
+      "path": "fpga/motor/.gitignore",
+      "sha256": "d88df8e2efa5594db8825bfc47b8b73a272bdbadc2a0ea454ea54127c7a0befb",
+      "bytes": 78
+    },
+    {
+      "path": "fpga/motor/BITSTREAMS_2026-09-27.json",
+      "sha256": "832a6c41ccd67570f3c5bf83e73b9c5c3a3a3e4096a0dd111eff9cb6c36435f7",
+      "bytes": 3112
+    },
+    {
+      "path": "fpga/motor/BOARD_STEP.md",
+      "sha256": "4facec38448f026e26ea2164636f76c1020860a591260254248761a0b388d562",
+      "bytes": 5601
+    },
+    {
+      "path": "fpga/motor/IMPORT_SOURCES_2026-09-27.json",
+      "sha256": "a2eb07bbe866ef223bc2d632284f36a1005feb86d4f594463efdfe86723f9efa",
+      "bytes": 63821
+    },
+    {
+      "path": "fpga/motor/PROGRESS_2026-09-27.md",
+      "sha256": "e6f279b07b0a2bfda615faa5bb0057fdccbd62853b02d4d0843b270a88fbb705",
+      "bytes": 6968
+    },
+    {
+      "path": "fpga/motor/PROTECTION.md",
+      "sha256": "36bc6d294f1632971a80291dc966ce7e7b84c27e4f39c89c33eb2a3f5ea14cfa",
+      "bytes": 5856
+    },
+    {
+      "path": "fpga/motor/PROTECTION_TEST_2026-09-27.md",
+      "sha256": "5169dc340f38a9486a221758f8a73303ec68cbf9a4433c51b037c883c7d7b42d",
+      "bytes": 2632
+    },
+    {
+      "path": "fpga/motor/README.md",
+      "sha256": "50c8533527ebeea60e8be7d996ffee8b3a0aef1303594817968c23f3c45b76b3",
+      "bytes": 6619
+    },
+    {
+      "path": "fpga/motor/TEST_RECORD_2026-09-26_27.md",
+      "sha256": "e86187e51b980420fe335ada769da465ccf368e2b087e148ee87d766e5017152",
+      "bytes": 14503
+    },
+    {
+      "path": "fpga/motor/WIRING.md",
+      "sha256": "b8884eefb7bc64b7936c91da0efc50737e3df260825b8c7b0525b192550042cc",
+      "bytes": 6916
+    },
+    {
+      "path": "fpga/motor/build_protection_synth.tcl",
+      "sha256": "a671417a251aeef7513127174cb1918d73e2a1caeab01069349c2af313d60ea5",
+      "bytes": 211
+    },
+    {
+      "path": "fpga/motor/experiments/.gitignore",
+      "sha256": "74713d0c61dce5a29e2969b3723374eedaa297ab1b9ec059a99767905fe2f47a",
+      "bytes": 104
+    },
+    {
+      "path": "fpga/motor/experiments/README.md",
+      "sha256": "4f86106d0b2a9259db3dc9caba150bf82e487f888f1d9240356fa4822dcae60d",
+      "bytes": 2481
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/BENCH_BASELINE.md",
+      "sha256": "9195ba1a2cfd5953b658a6b79354d292b666aa253a5184a02630870be5e6a2b3",
+      "bytes": 927
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/MANIFEST.json",
+      "sha256": "3e316aef29d239d8e70fef137e5a455731e96290e08fdebb966f88ccd41a5195",
+      "bytes": 5281
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/README.md",
+      "sha256": "d9ac9e12f298496c5f9b8639907ed3289a4e6943c692e83ee8e16537739296f8",
+      "bytes": 5799
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/TEST_RESULTS.md",
+      "sha256": "c620dd81f733f779808a4f46ebe16238320ff0ce6d24e1019b4ee03c8bab5ff2",
+      "bytes": 3073
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/build.tcl",
+      "sha256": "3e3a90afa44c6fe5186135de0f754b419afb748668399292680789b2f4eef91e",
+      "bytes": 205
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/build_core.tcl",
+      "sha256": "8c23afef8b4c12b5a153bdf371955641c5612e84d3bc18f203dce0a24ab4c938",
+      "bytes": 137
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/dock_motor_control_v1.cst",
+      "sha256": "dd4eb9b71c31a542f7660c02fb1f4f6d9f03084d217fd5fb9ad3ee9387cd27bc",
+      "bytes": 1270
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/dock_motor_control_v1.sdc",
+      "sha256": "808ff350bff5f9768dca6d3bf7f0bb6bbff1b7e63c0799b6af6a5c24fcddc97d",
+      "bytes": 861
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/motor_control_v1_100ms.fs",
+      "sha256": "fac7a75cd6813a6e709964247d9d58444dc1afbe93f985937bf38bbb8cc90622",
+      "bytes": 4620697
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/motor_control_v1_100ms.gprj",
+      "sha256": "f01cccca2a8cbf6cce1165ce432cc696cf83ee08029d10b1b02310abcd41975f",
+      "bytes": 819
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/motor_control_v1_core.gprj",
+      "sha256": "8849774bdee10f9d525a11220e214e78cb17ad0085aed0733bb3fc33d3c4e4fa",
+      "bytes": 482
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/rtl/button_input.v",
+      "sha256": "63ca1a28f046de346d1bbf673c4f647ef780ed2e9d974cca9f56ecee6bf52a49",
+      "bytes": 2398
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/rtl/dock_motor_control_v1.v",
+      "sha256": "945e2d5ab82d0c25664ea1f91e39e89ae1967b991ed092519c0b810d7803231f",
+      "bytes": 3711
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/rtl/ibt2_adapter.v",
+      "sha256": "65bcaf53c5387c677157b6d0a3f6edf95c84e070de3b63a5346536a92e02fc1e",
+      "bytes": 1235
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/rtl/motor_control_v1.v",
+      "sha256": "d739a42642ca336419da732a819e820b1e98eb8306756e0d9f415f0454d0255e",
+      "bytes": 5672
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/rtl/protection.v",
+      "sha256": "9938db8b367c2be9527c60b8ab329ab79c0ba6b08652a67d0eb5f67e8fc68234",
+      "bytes": 1858
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/rtl/pwm_tenths.v",
+      "sha256": "e9ea12ef3970723790185333eecc29f51bd6cd7483abb3ead6129567caf7f4e4",
+      "bytes": 1094
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/rtl/reset_guard.v",
+      "sha256": "0ca76dd366a6fa2d2d485e363107fb471f0e660e9452d90cd0612dc44002a368",
+      "bytes": 1260
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/run.do",
+      "sha256": "74926f7251983966247a8cb880a2b2f27f9a119eff9a4b3d5f58d1bdc6fa86a2",
+      "bytes": 473
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/run_tests.ps1",
+      "sha256": "f24e6d65f6e4dffb1c1dd56c86c2ebc67f6279f2f835f233cb3d7224eff7d9fd",
+      "bytes": 1117
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/tb/tb_control_board.v",
+      "sha256": "9285ce878b1c80005660e47e987486fb88f8a8a531110d38030a0941149ac9e6",
+      "bytes": 3483
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/tb/tb_control_board_pwm.v",
+      "sha256": "a484b0d26ab29b665ec5b1ee1aca7626c68aae75b2c3d23391a285420211d1a8",
+      "bytes": 2799
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/tb/tb_control_watchdog.v",
+      "sha256": "5fe4742c857b8a4944f0adeb6a3ba5a063ea08f09d6bdf63725c4883426ff85d",
+      "bytes": 3962
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/tb/tb_motor_control_v1.v",
+      "sha256": "93fbbc36d535f0baf29bc69d87642783a96e9be84a5e80b607a82180617fdc53",
+      "bytes": 5541
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/verification/build-console.log",
+      "sha256": "3ef53d58575c7ef7a4af905a1ee2b3ed5806cd6c3561ade15e750eb1cce03964",
+      "bytes": 3874
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/verification/core-build-console.log",
+      "sha256": "473d347cccf370f90909ae5bb5d120e53fb8185a29da5e4ac569fa50ac65720a",
+      "bytes": 1803
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/verification/motor_control_v1_100ms.pin.html",
+      "sha256": "bd6a5e006ea00840ab2d418adaf24c6fc0ec038fa2b475bbe83825218a893e68",
+      "bytes": 57234
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/verification/motor_control_v1_100ms.rpt.txt",
+      "sha256": "95c02e19833c79689976f72723f21c57ab93387c7ac069fc4e9892d487a9b80a",
+      "bytes": 48073
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/verification/motor_control_v1_100ms_tr_content.html",
+      "sha256": "424541b8824d8d443f3d1fd0253888830c118bca4450e98d6fd35a91073450b7",
+      "bytes": 413412
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/verification/motor_control_v1_core_syn.rpt.html",
+      "sha256": "6282579f58898d8b3b2fdaebe94a69b387f22b60a1217b22055de31609d02b7b",
+      "bytes": 148719
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/verification/motor_control_v1_core_syn_rsc.xml",
+      "sha256": "265319f65f1cb83a66c3425b8231954aacd00dbe32a7844b346801236f665707",
+      "bytes": 497
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/verification/tb_control_board.log",
+      "sha256": "f5799fb82883d2340cba8c0e2e2406ed322b5d9e479b2084f962c41401931ea1",
+      "bytes": 1930
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/verification/tb_control_board_pwm.log",
+      "sha256": "fbfd3f4105b0a6fd1eb054b657eabcb071835029a92754486f8fbb50cedfcf80",
+      "bytes": 1866
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/verification/tb_control_watchdog.log",
+      "sha256": "7ffc205ddbecad27ab45b0eb2f18c6bd8ebacdda5e3939825fd165f960f5b21a",
+      "bytes": 1790
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/verification/tb_motor_control_v1.log",
+      "sha256": "67ae178ed38d805ce7a23526d67488c7b5cdb151e90f08ba91b7129b9ceafd76",
+      "bytes": 3065
+    },
+    {
+      "path": "fpga/motor/experiments/motor_control_v1_100ms/verification/tests-console.log",
+      "sha256": "36f6dd129e5f5353a48019d61ce19a469bd823e14604665b6633b2fa35b7edb8",
+      "bytes": 8806
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/README.md",
+      "sha256": "a4adf642a1a320a80b54fa1d151bb20325e0711aa0fa6e71d2ede2de6c4595db",
+      "bytes": 3639
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/build.tcl",
+      "sha256": "6315a72e90c8d7b1dcbc02144393838e17a7e3d8ca86990b136e93b95e66a92f",
+      "bytes": 196
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/button_input.v",
+      "sha256": "63ca1a28f046de346d1bbf673c4f647ef780ed2e9d974cca9f56ecee6bf52a49",
+      "bytes": 2398
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/dock_motor_jog.cst",
+      "sha256": "cd3055d0dbc3e0b7bc0ca84683d3b6ff16df4a710afe7a0f2ee9ab5aee120431",
+      "bytes": 1083
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/dock_motor_jog.sdc",
+      "sha256": "9f3c43ab6bbe8403a0c209e07e264040018fe79f4decf2b1b0c0bb34294f3219",
+      "bytes": 895
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/dock_motor_jog.v",
+      "sha256": "f696b15fceea827e7c9735981798039b6afd4fec86efccb06fe488e4f0c32734",
+      "bytes": 3361
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/motor_jog_1khz_20pct.fs",
+      "sha256": "79448b440b9eeae13566c300f5df4660aec7fba7f654f4fda987e5a875e87500",
+      "bytes": 4620697
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/motor_jog_1khz_20pct.gprj",
+      "sha256": "7da25870d0f6b6edecc7de45eac348f38433c4b4802439f2c3ea45a3a121c069",
+      "bytes": 589
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/original-sha256.json",
+      "sha256": "e763d36ced3ff8bb45b0ed4db69046c31571e7f3a799fc18ac7588d04b62b8a6",
+      "bytes": 1029
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/pwm_gen.v",
+      "sha256": "105afd9d6263fa414bf9bb2c6909a5c072fc03ca3568d13d9548270bbbe8d328",
+      "bytes": 1237
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/reset_guard.v",
+      "sha256": "0ca76dd366a6fa2d2d485e363107fb471f0e660e9452d90cd0612dc44002a368",
+      "bytes": 1260
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/run.do",
+      "sha256": "f268bba66ad161dc6a74e9fe15becec4f2148d6cecabc898570e08e49324a13a",
+      "bytes": 232
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/run_actual.do",
+      "sha256": "c9775cd23d61a545a927b1a6ee305343de1c29631dd394b504528de9c0523099",
+      "bytes": 246
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/tb_jog.v",
+      "sha256": "7b3c9489a6589325df531b6e710b48c3b74329d11a0888e05d5828dffd5e8187",
+      "bytes": 2873
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/tb_jog_actual.v",
+      "sha256": "bcc2b17fd4a219b406ade25bb918c07706b98bf1aacc4b2516782f6d0fecfd72",
+      "bytes": 1947
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/verification/motor_jog_1khz_20pct.log",
+      "sha256": "aa521f0cad78210d43c4c115e95d5d089bc59056a9e5c3cba09f1b76c21dad5a",
+      "bytes": 1462
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/verification/motor_jog_1khz_20pct.rpt.txt",
+      "sha256": "9f4c90533e887f9ad97720f02f53441d141184a322973d84c17e67e097f783e7",
+      "bytes": 48660
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/verification/motor_jog_1khz_20pct_tr_content.html",
+      "sha256": "bdc41870e25146cc5490ddbdbbff5d6bb4dae34f24cab0045f1a2c7f6cfb21ab",
+      "bytes": 414255
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/verification/simulation_actual.log",
+      "sha256": "60d9c5be58c543b8a4709ace0231cdd4c4979d978cea803e35dd8f559544d6d6",
+      "bytes": 1213
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_20pct/verification/simulation_controls.log",
+      "sha256": "e58206ce6b7b806c4a620ba7f5f493128399e605d246d89cbf775ee0784b327c",
+      "bytes": 1233
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/README.md",
+      "sha256": "b450b2bda0e1b9885f6ff134e7ae1d367608d75e6d27b88569d89f43e07f4602",
+      "bytes": 3533
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/baseline-20pct-sha256.json",
+      "sha256": "c17c6ae1f964d9785a6074e21aad8a96910c40d62fd44100019772a3919241eb",
+      "bytes": 1808
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/build.tcl",
+      "sha256": "1aa6fe3f03caa0275033cf48b6fdb7c69ee1f79687162daee1690e098a50a491",
+      "bytes": 196
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/button_input.v",
+      "sha256": "63ca1a28f046de346d1bbf673c4f647ef780ed2e9d974cca9f56ecee6bf52a49",
+      "bytes": 2398
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/dock_motor_jog.cst",
+      "sha256": "cd3055d0dbc3e0b7bc0ca84683d3b6ff16df4a710afe7a0f2ee9ab5aee120431",
+      "bytes": 1083
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/dock_motor_jog.sdc",
+      "sha256": "9f3c43ab6bbe8403a0c209e07e264040018fe79f4decf2b1b0c0bb34294f3219",
+      "bytes": 895
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/dock_motor_jog.v",
+      "sha256": "110647296943a79510b10eb0f24e207672260e60d0ddf1c1ec736e5631977816",
+      "bytes": 3361
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/motor_jog_1khz_30pct.fs",
+      "sha256": "981f71aa110801c8f5bd192add99fa3e35026600914c8bf4d11b9ead5f5f4eea",
+      "bytes": 4620697
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/motor_jog_1khz_30pct.gprj",
+      "sha256": "7da25870d0f6b6edecc7de45eac348f38433c4b4802439f2c3ea45a3a121c069",
+      "bytes": 589
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/pwm_gen.v",
+      "sha256": "105afd9d6263fa414bf9bb2c6909a5c072fc03ca3568d13d9548270bbbe8d328",
+      "bytes": 1237
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/reset_guard.v",
+      "sha256": "0ca76dd366a6fa2d2d485e363107fb471f0e660e9452d90cd0612dc44002a368",
+      "bytes": 1260
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/run.do",
+      "sha256": "f268bba66ad161dc6a74e9fe15becec4f2148d6cecabc898570e08e49324a13a",
+      "bytes": 232
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/run_actual.do",
+      "sha256": "c9775cd23d61a545a927b1a6ee305343de1c29631dd394b504528de9c0523099",
+      "bytes": 246
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/tb_jog.v",
+      "sha256": "5b9e82842aa92e362a108b64ccbe9c7486c97c11ba1ca5d31426ad4ac24ea683",
+      "bytes": 2873
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/tb_jog_actual.v",
+      "sha256": "bcf8079d795e5acc55999bc3074bb9d86845798d9ea9ff8f5f21b7647aa03d7c",
+      "bytes": 1947
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/verification/motor_jog_1khz_30pct.log",
+      "sha256": "74abb1c70869e55d7e4be8d71f81456bf43c8d17f32274891371b0c9057303a6",
+      "bytes": 1462
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/verification/motor_jog_1khz_30pct.rpt.txt",
+      "sha256": "420ffd7c08afeb8b539e43534c250641953664059f914b4e38792aba436622b5",
+      "bytes": 48778
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/verification/motor_jog_1khz_30pct_tr_content.html",
+      "sha256": "eb94bec6054d694eba41588b2bfd14f860b0d6681c7aea9fdb0be05de0b71d24",
+      "bytes": 461811
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/verification/simulation_actual.log",
+      "sha256": "65c834d4c9713f3d0776ad2c0f52b6fbfb5bec63128b65c51c106d619fe7c78d",
+      "bytes": 1213
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_30pct/verification/simulation_controls.log",
+      "sha256": "5983ca3418384b08c9f7386b74103335b461840ea1ce62e2ef17ea7ddf9e34bf",
+      "bytes": 1233
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_5pct/README.md",
+      "sha256": "6808906b93f43b6d23feacd9428d2ee28e332c5368d0ee47d0221516a91ca61c",
+      "bytes": 2691
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_5pct/build.tcl",
+      "sha256": "c6f52700a5580ced0ae4f09e0bc2a17cfec454fec34be7535f78bd7627f81c60",
+      "bytes": 195
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_5pct/button_input.v",
+      "sha256": "63ca1a28f046de346d1bbf673c4f647ef780ed2e9d974cca9f56ecee6bf52a49",
+      "bytes": 2398
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_5pct/dock_motor_jog.cst",
+      "sha256": "cd3055d0dbc3e0b7bc0ca84683d3b6ff16df4a710afe7a0f2ee9ab5aee120431",
+      "bytes": 1083
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_5pct/dock_motor_jog.sdc",
+      "sha256": "9f3c43ab6bbe8403a0c209e07e264040018fe79f4decf2b1b0c0bb34294f3219",
+      "bytes": 895
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_5pct/dock_motor_jog.v",
+      "sha256": "c74aec890923ab02e61e862e1e0dc50dc8a9bee87dc57f3dabf5b5046233e852",
+      "bytes": 3360
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_5pct/motor_jog_1khz_5pct.fs",
+      "sha256": "3cc7ec6fa2272d55a772ed54d45c62b990bdf63cc1fd276a4d31d467ee7a2bbf",
+      "bytes": 4620697
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_5pct/motor_jog_1khz_5pct.gprj",
+      "sha256": "7da25870d0f6b6edecc7de45eac348f38433c4b4802439f2c3ea45a3a121c069",
+      "bytes": 589
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_5pct/pwm_gen.v",
+      "sha256": "105afd9d6263fa414bf9bb2c6909a5c072fc03ca3568d13d9548270bbbe8d328",
+      "bytes": 1237
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_5pct/reset_guard.v",
+      "sha256": "0ca76dd366a6fa2d2d485e363107fb471f0e660e9452d90cd0612dc44002a368",
+      "bytes": 1260
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_5pct/run.do",
+      "sha256": "f268bba66ad161dc6a74e9fe15becec4f2148d6cecabc898570e08e49324a13a",
+      "bytes": 232
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_5pct/run_actual.do",
+      "sha256": "c9775cd23d61a545a927b1a6ee305343de1c29631dd394b504528de9c0523099",
+      "bytes": 246
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_5pct/tb_jog.v",
+      "sha256": "6a9fad6e82df609bf0367179ef7cffb55584d3c218869cddf69c690022c906e9",
+      "bytes": 2880
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_5pct/tb_jog_actual.v",
+      "sha256": "dc4f831ed1c1d17826f196bdf69eab747795880c280d055da51733a5d75809df",
+      "bytes": 1944
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_5pct/verification/motor_jog_1khz_5pct.log",
+      "sha256": "3ccf0ac7c6c8c3699637b20e0c2f434f4d911a926e0e7f424bace49653729fb7",
+      "bytes": 1447
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_5pct/verification/motor_jog_1khz_5pct.rpt.txt",
+      "sha256": "824a4b2841187ca2dee6c0336be80371b92e8656462d9adf85cc0a878e47743f",
+      "bytes": 48670
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_5pct/verification/motor_jog_1khz_5pct_tr_content.html",
+      "sha256": "e01dcebceb94f7039bd0fecbd0d38ce3416da0ef451c0ddf37d4813bb95ecb02",
+      "bytes": 414495
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_5pct/verification/simulation_actual.log",
+      "sha256": "37c589c4a3ce1d090841d3497f6a61a7c9361b4703612336d3cc097efabb4871",
+      "bytes": 1212
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_5pct/verification/simulation_controls.log",
+      "sha256": "9c0d449074dd7cbaeaf0625fef3f7673a858d385ffe389ba2d8996fad9c83bba",
+      "bytes": 1234
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_7pct/README.md",
+      "sha256": "6c72be2981b7e6d6dbc9ff2d071a5646403948ba91a3ce46163da1173296d43c",
+      "bytes": 2455
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_7pct/build.tcl",
+      "sha256": "057b41183662733ba7ed3593448427f34d45f11363c6495b5812afbd7debec08",
+      "bytes": 195
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_7pct/button_input.v",
+      "sha256": "63ca1a28f046de346d1bbf673c4f647ef780ed2e9d974cca9f56ecee6bf52a49",
+      "bytes": 2398
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_7pct/dock_motor_jog.cst",
+      "sha256": "cd3055d0dbc3e0b7bc0ca84683d3b6ff16df4a710afe7a0f2ee9ab5aee120431",
+      "bytes": 1083
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_7pct/dock_motor_jog.sdc",
+      "sha256": "9f3c43ab6bbe8403a0c209e07e264040018fe79f4decf2b1b0c0bb34294f3219",
+      "bytes": 895
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_7pct/dock_motor_jog.v",
+      "sha256": "7fcca8cf7cc6ee6bf1d091d60c3f3a74b942f5790cce36479d3173512a22ac79",
+      "bytes": 3360
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_7pct/motor_jog_1khz_7pct.fs",
+      "sha256": "50fd296ac583c969af9e5c846a2e15c0f7894aa84ae7425e2eaadde80f05487a",
+      "bytes": 4620697
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_7pct/motor_jog_1khz_7pct.gprj",
+      "sha256": "7da25870d0f6b6edecc7de45eac348f38433c4b4802439f2c3ea45a3a121c069",
+      "bytes": 589
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_7pct/pwm_gen.v",
+      "sha256": "105afd9d6263fa414bf9bb2c6909a5c072fc03ca3568d13d9548270bbbe8d328",
+      "bytes": 1237
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_7pct/reset_guard.v",
+      "sha256": "0ca76dd366a6fa2d2d485e363107fb471f0e660e9452d90cd0612dc44002a368",
+      "bytes": 1260
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_7pct/run.do",
+      "sha256": "f268bba66ad161dc6a74e9fe15becec4f2148d6cecabc898570e08e49324a13a",
+      "bytes": 232
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_7pct/run_actual.do",
+      "sha256": "c9775cd23d61a545a927b1a6ee305343de1c29631dd394b504528de9c0523099",
+      "bytes": 246
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_7pct/tb_jog.v",
+      "sha256": "4e6aa09f9049abb2a39ac6c2c2377aaef435b619fd73cb6c6f7a9f9bc74f6954",
+      "bytes": 2880
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_7pct/tb_jog_actual.v",
+      "sha256": "d791f3150d5da5d60a103c3448368d9159356b260e6d083ae5d54c55133b72e0",
+      "bytes": 1944
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_7pct/verification/motor_jog_1khz_7pct.pin.html",
+      "sha256": "ecc3480993014d9271ac196aaa03189097c3ec61325011a57201787b237446e5",
+      "bytes": 57216
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_7pct/verification/motor_jog_1khz_7pct.rpt.txt",
+      "sha256": "1a1224d33c1fa9b3a434f9e61b007fc41b58a463e7f73e1d3293972782a1eb58",
+      "bytes": 48777
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_7pct/verification/motor_jog_1khz_7pct_tr_content.html",
+      "sha256": "8244990f233e80dccd400c5906f2b108b60a802f2fae5dcb7af7ae9d03cee50d",
+      "bytes": 454527
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_7pct/verification/simulation_actual.log",
+      "sha256": "88f83d11b720087e123b19f9d303c0c723c4054a29e3c37415bd9b3d531bc239",
+      "bytes": 1212
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_7pct/verification/simulation_controls.log",
+      "sha256": "e500ceef5b47d31108e6a367e6ece98edba575131727a1da88c1d1928cefcc9c",
+      "bytes": 1234
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_8pct/README.md",
+      "sha256": "497aa11aa68c91bf65db16b076d70a2f2afa5396a0be7d9f0278b90c57c527bb",
+      "bytes": 2855
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_8pct/build.tcl",
+      "sha256": "c2ba07547d21ec35b20ba0ff6df797d902a1aebe2434dd5389587f2c42a26a6f",
+      "bytes": 195
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_8pct/button_input.v",
+      "sha256": "63ca1a28f046de346d1bbf673c4f647ef780ed2e9d974cca9f56ecee6bf52a49",
+      "bytes": 2398
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_8pct/dock_motor_jog.cst",
+      "sha256": "cd3055d0dbc3e0b7bc0ca84683d3b6ff16df4a710afe7a0f2ee9ab5aee120431",
+      "bytes": 1083
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_8pct/dock_motor_jog.sdc",
+      "sha256": "9f3c43ab6bbe8403a0c209e07e264040018fe79f4decf2b1b0c0bb34294f3219",
+      "bytes": 895
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_8pct/dock_motor_jog.v",
+      "sha256": "87ed44d20e0eaeb70c8640472c8fe81e3940e57efcd2db7f1bb7c170f9f02d0c",
+      "bytes": 3360
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_8pct/motor_jog_1khz_8pct.fs",
+      "sha256": "b1e8a608eb6051fb220d552111af0ad4566520ade755776a75fe58daa01366d6",
+      "bytes": 4620697
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_8pct/motor_jog_1khz_8pct.gprj",
+      "sha256": "7da25870d0f6b6edecc7de45eac348f38433c4b4802439f2c3ea45a3a121c069",
+      "bytes": 589
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_8pct/pwm_gen.v",
+      "sha256": "105afd9d6263fa414bf9bb2c6909a5c072fc03ca3568d13d9548270bbbe8d328",
+      "bytes": 1237
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_8pct/reset_guard.v",
+      "sha256": "0ca76dd366a6fa2d2d485e363107fb471f0e660e9452d90cd0612dc44002a368",
+      "bytes": 1260
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_8pct/run.do",
+      "sha256": "f268bba66ad161dc6a74e9fe15becec4f2148d6cecabc898570e08e49324a13a",
+      "bytes": 232
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_8pct/run_actual.do",
+      "sha256": "c9775cd23d61a545a927b1a6ee305343de1c29631dd394b504528de9c0523099",
+      "bytes": 246
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_8pct/tb_jog.v",
+      "sha256": "ba5237b8a06aa7ccc1372e5473bb37688525d3ffd3fda230f822fb765cf01b91",
+      "bytes": 2880
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_8pct/tb_jog_actual.v",
+      "sha256": "7b94b3340daf2715f65a5839e7511cc224b31b2718341a6baebf29c5fe1b3bf8",
+      "bytes": 1944
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_8pct/verification/motor_jog_1khz_8pct.pin.html",
+      "sha256": "507a0557d48d7cb1a8881a12fbe714c24fc7aa5db80614e1637d05dc001f9040",
+      "bytes": 57216
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_8pct/verification/motor_jog_1khz_8pct.rpt.txt",
+      "sha256": "9b8454250662f87250ff0e82bacc9bc436d907171e6280dff6f8eb3daa841e01",
+      "bytes": 48666
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_8pct/verification/motor_jog_1khz_8pct_tr_content.html",
+      "sha256": "a06e218588fdb1c16b1351b5e344ecc2ed268fadd7930a34f31c30ba47278752",
+      "bytes": 413724
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_8pct/verification/simulation_actual.log",
+      "sha256": "66e8584cd71b83e7ed9e41299e92c386fae2c0eb1487a14148af53ab18d965b4",
+      "bytes": 1212
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_1khz_8pct/verification/simulation_controls.log",
+      "sha256": "d786a4cb04e8c94e99bec6efd58e7141dede85c265932cf99a08c548bf2a183e",
+      "bytes": 1234
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_20khz_20pct_20260923/README.md",
+      "sha256": "8e6395f0c3280101b3573528f2950969c5b2fa348ce5f4134157a65194eb45c7",
+      "bytes": 3461
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_20khz_20pct_20260923/build.tcl",
+      "sha256": "d211d6fdc4ec4fb4edbbfc5f9f81a99512c4922b48eeba678d75d51a6b74b477",
+      "bytes": 190
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_20khz_20pct_20260923/button_input.v",
+      "sha256": "63ca1a28f046de346d1bbf673c4f647ef780ed2e9d974cca9f56ecee6bf52a49",
+      "bytes": 2398
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_20khz_20pct_20260923/dock_motor_jog.cst",
+      "sha256": "cd3055d0dbc3e0b7bc0ca84683d3b6ff16df4a710afe7a0f2ee9ab5aee120431",
+      "bytes": 1083
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_20khz_20pct_20260923/dock_motor_jog.fs",
+      "sha256": "4563fc35dceeaa49d6c64e9bc765a461d4844e1f95a392096cf03790cb11a3a1",
+      "bytes": 4620697
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_20khz_20pct_20260923/dock_motor_jog.gprj",
+      "sha256": "7da25870d0f6b6edecc7de45eac348f38433c4b4802439f2c3ea45a3a121c069",
+      "bytes": 589
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_20khz_20pct_20260923/dock_motor_jog.sdc",
+      "sha256": "9f3c43ab6bbe8403a0c209e07e264040018fe79f4decf2b1b0c0bb34294f3219",
+      "bytes": 895
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_20khz_20pct_20260923/dock_motor_jog.v",
+      "sha256": "ea38a3e6e80e314e69e7e58ad28e5553a9bd6d9c7ec4574505b96db03a0b9203",
+      "bytes": 3362
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_20khz_20pct_20260923/pwm_gen.v",
+      "sha256": "105afd9d6263fa414bf9bb2c6909a5c072fc03ca3568d13d9548270bbbe8d328",
+      "bytes": 1237
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_20khz_20pct_20260923/reset_guard.v",
+      "sha256": "0ca76dd366a6fa2d2d485e363107fb471f0e660e9452d90cd0612dc44002a368",
+      "bytes": 1260
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_20khz_20pct_20260923/run.do",
+      "sha256": "f268bba66ad161dc6a74e9fe15becec4f2148d6cecabc898570e08e49324a13a",
+      "bytes": 232
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_20khz_20pct_20260923/tb_jog.v",
+      "sha256": "7b3c9489a6589325df531b6e710b48c3b74329d11a0888e05d5828dffd5e8187",
+      "bytes": 2873
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_20khz_20pct_20260923/verification/dock_motor_jog.pin.html",
+      "sha256": "efe8d7d0034ab9e71b7b262a908eb481f007b07580fbbaae8aa3679b57135039",
+      "bytes": 57226
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_20khz_20pct_20260923/verification/dock_motor_jog.rpt.txt",
+      "sha256": "e3dbe4698c3c550d0d84936300627ffa2c0cb6210a5b803f0bcf8934c6ccec7c",
+      "bytes": 48673
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_20khz_20pct_20260923/verification/dock_motor_jog_tr_content.html",
+      "sha256": "38401349f52f75d76373a52d26942fb881b10edb1dacc9db72e4bc854f373391",
+      "bytes": 414251
+    },
+    {
+      "path": "fpga/motor/experiments/motor_jog_20khz_20pct_20260923/verification/simulation.log",
+      "sha256": "85b9fce4e0de97406a322c555a05ab1c65286991078cf8737d2018f41606301c",
+      "bytes": 1233
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/PROTECTION.md",
+      "sha256": "d19af31a29abafa7641c27ac10e16da172111c744b55b281c06418baf6d143c5",
+      "bytes": 5613
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/PROTECTION_TEST_2026-09-27.md",
+      "sha256": "6994598aca72e7611ab0717b08ed072eb306e6f890ba46df7fa8ac1b7fde921e",
+      "bytes": 2389
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/README.md",
+      "sha256": "27f5426b9a03d4989e445a71ef1e480adc6fa6dffe512bb3a25e47a86156fd88",
+      "bytes": 458
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/baseline-sha256.json",
+      "sha256": "55462cdbdeacf7983de4e7f29907370fc8100d778f6ddfc21c46e34b96a55150",
+      "bytes": 510
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/build_protection_synth.tcl",
+      "sha256": "a671417a251aeef7513127174cb1918d73e2a1caeab01069349c2af313d60ea5",
+      "bytes": 211
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/motor_protected.gprj",
+      "sha256": "1a8e4948d26bf570ae325ebed1b02f51fa8778d25aa9d6ada537e6218ca9b900",
+      "bytes": 578
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/rtl/ibt2_adapter.v",
+      "sha256": "65bcaf53c5387c677157b6d0a3f6edf95c84e070de3b63a5346536a92e02fc1e",
+      "bytes": 1235
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/rtl/motor_driver.v",
+      "sha256": "5001c18fdc796c9fdba6d97ae6eb94dd3c6bed04a4d38effb9227c549d8a5517",
+      "bytes": 2837
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/rtl/motor_protected.v",
+      "sha256": "3f7a430dff4f20404c5a64128a259c298f0cc2e7d5fa22a357c6d2bba4394b54",
+      "bytes": 1987
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/rtl/protection.v",
+      "sha256": "9938db8b367c2be9527c60b8ab329ab79c0ba6b08652a67d0eb5f67e8fc68234",
+      "bytes": 1858
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/rtl/pwm_gen.v",
+      "sha256": "105afd9d6263fa414bf9bb2c6909a5c072fc03ca3568d13d9548270bbbe8d328",
+      "bytes": 1237
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/run_protection.do",
+      "sha256": "bbf837df0e68d1be02903d063c9e6cf97fd0da83738df95f8d444c2c511ab90d",
+      "bytes": 402
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/run_protection.ps1",
+      "sha256": "01c6624058e126936fb98d5f7bb3e81ef04ed372020870997f7754ce9d10a67f",
+      "bytes": 1073
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/tb/tb_ibt2_adapter.v",
+      "sha256": "7df128dae850dd9743cd46884c7c789485064f31bb960e5ffb1d79499d3a6999",
+      "bytes": 1097
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/tb/tb_motor.v",
+      "sha256": "85d17f0181fa8899802bc124622a20e257fafe4c9887d36103879d441fc1fd06",
+      "bytes": 4269
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/tb/tb_motor_protected.v",
+      "sha256": "058d186147c1305e81eac7989fbed867367922ddba3b8f222eb1b07d51a53844",
+      "bytes": 5598
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/tb/tb_protection.v",
+      "sha256": "1c18a73df6cd8949aa3f059c46e8937b22de9c41730020155da7ffd371f9b702",
+      "bytes": 3371
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/verification/motor_protected.log",
+      "sha256": "8cdc838508bff7a65944aa6783cdcbb0d75d87ae6ed05099dafd3d8b6b81f0b2",
+      "bytes": 1841
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/verification/motor_protected_syn.rpt.html",
+      "sha256": "d2858c3bf5ae76dab6d91432c9eb62845dcae12343a5e0dfb16ed984f290e324",
+      "bytes": 118987
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/verification/motor_protected_syn_resource.html",
+      "sha256": "c7d3f5189192f05634220def90f35696bedb07308a8aa9d02f21cb60cf4a5d89",
+      "bytes": 2874
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/verification/motor_protected_syn_rsc.xml",
+      "sha256": "fd4e0c777fa204a269dce8982bd29d831b05cf17a2017da73849e2a69d5c1f49",
+      "bytes": 609
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/verification/tb_motor.log",
+      "sha256": "cb62bbde6842a398ece11855697a24ee6ccac274792f749c8b45a6d851d3cb6f",
+      "bytes": 1899
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/verification/tb_motor_protected.log",
+      "sha256": "13cb8964ad0e82f40b8f60b41680e78c0f0bcc2f858a9bfece9f7804b0964160",
+      "bytes": 1753
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection/verification/tb_protection.log",
+      "sha256": "5c299a35782ac389aa6fb18e0434dcf3bbe93839da3dd93250e9162c141ddbe7",
+      "bytes": 1553
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/README.md",
+      "sha256": "86514de962bfc4e34989f09e93835836ef0a75a2338d9d1e1a85f40288d53263",
+      "bytes": 4318
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/build.tcl",
+      "sha256": "04b8fe3b5ba7c27c92ccd138f3bab10dde4e8c217f68c30f0b0bf000c70f6d5a",
+      "bytes": 205
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/dock_motor_protection.cst",
+      "sha256": "1025d810512783c7a061ed27494fc8cc0d12185bb8dd4cfd422adb685cdb3349",
+      "bytes": 1075
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/dock_motor_protection.sdc",
+      "sha256": "808ff350bff5f9768dca6d3bf7f0bb6bbff1b7e63c0799b6af6a5c24fcddc97d",
+      "bytes": 861
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/motor_protection_board.fs",
+      "sha256": "e56729e330772692f0dfd3a4f4c3b06dcf59e99e54caca9945b4dd4dba5fad21",
+      "bytes": 4620697
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/motor_protection_board.gprj",
+      "sha256": "c6b49214a10285d5cde066764cca522b41c3cdba456f928d1e8d46687f9d6c30",
+      "bytes": 887
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/rtl/button_input.v",
+      "sha256": "63ca1a28f046de346d1bbf673c4f647ef780ed2e9d974cca9f56ecee6bf52a49",
+      "bytes": 2398
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/rtl/dock_motor_protection.v",
+      "sha256": "d19c33fd0899e71551f8f9d8a15e6e18e8c4c507bb55cbc5546f3256c6f6260f",
+      "bytes": 3427
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/rtl/ibt2_adapter.v",
+      "sha256": "65bcaf53c5387c677157b6d0a3f6edf95c84e070de3b63a5346536a92e02fc1e",
+      "bytes": 1235
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/rtl/motor_driver.v",
+      "sha256": "5001c18fdc796c9fdba6d97ae6eb94dd3c6bed04a4d38effb9227c549d8a5517",
+      "bytes": 2837
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/rtl/motor_protected.v",
+      "sha256": "3f7a430dff4f20404c5a64128a259c298f0cc2e7d5fa22a357c6d2bba4394b54",
+      "bytes": 1987
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/rtl/protection.v",
+      "sha256": "9938db8b367c2be9527c60b8ab329ab79c0ba6b08652a67d0eb5f67e8fc68234",
+      "bytes": 1858
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/rtl/pwm_gen.v",
+      "sha256": "105afd9d6263fa414bf9bb2c6909a5c072fc03ca3568d13d9548270bbbe8d328",
+      "bytes": 1237
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/rtl/reset_guard.v",
+      "sha256": "0ca76dd366a6fa2d2d485e363107fb471f0e660e9452d90cd0612dc44002a368",
+      "bytes": 1260
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/run.do",
+      "sha256": "818047d6efb13661c03ba8218a9ddb4ad8261f423a292ac1c524de02ee4a1693",
+      "bytes": 444
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/tb/tb_protection_board.v",
+      "sha256": "cbb34a1bcea9c2bafdfa5d8e1ccec4ec3ab5cc26014993ae81c2bef24cf74de1",
+      "bytes": 3442
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/tb/tb_protection_board_pwm.v",
+      "sha256": "f639f06669ca70370f3be4f3f8b60140270bdfa493d8e5872845276816433eb3",
+      "bytes": 2302
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/verification/motor_protection_board.log",
+      "sha256": "2d1b81d3a07cc4b50bd80b983b71d0e98d4867a157f3a29fa93bb0905f36c62c",
+      "bytes": 1499
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/verification/motor_protection_board.pin.html",
+      "sha256": "032585d0cf99ddfc7dc736f042bc860b8a1b35cd56b6c2ec0597ed6beca2de0b",
+      "bytes": 57234
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/verification/motor_protection_board.rpt.txt",
+      "sha256": "d7d7fd4df64ccf3460468dbf85a4836fa856e3ac05fc174c70ae2f8a33790539",
+      "bytes": 47960
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/verification/motor_protection_board_tr_content.html",
+      "sha256": "ff9fd4322cbf0ee3ee51ada3c155b26b0dd9e915f099044a107d83b1ed5d3a66",
+      "bytes": 408791
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/verification/tb_protection_board.log",
+      "sha256": "549398d92b586b3acafea74a84a41bcb4c46170308b93e7558c061fca7336d2a",
+      "bytes": 1952
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_board/verification/tb_protection_board_pwm.log",
+      "sha256": "7f4848e5efa3336a4f2ff146582ff6d69e57bc82423259358ad9a51f55da301f",
+      "bytes": 1756
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/README.md",
+      "sha256": "166615843c614c868e06b28a21167a81ecd7ee6b10923eb6a694ff2a1fbda739",
+      "bytes": 4006
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/build.tcl",
+      "sha256": "07f97948e96ba65b6a4f9d3efd2b0c69dda9892a532d726e80f3c2cc978623c0",
+      "bytes": 209
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/dock_motor_protection.cst",
+      "sha256": "1025d810512783c7a061ed27494fc8cc0d12185bb8dd4cfd422adb685cdb3349",
+      "bytes": 1075
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/dock_motor_protection.sdc",
+      "sha256": "808ff350bff5f9768dca6d3bf7f0bb6bbff1b7e63c0799b6af6a5c24fcddc97d",
+      "bytes": 861
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/motor_protection_jog_200ms.fs",
+      "sha256": "c5657dafde3f20a93052e8cd840fe74848332d1e61a0461a0c7ef977fe3e789f",
+      "bytes": 4620697
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/motor_protection_jog_200ms.gprj",
+      "sha256": "c6b49214a10285d5cde066764cca522b41c3cdba456f928d1e8d46687f9d6c30",
+      "bytes": 887
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/rtl/button_input.v",
+      "sha256": "63ca1a28f046de346d1bbf673c4f647ef780ed2e9d974cca9f56ecee6bf52a49",
+      "bytes": 2398
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/rtl/dock_motor_protection.v",
+      "sha256": "65de89c766ed1fe136f1f2e75c32371f2f8213756247f84312fb018e211a44eb",
+      "bytes": 3395
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/rtl/ibt2_adapter.v",
+      "sha256": "65bcaf53c5387c677157b6d0a3f6edf95c84e070de3b63a5346536a92e02fc1e",
+      "bytes": 1235
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/rtl/motor_driver.v",
+      "sha256": "5001c18fdc796c9fdba6d97ae6eb94dd3c6bed04a4d38effb9227c549d8a5517",
+      "bytes": 2837
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/rtl/motor_protected.v",
+      "sha256": "3f7a430dff4f20404c5a64128a259c298f0cc2e7d5fa22a357c6d2bba4394b54",
+      "bytes": 1987
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/rtl/protection.v",
+      "sha256": "9938db8b367c2be9527c60b8ab329ab79c0ba6b08652a67d0eb5f67e8fc68234",
+      "bytes": 1858
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/rtl/pwm_gen.v",
+      "sha256": "105afd9d6263fa414bf9bb2c6909a5c072fc03ca3568d13d9548270bbbe8d328",
+      "bytes": 1237
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/rtl/reset_guard.v",
+      "sha256": "0ca76dd366a6fa2d2d485e363107fb471f0e660e9452d90cd0612dc44002a368",
+      "bytes": 1260
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/run.do",
+      "sha256": "818047d6efb13661c03ba8218a9ddb4ad8261f423a292ac1c524de02ee4a1693",
+      "bytes": 444
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/tb/tb_protection_board.v",
+      "sha256": "cbb34a1bcea9c2bafdfa5d8e1ccec4ec3ab5cc26014993ae81c2bef24cf74de1",
+      "bytes": 3442
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/tb/tb_protection_board_pwm.v",
+      "sha256": "5296a79d50cacf18a5f999c3f6d4a2f33d2e23224362915968849df94a2d5ec2",
+      "bytes": 2493
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/verification/build-console.log",
+      "sha256": "6aa2e0df053da4790eb03b2d4521faa56820e818762fde447508da55816e4cbb",
+      "bytes": 4216
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/verification/controls-console.log",
+      "sha256": "dc2ad426f66545ee6dcc001317d458d2821e3b459011f00d30242465ab859ba5",
+      "bytes": 1984
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/verification/controls.log",
+      "sha256": "cbf6b8ca56c484061d7aa30187e4e61db5016fe82c49e7a5bce3c7311e019c45",
+      "bytes": 1952
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/verification/jog-200ms.log",
+      "sha256": "514936d5133ff8967aadec0475b84b38d25e6ae8f076f484d59bb66ed5eac3fe",
+      "bytes": 1806
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/verification/jog-console.log",
+      "sha256": "fb0296d8ce4d2006d50f533ad0d89c353dbfab3d1353752bb1b2169fb907b078",
+      "bytes": 1838
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/verification/motor_protection_jog_200ms.pin.html",
+      "sha256": "6cf742c792eedab63c123e4c51278978788d7ca45096d26f75c6bae66fc7597e",
+      "bytes": 57250
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/verification/motor_protection_jog_200ms.rpt.txt",
+      "sha256": "08e4cb13cdfb5e13ffb1351323dde54df31c428cc4454bf749c4e8805e7c0652",
+      "bytes": 47978
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_200ms/verification/motor_protection_jog_200ms_tr_content.html",
+      "sha256": "c9ea4ce6287d6e08460e821cb4f9f8fcae8e69bafe0ec8f267981065180b47de",
+      "bytes": 409777
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/README.md",
+      "sha256": "29735b52209ff2f041b63c1e2f5cc35c5f8531df433b4286906c127a80a9786d",
+      "bytes": 4747
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/build.tcl",
+      "sha256": "c043eedad4241bf709be39c43bae228fdaf9af0830ffa804958b32c7c7eddb7c",
+      "bytes": 211
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/dock_motor_protection.cst",
+      "sha256": "dd4eb9b71c31a542f7660c02fb1f4f6d9f03084d217fd5fb9ad3ee9387cd27bc",
+      "bytes": 1270
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/dock_motor_protection.sdc",
+      "sha256": "808ff350bff5f9768dca6d3bf7f0bb6bbff1b7e63c0799b6af6a5c24fcddc97d",
+      "bytes": 861
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/motor_protection_jog_ab_led3.fs",
+      "sha256": "c21bdbe15bdd4390eeaac5ebf7f17b8e28f790ef4b115fac7a4b41d03fee2871",
+      "bytes": 4620697
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/motor_protection_jog_ab_led3.gprj",
+      "sha256": "c6b49214a10285d5cde066764cca522b41c3cdba456f928d1e8d46687f9d6c30",
+      "bytes": 887
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/rtl/button_input.v",
+      "sha256": "63ca1a28f046de346d1bbf673c4f647ef780ed2e9d974cca9f56ecee6bf52a49",
+      "bytes": 2398
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/rtl/dock_motor_protection.v",
+      "sha256": "ce6aff56fef5ff32e7279091d80db9f4f320866c6932ff0a1925e85f8683d4aa",
+      "bytes": 3395
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/rtl/ibt2_adapter.v",
+      "sha256": "65bcaf53c5387c677157b6d0a3f6edf95c84e070de3b63a5346536a92e02fc1e",
+      "bytes": 1235
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/rtl/motor_driver.v",
+      "sha256": "5001c18fdc796c9fdba6d97ae6eb94dd3c6bed04a4d38effb9227c549d8a5517",
+      "bytes": 2837
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/rtl/motor_protected.v",
+      "sha256": "3f7a430dff4f20404c5a64128a259c298f0cc2e7d5fa22a357c6d2bba4394b54",
+      "bytes": 1987
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/rtl/protection.v",
+      "sha256": "9938db8b367c2be9527c60b8ab329ab79c0ba6b08652a67d0eb5f67e8fc68234",
+      "bytes": 1858
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/rtl/pwm_gen.v",
+      "sha256": "105afd9d6263fa414bf9bb2c6909a5c072fc03ca3568d13d9548270bbbe8d328",
+      "bytes": 1237
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/rtl/reset_guard.v",
+      "sha256": "0ca76dd366a6fa2d2d485e363107fb471f0e660e9452d90cd0612dc44002a368",
+      "bytes": 1260
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/run.do",
+      "sha256": "818047d6efb13661c03ba8218a9ddb4ad8261f423a292ac1c524de02ee4a1693",
+      "bytes": 444
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/tb/tb_protection_board.v",
+      "sha256": "cbb34a1bcea9c2bafdfa5d8e1ccec4ec3ab5cc26014993ae81c2bef24cf74de1",
+      "bytes": 3442
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/tb/tb_protection_board_pwm.v",
+      "sha256": "5296a79d50cacf18a5f999c3f6d4a2f33d2e23224362915968849df94a2d5ec2",
+      "bytes": 2493
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/verification/build-console.log",
+      "sha256": "76aa084d9e52beabd5b1da3c84a574529c36e34ea3cdd8537f3a00a087db8b8c",
+      "bytes": 4290
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/verification/motor_protection_jog_ab_led3.pin.html",
+      "sha256": "413a7a15149728dd89bd715d09c5e9d40521d9f42fc55ff79464b9be1357820c",
+      "bytes": 57258
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/verification/motor_protection_jog_ab_led3.rpt.txt",
+      "sha256": "24061d27d55595edf845375a986bbfe6039f4b6c1e060c31d9fd403f95dccdbe",
+      "bytes": 47985
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/verification/motor_protection_jog_ab_led3_tr_content.html",
+      "sha256": "25d2b94b382345812760eb3a749ee6f5af0b2b4ad8295a37234cb690aee40a25",
+      "bytes": 409491
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/README.md",
+      "sha256": "47b8d5b0b773ace1af871bce6dc654902f81fd9f00d2fc7055a613b026ff6e19",
+      "bytes": 4353
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/build.tcl",
+      "sha256": "a2cc79a7bde59b1c591881b696e4461a0fc0f941ce6aaaa7ebb09668b032e406",
+      "bytes": 211
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/dock_motor_protection.cst",
+      "sha256": "3e0230caf7a14704b11551150726d9e2ef9cc86f5a76a45272f1fe512d3a6137",
+      "bytes": 1222
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/dock_motor_protection.sdc",
+      "sha256": "808ff350bff5f9768dca6d3bf7f0bb6bbff1b7e63c0799b6af6a5c24fcddc97d",
+      "bytes": 861
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/motor_protection_jog_ab_pins.fs",
+      "sha256": "ea05ca996a2e4b0d40c71c92e1a32d81f95e5a30934a21fdd408cf776864b37e",
+      "bytes": 4620697
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/motor_protection_jog_ab_pins.gprj",
+      "sha256": "c6b49214a10285d5cde066764cca522b41c3cdba456f928d1e8d46687f9d6c30",
+      "bytes": 887
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/rtl/button_input.v",
+      "sha256": "63ca1a28f046de346d1bbf673c4f647ef780ed2e9d974cca9f56ecee6bf52a49",
+      "bytes": 2398
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/rtl/dock_motor_protection.v",
+      "sha256": "65de89c766ed1fe136f1f2e75c32371f2f8213756247f84312fb018e211a44eb",
+      "bytes": 3395
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/rtl/ibt2_adapter.v",
+      "sha256": "65bcaf53c5387c677157b6d0a3f6edf95c84e070de3b63a5346536a92e02fc1e",
+      "bytes": 1235
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/rtl/motor_driver.v",
+      "sha256": "5001c18fdc796c9fdba6d97ae6eb94dd3c6bed04a4d38effb9227c549d8a5517",
+      "bytes": 2837
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/rtl/motor_protected.v",
+      "sha256": "3f7a430dff4f20404c5a64128a259c298f0cc2e7d5fa22a357c6d2bba4394b54",
+      "bytes": 1987
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/rtl/protection.v",
+      "sha256": "9938db8b367c2be9527c60b8ab329ab79c0ba6b08652a67d0eb5f67e8fc68234",
+      "bytes": 1858
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/rtl/pwm_gen.v",
+      "sha256": "105afd9d6263fa414bf9bb2c6909a5c072fc03ca3568d13d9548270bbbe8d328",
+      "bytes": 1237
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/rtl/reset_guard.v",
+      "sha256": "0ca76dd366a6fa2d2d485e363107fb471f0e660e9452d90cd0612dc44002a368",
+      "bytes": 1260
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/run.do",
+      "sha256": "818047d6efb13661c03ba8218a9ddb4ad8261f423a292ac1c524de02ee4a1693",
+      "bytes": 444
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/tb/tb_protection_board.v",
+      "sha256": "cbb34a1bcea9c2bafdfa5d8e1ccec4ec3ab5cc26014993ae81c2bef24cf74de1",
+      "bytes": 3442
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/tb/tb_protection_board_pwm.v",
+      "sha256": "5296a79d50cacf18a5f999c3f6d4a2f33d2e23224362915968849df94a2d5ec2",
+      "bytes": 2493
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/verification/build-console.log",
+      "sha256": "1214ef5fd854cb8278959d23fc08ed9423a43b637e49cd5ce477d063830a9ddd",
+      "bytes": 4290
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/verification/motor_protection_jog_ab_pins.pin.html",
+      "sha256": "3c3c6c882ce6130f4288350dd234c72f41acd447b6eb6ef673250102e4a0475f",
+      "bytes": 57258
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/verification/motor_protection_jog_ab_pins.rpt.txt",
+      "sha256": "18aade2b1efa1c544769262b248c8c92cc44207364104e65d45c91cd168db61b",
+      "bytes": 47984
+    },
+    {
+      "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/verification/motor_protection_jog_ab_pins_tr_content.html",
+      "sha256": "30cd9fb6499336af4068927a76f61dd8f36c6d9709bcfe7ffff606dc973d7890",
+      "bytes": 409491
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/README.md",
+      "sha256": "c01bd31639466b1c3582fb4775299cdc47cef8c1bae51c0f0df748a5f094fedf",
+      "bytes": 3482
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/board/build.tcl",
+      "sha256": "f59364041996a3371a596ef93ebcf597b9badc836ed8c2b8e43a3a672e4c1966",
+      "bytes": 257
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/board/dock_motor_1khz.gprj",
+      "sha256": "e557d5bf13d129a5472163efbe51ae1fae14f548b7fafee8049d74d93d13fa2b",
+      "bytes": 829
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/board/dock_motor_test.cst",
+      "sha256": "cd3055d0dbc3e0b7bc0ca84683d3b6ff16df4a710afe7a0f2ee9ab5aee120431",
+      "bytes": 1083
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/board/dock_motor_test.sdc",
+      "sha256": "a0a9113579a17a757c578e0d4382557640232568dbe77d68999f8558e3815649",
+      "bytes": 1374
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/dock_motor_1khz.fs",
+      "sha256": "3cc1fc9e04ef37275d4d168cbcb8c5a23c1f0cc9f409a5563750c9343d937842",
+      "bytes": 4620697
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/original-sha256.json",
+      "sha256": "0077e43c111ee77c7699cd70db712e23d8b8db8f318ca8c71cab8276bd79b648",
+      "bytes": 1384
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/rtl/button_input.v",
+      "sha256": "63ca1a28f046de346d1bbf673c4f647ef780ed2e9d974cca9f56ecee6bf52a49",
+      "bytes": 2398
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/rtl/dock_motor_test.v",
+      "sha256": "50edeaf19358a68885bf74fc8c9069badbab8580779ab524832b144ffcf8d2eb",
+      "bytes": 1225
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/rtl/ibt2_adapter.v",
+      "sha256": "65bcaf53c5387c677157b6d0a3f6edf95c84e070de3b63a5346536a92e02fc1e",
+      "bytes": 1235
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/rtl/motor_buttons_top.v",
+      "sha256": "7d6b1a6ca8cc9da4a8a6a54e7e1442bb351927bc37081ffe4ae67a2080555cf4",
+      "bytes": 2901
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/rtl/motor_driver.v",
+      "sha256": "5001c18fdc796c9fdba6d97ae6eb94dd3c6bed04a4d38effb9227c549d8a5517",
+      "bytes": 2837
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/rtl/pwm_gen.v",
+      "sha256": "105afd9d6263fa414bf9bb2c6909a5c072fc03ca3568d13d9548270bbbe8d328",
+      "bytes": 1237
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/rtl/reset_guard.v",
+      "sha256": "0ca76dd366a6fa2d2d485e363107fb471f0e660e9452d90cd0612dc44002a368",
+      "bytes": 1260
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/run_sim.do",
+      "sha256": "85232357f3e8d652149276d06b8279e79dd5f943b4ae505c752f1c3b7b26d3cf",
+      "bytes": 328
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/tb/tb_motor_1khz.v",
+      "sha256": "30ffadabe1c353f4c436767e814b126697879e5d735641bb9d1ace39afd4c7ad",
+      "bytes": 3062
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/verification/dock_motor_1khz.log",
+      "sha256": "902b981c85700593b08b689a8d07fe7be7b39abb4f2d1884e9539c4bc876eefc",
+      "bytes": 1468
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/verification/dock_motor_1khz.rpt.txt",
+      "sha256": "977052fa6969709a9f9d8b483cb039d9f214c033c518788dda217081ddc6d765",
+      "bytes": 48682
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/verification/dock_motor_1khz_tr_content.html",
+      "sha256": "bc3230e359230fed34805e4d93f74c1579dbb651fd4fed98cf84cd3e90ce5452",
+      "bytes": 422117
+    },
+    {
+      "path": "fpga/motor/experiments/motor_pwm_1khz_test/verification/simulation.log",
+      "sha256": "d92b3c325280eaca053827cb6e9d8d772f4c92b8978aff60b5dd53bc09637072",
+      "bytes": 1746
+    },
+    {
+      "path": "fpga/motor/motor_protected.gprj",
+      "sha256": "1a8e4948d26bf570ae325ebed1b02f51fa8778d25aa9d6ada537e6218ca9b900",
+      "bytes": 578
+    },
+    {
+      "path": "fpga/motor/rtl/motor_protected.v",
+      "sha256": "3f7a430dff4f20404c5a64128a259c298f0cc2e7d5fa22a357c6d2bba4394b54",
+      "bytes": 1987
+    },
+    {
+      "path": "fpga/motor/rtl/protection.v",
+      "sha256": "9938db8b367c2be9527c60b8ab329ab79c0ba6b08652a67d0eb5f67e8fc68234",
+      "bytes": 1858
+    },
+    {
+      "path": "fpga/motor/run_protection.do",
+      "sha256": "bbf837df0e68d1be02903d063c9e6cf97fd0da83738df95f8d444c2c511ab90d",
+      "bytes": 402
+    },
+    {
+      "path": "fpga/motor/run_protection.ps1",
+      "sha256": "01c6624058e126936fb98d5f7bb3e81ef04ed372020870997f7754ce9d10a67f",
+      "bytes": 1073
+    },
+    {
+      "path": "fpga/motor/tb/tb_motor_protected.v",
+      "sha256": "058d186147c1305e81eac7989fbed867367922ddba3b8f222eb1b07d51a53844",
+      "bytes": 5598
+    },
+    {
+      "path": "fpga/motor/tb/tb_protection.v",
+      "sha256": "1c18a73df6cd8949aa3f059c46e8937b22de9c41730020155da7ffd371f9b702",
+      "bytes": 3371
+    },
+    {
+      "path": "fpga/motor/verification_20260927_upload/results.json",
+      "sha256": "ff31339e217c559be603a3b3962bd3903f058e44b1f86a2e40b9699921fff5e2",
+      "bytes": 933
+    },
+    {
+      "path": "fpga/motor/verification_20260927_upload/tb_motor.log",
+      "sha256": "371bf881811cf3872eae8163814dd934e86414eb484cbd612f5cea3c904067ec",
+      "bytes": 1899
+    },
+    {
+      "path": "fpga/motor/verification_20260927_upload/tb_motor_protected.log",
+      "sha256": "f22aafa40970ee1a7eb5b677fb754635dbc81423ddccfe792d999fbba3e64775",
+      "bytes": 1753
+    },
+    {
+      "path": "fpga/motor/verification_20260927_upload/tb_protection.log",
+      "sha256": "d98d4117235b613fb9edc3ff71d6d0daef5f519dde8c898febf203098f2bb79e",
+      "bytes": 1649
+    },
+    {
+      "path": "fpga/motor/verification_20260927_upload/tb_protection_board.log",
+      "sha256": "2e297b525c84c1a9b6db7bfdcaeb9e3742d73d7d330fd807d143620386422c08",
+      "bytes": 1952
+    },
+    {
+      "path": "fpga/motor/verification_20260927_upload/tb_protection_board_pwm.log",
+      "sha256": "6352a77f6d1a3d2a88da25a40e8dc100a82c1c69e13feab4458768d8e0348438",
+      "bytes": 1806
+    }
+  ]
+}

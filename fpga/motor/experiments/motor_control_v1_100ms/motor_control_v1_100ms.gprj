@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE gowin-fpga-project><Project><Template>FPGA</Template><Version>5</Version><Device name="GW2A-18C" pn="GW2A-LV18PG256C8/I7">gw2a18c-011</Device><FileList>
+<File path="rtl/pwm_tenths.v" type="file.verilog" enable="1"/>
+<File path="rtl/protection.v" type="file.verilog" enable="1"/>
+<File path="rtl/ibt2_adapter.v" type="file.verilog" enable="1"/>
+<File path="rtl/motor_control_v1.v" type="file.verilog" enable="1"/>
+<File path="rtl/button_input.v" type="file.verilog" enable="1"/>
+<File path="rtl/reset_guard.v" type="file.verilog" enable="1"/>
+<File path="rtl/dock_motor_control_v1.v" type="file.verilog" enable="1"/>
+<File path="dock_motor_control_v1.cst" type="file.cst" enable="1"/><File path="dock_motor_control_v1.sdc" type="file.sdc" enable="1"/></FileList></Project>

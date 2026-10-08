@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="motor_control_u_chain_3pin" T_Register="107(0)" T_Alu="50(0)" T_Lut="402(0)" T_MULT18X18="1(0)">
+ <SubModule name="adapter_i" Register="37" Alu="21" Lut="123" T_Register="37(37)" T_Alu="21(21)" T_Lut="123(123)"/>
+ <SubModule name="motor_i" T_Register="70(0)" T_Alu="29(0)" T_Lut="279(0)" T_MULT18X18="1(0)">
+  <SubModule name="protection_i" Register="5" Lut="10" T_Register="5(5)" T_Lut="10(10)"/>
+  <SubModule name="driver_i" Register="30" Lut="61" T_Register="61(30)" T_Alu="29(0)" T_Lut="262(61)" T_MULT18X18="1(0)">
+   <SubModule name="pwm_i" Register="31" Alu="29" Lut="201" MULT18X18="1" T_Register="31(31)" T_Alu="29(29)" T_Lut="201(201)" T_MULT18X18="1(1)"/>
+  </SubModule>
+  <SubModule name="adapter_i" Register="4" Lut="7" T_Register="4(4)" T_Lut="7(7)"/>
+ </SubModule>
+</Module>

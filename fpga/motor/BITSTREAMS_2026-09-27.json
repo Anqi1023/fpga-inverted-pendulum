@@ -1,0 +1,74 @@
+[
+  {
+    "path": "fpga/motor/experiments/motor_jog_1khz_20pct/motor_jog_1khz_20pct.fs",
+    "sha256": "79448b440b9eeae13566c300f5df4660aec7fba7f654f4fda987e5a875e87500",
+    "bytes": 4620697,
+    "status": "historical_do_not_use_with_current_wiring"
+  },
+  {
+    "path": "fpga/motor/experiments/motor_jog_1khz_30pct/motor_jog_1khz_30pct.fs",
+    "sha256": "981f71aa110801c8f5bd192add99fa3e35026600914c8bf4d11b9ead5f5f4eea",
+    "bytes": 4620697,
+    "status": "historical_do_not_use_with_current_wiring"
+  },
+  {
+    "path": "fpga/motor/experiments/motor_jog_1khz_5pct/motor_jog_1khz_5pct.fs",
+    "sha256": "3cc7ec6fa2272d55a772ed54d45c62b990bdf63cc1fd276a4d31d467ee7a2bbf",
+    "bytes": 4620697,
+    "status": "historical_do_not_use_with_current_wiring"
+  },
+  {
+    "path": "fpga/motor/experiments/motor_jog_1khz_7pct/motor_jog_1khz_7pct.fs",
+    "sha256": "50fd296ac583c969af9e5c846a2e15c0f7894aa84ae7425e2eaadde80f05487a",
+    "bytes": 4620697,
+    "status": "historical_do_not_use_with_current_wiring"
+  },
+  {
+    "path": "fpga/motor/experiments/motor_jog_1khz_8pct/motor_jog_1khz_8pct.fs",
+    "sha256": "b1e8a608eb6051fb220d552111af0ad4566520ade755776a75fe58daa01366d6",
+    "bytes": 4620697,
+    "status": "historical_do_not_use_with_current_wiring"
+  },
+  {
+    "path": "fpga/motor/experiments/motor_jog_20khz_20pct_20260923/dock_motor_jog.fs",
+    "sha256": "4563fc35dceeaa49d6c64e9bc765a461d4844e1f95a392096cf03790cb11a3a1",
+    "bytes": 4620697,
+    "status": "historical_do_not_use_with_current_wiring"
+  },
+  {
+    "path": "fpga/motor/experiments/motor_protection_board/motor_protection_board.fs",
+    "sha256": "e56729e330772692f0dfd3a4f4c3b06dcf59e99e54caca9945b4dd4dba5fad21",
+    "bytes": 4620697,
+    "status": "historical_do_not_use_with_current_wiring"
+  },
+  {
+    "path": "fpga/motor/experiments/motor_protection_jog_200ms/motor_protection_jog_200ms.fs",
+    "sha256": "c5657dafde3f20a93052e8cd840fe74848332d1e61a0461a0c7ef977fe3e789f",
+    "bytes": 4620697,
+    "status": "historical_do_not_use_with_current_wiring"
+  },
+  {
+    "path": "fpga/motor/experiments/motor_protection_jog_ab_led3/motor_protection_jog_ab_led3.fs",
+    "sha256": "c21bdbe15bdd4390eeaac5ebf7f17b8e28f790ef4b115fac7a4b41d03fee2871",
+    "bytes": 4620697,
+    "status": "previous_hardware_verified_baseline"
+  },
+  {
+    "path": "fpga/motor/experiments/motor_protection_jog_ab_pins/motor_protection_jog_ab_pins.fs",
+    "sha256": "ea05ca996a2e4b0d40c71c92e1a32d81f95e5a30934a21fdd408cf776864b37e",
+    "bytes": 4620697,
+    "status": "historical_do_not_use_with_current_wiring"
+  },
+  {
+    "path": "fpga/motor/experiments/motor_pwm_1khz_test/dock_motor_1khz.fs",
+    "sha256": "3cc1fc9e04ef37275d4d168cbcb8c5a23c1f0cc9f409a5563750c9343d937842",
+    "bytes": 4620697,
+    "status": "historical_do_not_use_with_current_wiring"
+  },
+  {
+    "path": "fpga/motor/experiments/motor_control_v1_100ms/motor_control_v1_100ms.fs",
+    "sha256": "fac7a75cd6813a6e709964247d9d58444dc1afbe93f985937bf38bbb8cc90622",
+    "bytes": 4620697,
+    "status": "current_mock_C_jog_CV_verified_watchdog_and_truncation_simulated"
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "purpose": "Regression of packaged unchanged RTL; no hardware operation",
+  "date": "2026-09-27",
+  "results": [
+    {
+      "test": "tb_protection",
+      "result": "PASS",
+      "markers": [
+        "PROTECTION_UNIT_PASS"
+      ]
+    },
+    {
+      "test": "tb_motor_protected",
+      "result": "PASS",
+      "markers": [
+        "MOTOR_PROTECTED_INTEGRATION_PASS"
+      ]
+    },
+    {
+      "test": "tb_motor",
+      "result": "PASS",
+      "markers": [
+        "HENGXIN_MOTOR_OFFLINE_PASS",
+        "HENGXIN_IBT2_ADAPTER_PASS"
+      ]
+    },
+    {
+      "test": "tb_protection_board",
+      "result": "PASS",
+      "markers": [
+        "PROTECTION_BOARD_CONTROLS_PASS"
+      ]
+    },
+    {
+      "test": "tb_protection_board_pwm",
+      "result": "PASS",
+      "markers": [
+        "PROTECTED_JOG_200MS_1KHZ_10PCT_PASS ticks=5400000 pulses=199 high_ticks=537300"
+      ]
+    }
+  ]
+}

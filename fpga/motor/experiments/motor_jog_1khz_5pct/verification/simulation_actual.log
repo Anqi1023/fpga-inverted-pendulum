@@ -1,0 +1,30 @@
+# do run_actual.do
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:09:27 on Sep 26,2026
+# vlog -sv pwm_gen.v button_input.v reset_guard.v dock_motor_jog.v tb_jog_actual.v 
+# -- Compiling module pwm_gen
+# -- Compiling module button_input
+# -- Compiling module reset_guard
+# -- Compiling module dock_motor_jog
+# -- Compiling module tb_jog_actual
+# 
+# Top level modules:
+# 	tb_jog_actual
+# End time: 22:09:27 on Sep 26,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.tb_jog_actual 
+# Start time: 22:09:27 on Sep 26,2026
+# Loading sv_std.std
+# Loading work.tb_jog_actual
+# Loading work.dock_motor_jog
+# Loading work.reset_guard
+# Loading work.button_input
+# Loading work.pwm_gen
+# JOG_ACTUAL_PASS: 1 kHz, 5%, 5400000-clock/200-ms run, automatic stop, 1-s cooldown loaded
+# ** Note: $finish    : tb_jog_actual.v(38)
+#    Time: 200010404839 ps  Iteration: 0  Instance: /tb_jog_actual
+# End time: 22:09:55 on Sep 26,2026, Elapsed time: 0:00:28
+# Errors: 0, Warnings: 0

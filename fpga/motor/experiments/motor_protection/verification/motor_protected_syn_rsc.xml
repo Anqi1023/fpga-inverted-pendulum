@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="motor_protected" T_Register="70(0)" T_Alu="29(0)" T_Lut="257(0)" T_MULT18X18="1(0)">
+ <SubModule name="protection_i" Register="5" Lut="11" T_Register="5(5)" T_Lut="11(11)"/>
+ <SubModule name="driver_i" Register="30" Lut="63" T_Register="61(30)" T_Alu="29(0)" T_Lut="239(63)" T_MULT18X18="1(0)">
+  <SubModule name="pwm_i" Register="31" Alu="29" Lut="176" MULT18X18="1" T_Register="31(31)" T_Alu="29(29)" T_Lut="176(176)" T_MULT18X18="1(1)"/>
+ </SubModule>
+ <SubModule name="adapter_i" Register="4" Lut="7" T_Register="4(4)" T_Lut="7(7)"/>
+</Module>

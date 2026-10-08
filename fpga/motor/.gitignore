@@ -3,3 +3,4 @@ modelsim.ini
 transcript
 *.wlf
 *.vcd
+!verification_20260927_upload/*.log

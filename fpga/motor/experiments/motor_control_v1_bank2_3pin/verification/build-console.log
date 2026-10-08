@@ -1,0 +1,67 @@
+*** GOWIN Tcl Command Line Console  *** 
+Open project D:/FPGA/hengxin/motor-control-v1-bank2-3pin/motor_control_v1_bank2_3pin.gprj finished
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\FPGA\hengxin\motor-control-v1-bank2-3pin\rtl\pwm_tenths.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\motor-control-v1-bank2-3pin\rtl\protection.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\motor-control-v1-bank2-3pin\rtl\ibt2_adapter.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\motor-control-v1-bank2-3pin\rtl\motor_control_v1.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\motor-control-v1-bank2-3pin\rtl\button_input.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\motor-control-v1-bank2-3pin\rtl\reset_guard.v'
+Analyzing Verilog file 'D:\FPGA\hengxin\motor-control-v1-bank2-3pin\rtl\dock_motor_control_v1.v'
+Compiling module 'dock_motor_control_v1'("D:\FPGA\hengxin\motor-control-v1-bank2-3pin\rtl\dock_motor_control_v1.v":6)
+Compiling module 'reset_guard'("D:\FPGA\hengxin\motor-control-v1-bank2-3pin\rtl\reset_guard.v":4)
+Compiling module 'button_input'("D:\FPGA\hengxin\motor-control-v1-bank2-3pin\rtl\button_input.v":4)
+Compiling module 'motor_control_v1'("D:\FPGA\hengxin\motor-control-v1-bank2-3pin\rtl\motor_control_v1.v":7)
+Compiling module 'protection'("D:\FPGA\hengxin\motor-control-v1-bank2-3pin\rtl\protection.v":6)
+Compiling module 'pwm_tenths'("D:\FPGA\hengxin\motor-control-v1-bank2-3pin\rtl\pwm_tenths.v":4)
+Compiling module 'ibt2_adapter'("D:\FPGA\hengxin\motor-control-v1-bank2-3pin\rtl\ibt2_adapter.v":4)
+NOTE  (EX0101) : Current top module is "dock_motor_control_v1"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "D:\FPGA\hengxin\motor-control-v1-bank2-3pin\impl\gwsynthesis\motor_control_v1_bank2_3pin.vg" completed
+[100%] Generate report file "D:\FPGA\hengxin\motor-control-v1-bank2-3pin\impl\gwsynthesis\motor_control_v1_bank2_3pin_syn.rpt.html" completed
+GowinSynthesis finish
+Reading netlist file: "D:\FPGA\hengxin\motor-control-v1-bank2-3pin\impl\gwsynthesis\motor_control_v1_bank2_3pin.vg"
+Parsing netlist file "D:\FPGA\hengxin\motor-control-v1-bank2-3pin\impl\gwsynthesis\motor_control_v1_bank2_3pin.vg" completed
+Processing netlist completed
+Reading constraint file: "D:\FPGA\hengxin\motor-control-v1-bank2-3pin\dock_motor_control_v1.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "D:\FPGA\hengxin\motor-control-v1-bank2-3pin\impl\pnr\motor_control_v1_bank2_3pin.power.html" completed
+Generate file "D:\FPGA\hengxin\motor-control-v1-bank2-3pin\impl\pnr\motor_control_v1_bank2_3pin.pin.html" completed
+Generate file "D:\FPGA\hengxin\motor-control-v1-bank2-3pin\impl\pnr\motor_control_v1_bank2_3pin.rpt.html" completed
+Generate file "D:\FPGA\hengxin\motor-control-v1-bank2-3pin\impl\pnr\motor_control_v1_bank2_3pin.rpt.txt" completed
+Generate file "D:\FPGA\hengxin\motor-control-v1-bank2-3pin\impl\pnr\motor_control_v1_bank2_3pin.tr.html" completed
+Thu Oct  8 12:20:08 2026
+

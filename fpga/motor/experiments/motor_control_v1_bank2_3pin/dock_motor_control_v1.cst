@@ -1,0 +1,27 @@
+// 2026-10-08: BANK2, three physical outputs, LVCMOS33 / 3.3 V.
+// T11=DVP_D1, P11=DVP_D2, T12=DVP_D0 on Dock 3713.
+// Leave the camera connectors and competing PMOD peripherals disconnected.
+// T12 fans out to level-shifter INPUTS B3/B4; A3/A4 remain separate outputs.
+IO_LOC "clk" H11;
+IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+IO_LOC "reset_key_n" T10;
+IO_PORT "reset_key_n" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+// These three button inputs use external 1.5V pull-ups.
+IO_LOC "start_key_n" T3;
+IO_LOC "estop_key_n" T2;
+IO_LOC "fault_key_n" D7;
+IO_PORT "start_key_n" IO_TYPE=LVCMOS15 PULL_MODE=NONE;
+IO_PORT "estop_key_n" IO_TYPE=LVCMOS15 PULL_MODE=NONE;
+IO_PORT "fault_key_n" IO_TYPE=LVCMOS15 PULL_MODE=NONE;
+IO_LOC "rpwm" T11;
+IO_LOC "lpwm" P11;
+IO_LOC "ibt_en" T12;
+IO_PORT "rpwm" IO_TYPE=LVCMOS33 DRIVE=4 PULL_MODE=DOWN;
+IO_PORT "lpwm" IO_TYPE=LVCMOS33 DRIVE=4 PULL_MODE=DOWN;
+IO_PORT "ibt_en" IO_TYPE=LVCMOS33 DRIVE=4 PULL_MODE=DOWN;
+IO_LOC "led_run_n" L14;
+IO_LOC "led_locked_n" L16;
+IO_LOC "led_ready_n" N14; // LED3 ready; LED2/N16 reserved for A encoder.
+IO_PORT "led_run_n" IO_TYPE=LVCMOS33 DRIVE=4 PULL_MODE=NONE;
+IO_PORT "led_locked_n" IO_TYPE=LVCMOS33 DRIVE=4 PULL_MODE=NONE;
+IO_PORT "led_ready_n" IO_TYPE=LVCMOS33 DRIVE=4 PULL_MODE=NONE;

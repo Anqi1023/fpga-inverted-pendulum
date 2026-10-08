@@ -1,0 +1,51 @@
+# set test_top tb_motor
+# tb_motor
+#  do run_protection.do
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:57:07 on Sep 27,2026
+# vlog -sv rtl/pwm_gen.v rtl/motor_driver.v rtl/ibt2_adapter.v rtl/protection.v rtl/motor_protected.v tb/tb_protection.v tb/tb_motor_protected.v tb/tb_motor.v tb/tb_ibt2_adapter.v 
+# -- Compiling module pwm_gen
+# -- Compiling module motor_driver
+# -- Compiling module ibt2_adapter
+# -- Compiling module protection
+# -- Compiling module motor_protected
+# -- Compiling module tb_protection
+# -- Compiling module tb_motor_protected
+# -- Compiling module tb_motor
+# -- Compiling module tb_ibt2_adapter
+# 
+# Top level modules:
+# 	tb_protection
+# 	tb_motor_protected
+# 	tb_motor
+# End time: 16:57:07 on Sep 27,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.tb_motor 
+# Start time: 16:57:07 on Sep 27,2026
+# Loading sv_std.std
+# Loading work.tb_motor
+# Loading work.tb_ibt2_adapter
+# Loading work.ibt2_adapter
+# Loading work.motor_driver
+# Loading work.pwm_gen
+# HENGXIN_IBT2_ADAPTER_PASS
+# BOOT_HELD_COMMAND_ARM_PASS
+# DUTY_PASS 10 percent: 135/1350
+# DUTY_PASS 20 percent: 270/1350
+# DUTY_PASS 30 percent: 405/1350
+# DUTY_PASS 0 percent: 0/1350
+# DUTY_PASS 10 percent: 135/1350
+# DUTY_PASS 10 percent: 135/1350
+# DUTY_PASS 20 percent: 270/1350
+# DUTY_PASS 30 percent: 405/1350
+# STOP_FORWARD_STOP_REVERSE_STOP_PASS
+# DIRECT_REVERSAL_EARLY_ARM_PASS
+# INVALID_DUTY_PERMIT_COMMAND_RESET_PASS
+# HENGXIN_MOTOR_OFFLINE_PASS
+# ** Note: $finish    : tb/tb_motor.v(90)
+#    Time: 1922161086 ps  Iteration: 1  Instance: /tb_motor
+# End time: 16:57:08 on Sep 27,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

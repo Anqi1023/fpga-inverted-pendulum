@@ -1,0 +1,2 @@
+fpga/motor/experiments/**/*.fs binary
+fpga/motor/experiments/**/verification/*.html -diff

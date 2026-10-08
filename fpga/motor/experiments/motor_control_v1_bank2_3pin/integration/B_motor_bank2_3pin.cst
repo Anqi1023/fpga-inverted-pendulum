@@ -1,0 +1,11 @@
+// 2026-10-08: BANK2, three physical outputs, LVCMOS33 / 3.3 V.
+// T11=DVP_D1, P11=DVP_D2, T12=DVP_D0 on Dock 3713.
+// Leave the camera connectors and competing PMOD peripherals disconnected.
+// T12 fans out to level-shifter INPUTS B3/B4; A3/A4 remain separate outputs.
+// Merge into the joint top CST, using its actual top-level port names.
+IO_LOC "rpwm" T11;
+IO_PORT "rpwm" IO_TYPE=LVCMOS33 DRIVE=4 PULL_MODE=DOWN;
+IO_LOC "lpwm" P11;
+IO_PORT "lpwm" IO_TYPE=LVCMOS33 DRIVE=4 PULL_MODE=DOWN;
+IO_LOC "ibt_en" T12;
+IO_PORT "ibt_en" IO_TYPE=LVCMOS33 DRIVE=4 PULL_MODE=DOWN;

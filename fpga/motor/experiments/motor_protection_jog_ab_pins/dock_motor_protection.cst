@@ -1,0 +1,28 @@
+// 2026-09-27 A/B allocation: retain A P9/P8/R8/T7; B enables move to T8/T9.
+// T9 is shared with the onboard WS2812 DIN; no separate RGB use.
+// PMOD0 shares the MIC array nets; leave external MIC array disconnected.
+IO_LOC "clk" H11;
+IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+IO_LOC "reset_key_n" T10;
+IO_PORT "reset_key_n" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+// These three button inputs use external 1.5V pull-ups.
+IO_LOC "start_key_n" T3;
+IO_LOC "estop_key_n" T2;
+IO_LOC "fault_key_n" D7;
+IO_PORT "start_key_n" IO_TYPE=LVCMOS15 PULL_MODE=NONE;
+IO_PORT "estop_key_n" IO_TYPE=LVCMOS15 PULL_MODE=NONE;
+IO_PORT "fault_key_n" IO_TYPE=LVCMOS15 PULL_MODE=NONE;
+IO_LOC "rpwm" T6;
+IO_LOC "lpwm" P6;
+IO_LOC "r_en" T8;
+IO_LOC "l_en" T9;
+IO_PORT "rpwm" IO_TYPE=LVCMOS33 DRIVE=4 PULL_MODE=DOWN;
+IO_PORT "lpwm" IO_TYPE=LVCMOS33 DRIVE=4 PULL_MODE=DOWN;
+IO_PORT "r_en" IO_TYPE=LVCMOS33 DRIVE=4 PULL_MODE=DOWN;
+IO_PORT "l_en" IO_TYPE=LVCMOS33 DRIVE=4 PULL_MODE=DOWN;
+IO_LOC "led_run_n" L14;
+IO_LOC "led_locked_n" L16;
+IO_LOC "led_ready_n" N16;
+IO_PORT "led_run_n" IO_TYPE=LVCMOS33 DRIVE=4 PULL_MODE=NONE;
+IO_PORT "led_locked_n" IO_TYPE=LVCMOS33 DRIVE=4 PULL_MODE=NONE;
+IO_PORT "led_ready_n" IO_TYPE=LVCMOS33 DRIVE=4 PULL_MODE=NONE;

@@ -1,0 +1,29 @@
+Reading netlist file: "D:\FPGA\hengxin\motor-pwm-1khz-test\board\impl\gwsynthesis\dock_motor_1khz.vg"
+Parsing netlist file "D:\FPGA\hengxin\motor-pwm-1khz-test\board\impl\gwsynthesis\dock_motor_1khz.vg" completed
+Processing netlist completed
+Reading constraint file: "D:\FPGA\hengxin\motor-pwm-1khz-test\board\dock_motor_test.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "D:\FPGA\hengxin\motor-pwm-1khz-test\board\impl\pnr\dock_motor_1khz.power.html" completed
+Generate file "D:\FPGA\hengxin\motor-pwm-1khz-test\board\impl\pnr\dock_motor_1khz.pin.html" completed
+Generate file "D:\FPGA\hengxin\motor-pwm-1khz-test\board\impl\pnr\dock_motor_1khz.rpt.html" completed
+Generate file "D:\FPGA\hengxin\motor-pwm-1khz-test\board\impl\pnr\dock_motor_1khz.rpt.txt" completed
+Generate file "D:\FPGA\hengxin\motor-pwm-1khz-test\board\impl\pnr\dock_motor_1khz.tr.html" completed
+Sat Sep 26 21:15:56 2026
+

@@ -1,0 +1,149 @@
+{
+  "version": "C-B-V1.0-supplement-100ms-integer-percent",
+  "control_period_ms": 20,
+  "watchdog_ms": 100,
+  "pwm_hz": 1000,
+  "bitstream_sha256": "FAC7A75CD6813A6E709964247D9D58444DC1AFBE93F985937BF38BBB8CC90622",
+  "files": [
+    {
+      "path": "BENCH_BASELINE.md",
+      "sha256": "9195BA1A2CFD5953B658A6B79354D292B666AA253A5184A02630870BE5E6A2B3"
+    },
+    {
+      "path": "build.tcl",
+      "sha256": "3E3A90AFA44C6FE5186135DE0F754B419AFB748668399292680789B2F4EEF91E"
+    },
+    {
+      "path": "build_core.tcl",
+      "sha256": "8C23AFEF8B4C12B5A153BDF371955641C5612E84D3BC18F203DCE0A24AB4C938"
+    },
+    {
+      "path": "dock_motor_control_v1.cst",
+      "sha256": "DD4EB9B71C31A542F7660C02FB1F4F6D9F03084D217FD5FB9AD3EE9387CD27BC"
+    },
+    {
+      "path": "dock_motor_control_v1.sdc",
+      "sha256": "808FF350BFF5F9768DCA6D3BF7F0BB6BBFF1B7E63C0799B6AF6A5C24FCDDC97D"
+    },
+    {
+      "path": "motor_control_v1_100ms.fs",
+      "sha256": "FAC7A75CD6813A6E709964247D9D58444DC1AFBE93F985937BF38BBB8CC90622"
+    },
+    {
+      "path": "motor_control_v1_100ms.gprj",
+      "sha256": "F01CCCCA2A8CBF6CCE1165CE432CC696CF83EE08029D10B1B02310ABCD41975F"
+    },
+    {
+      "path": "motor_control_v1_core.gprj",
+      "sha256": "8849774BDEE10F9D525A11220E214E78CB17AD0085AED0733BB3FC33D3C4E4FA"
+    },
+    {
+      "path": "README.md",
+      "sha256": "D9AC9E12F298496C5F9B8639907ED3289A4E6943C692E83EE8E16537739296F8"
+    },
+    {
+      "path": "rtl/button_input.v",
+      "sha256": "63CA1A28F046DE346D1BBF673C4F647EF780ED2E9D974CCA9F56ECEE6BF52A49"
+    },
+    {
+      "path": "rtl/dock_motor_control_v1.v",
+      "sha256": "945E2D5AB82D0C25664EA1F91E39E89AE1967B991ED092519C0B810D7803231F"
+    },
+    {
+      "path": "rtl/ibt2_adapter.v",
+      "sha256": "65BCAF53C5387C677157B6D0A3F6EDF95C84E070DE3B63A5346536A92E02FC1E"
+    },
+    {
+      "path": "rtl/motor_control_v1.v",
+      "sha256": "D739A42642CA336419DA732A819E820B1E98EB8306756E0D9F415F0454D0255E"
+    },
+    {
+      "path": "rtl/protection.v",
+      "sha256": "9938DB8B367C2BE9527C60B8AB329AB79C0BA6B08652A67D0EB5F67E8FC68234"
+    },
+    {
+      "path": "rtl/pwm_tenths.v",
+      "sha256": "E9EA12EF3970723790185333EECC29F51BD6CD7483ABB3EAD6129567CAF7F4E4"
+    },
+    {
+      "path": "rtl/reset_guard.v",
+      "sha256": "0CA76DD366A6FA2D2D485E363107FB471F0E660E9452D90CD0612DC44002A368"
+    },
+    {
+      "path": "run.do",
+      "sha256": "74926F7251983966247A8CB880A2B2F27F9A119EFF9A4B3D5F58D1BDC6FA86A2"
+    },
+    {
+      "path": "run_tests.ps1",
+      "sha256": "F24E6D65F6E4DFFB1C1DD56C86C2EBC67F6279F2F835F233CB3D7224EFF7D9FD"
+    },
+    {
+      "path": "tb/tb_control_board.v",
+      "sha256": "9285CE878B1C80005660E47E987486FB88F8A8A531110D38030A0941149AC9E6"
+    },
+    {
+      "path": "tb/tb_control_board_pwm.v",
+      "sha256": "A484B0D26AB29B665EC5B1EE1ACA7626C68AAE75B2C3D23391A285420211D1A8"
+    },
+    {
+      "path": "tb/tb_control_watchdog.v",
+      "sha256": "5FE4742C857B8A4944F0ADEB6A3BA5A063EA08F09D6BDF63725C4883426FF85D"
+    },
+    {
+      "path": "tb/tb_motor_control_v1.v",
+      "sha256": "93FBBC36D535F0BAF29BC69D87642783A96E9BE84A5E80B607A82180617FDC53"
+    },
+    {
+      "path": "TEST_RESULTS.md",
+      "sha256": "C620DD81F733F779808A4F46EBE16238320FF0CE6D24E1019B4EE03C8BAB5FF2"
+    },
+    {
+      "path": "verification/build-console.log",
+      "sha256": "3EF53D58575C7EF7A4AF905A1EE2B3ED5806CD6C3561ADE15E750EB1CCE03964"
+    },
+    {
+      "path": "verification/core-build-console.log",
+      "sha256": "473D347CCCF370F90909AE5BB5D120E53FB8185A29DA5E4AC569FA50AC65720A"
+    },
+    {
+      "path": "verification/motor_control_v1_100ms.pin.html",
+      "sha256": "BD6A5E006EA00840AB2D418ADAF24C6FC0EC038FA2B475BBE83825218A893E68"
+    },
+    {
+      "path": "verification/motor_control_v1_100ms.rpt.txt",
+      "sha256": "95C02E19833C79689976F72723F21C57AB93387C7AC069FC4E9892D487A9B80A"
+    },
+    {
+      "path": "verification/motor_control_v1_100ms_tr_content.html",
+      "sha256": "424541B8824D8D443F3D1FD0253888830C118BCA4450E98D6FD35A91073450B7"
+    },
+    {
+      "path": "verification/motor_control_v1_core_syn.rpt.html",
+      "sha256": "6282579F58898D8B3B2FDAEBE94A69B387F22B60A1217B22055DE31609D02B7B"
+    },
+    {
+      "path": "verification/motor_control_v1_core_syn_rsc.xml",
+      "sha256": "265319F65F1CB83A66C3425B8231954AACD00DBE32A7844B346801236F665707"
+    },
+    {
+      "path": "verification/tb_control_board.log",
+      "sha256": "F5799FB82883D2340CBA8C0E2E2406ED322B5D9E479B2084F962C41401931EA1"
+    },
+    {
+      "path": "verification/tb_control_board_pwm.log",
+      "sha256": "FBFD3F4105B0A6FD1EB054B657EABCB071835029A92754486F8FBB50CEDFCF80"
+    },
+    {
+      "path": "verification/tb_control_watchdog.log",
+      "sha256": "7FFC205DDBECAD27AB45B0EB2F18C6BD8EBACDDA5E3939825FD165F960F5B21A"
+    },
+    {
+      "path": "verification/tb_motor_control_v1.log",
+      "sha256": "67AE178ED38D805CE7A23526D67488C7B5CDB151E90F08BA91B7129B9CEAFD76"
+    },
+    {
+      "path": "verification/tests-console.log",
+      "sha256": "36F6DD129E5F5353A48019D61CE19A469BD823E14604665B6633B2FA35B7EDB8"
+    }
+  ]
+}
