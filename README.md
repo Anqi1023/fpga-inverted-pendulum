@@ -18,6 +18,8 @@ FPGA-based inverted pendulum control system for competition
 项目目标仍为旋转倒立摆。误购的直线倒立摆正在更换为旋转机构；据团队确认，两款共用说明书、接线图和使用资料，电机及摆杆角度传感器相同。现有 FPGA 点灯、电机驱动代码和离线验证结果保留。新机构尚未完成实机测试；机械运动范围、实际转向和传感器安装零点仍需到货核对。共用不代表厂家原始资料已全部归档。
 
 
-## B 电机执行链路进展（2026-09-27）
+## B 电机执行链路进展（2026-10-08）
 
-已完成 1 kHz 实物正反转/停止、20%/30% 点动、启动死区初测、保护模块及实板保护检查；最新版本解决 A/B 使能引脚和 LED 冲突，并通过实际点动。源码、可下载位流和测试记录见 [B 成果汇总](fpga/motor/PROGRESS_2026-09-27.md)。新增 [C→B V1.0 工程](fpga/motor/experiments/motor_control_v1_100ms/README.md)：20 ms 更新、100 ms 超时、整数百分比截断；四项仿真及高云构建通过，新版点动用户反馈“符合预期，CV”。下一步为真实 C 接入及联合验证；仍保留 1 秒停止/换向等待，尚未验收闭环控制。
+当前采用 **BANK2 三引脚：RPWM=T11、LPWM=P11、共用使能 ibt_en=T12**。高云工程、C 正式执行链和接线说明见 [B 最新成果](fpga/motor/PROGRESS_2026-10-08.md)。三项仿真及编译通过，**新版尚未上板实测**；旧四脚版本的实际点动、保护及 CV 记录见 [历史成果](fpga/motor/PROGRESS_2026-09-27.md)。
+
+给 C 使用 [正式三脚执行链](fpga/motor/experiments/motor_control_v1_bank2_3pin/integration/README.md)，B 单独测试使用 [200 ms 点动工程](fpga/motor/experiments/motor_control_v1_bank2_3pin/README.md)。两者用途不同；尚未验收三人联合闭环控制。

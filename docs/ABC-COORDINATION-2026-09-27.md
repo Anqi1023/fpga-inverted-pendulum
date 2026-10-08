@@ -1,12 +1,12 @@
 # A/B/C 合板前共同确认清单
 
-日期：2026-09-27。依据本会话实测反馈、feature/sensor=f53d9c8e6c9299a4514080da2c99f52ca0982f45、feature/control=ebf1cc127b0bc761914266abd03cd96a99931c44 和 B 的 motor_protection_jog_ab_led3。A/C 源码快照为此前核对依据。C→B 接口已由用户随后转交并确认，最新实现为 motor_control_v1_100ms；以下已相应更新，不代表已完成三人联合控制。
+日期：2026-09-27。依据本会话实测反馈、feature/sensor=f53d9c8e6c9299a4514080da2c99f52ca0982f45、feature/control=ebf1cc127b0bc761914266abd03cd96a99931c44 和 B 的 motor_protection_jog_ab_led3。A/C 源码快照为此前核对依据。C→B 接口已由用户随后转交并确认，2026-10-08 的 B 最新实现为 motor_control_u_chain_3pin，独立测试入口为 motor_control_v1_bank2_3pin；以下 B 引脚和交接入口已更新，A/C 快照未重新核对，不代表已完成三人联合控制。
 
 ## 已确定且不重复要求测量
 
 - 主板 Tang Primer 20K + Dock，系统 27 MHz，H11。
-- A 编码器 P9/P8、I2C SDA/SCL R8/T7，B RPWM/LPWM T6/P6、R_EN/L_EN T8/T9。
-- B 新引脚已按用户反馈完成换线、启动锁定、清除锁定、10% 点动后停止（CV）、S2/S3 锁定时禁止启动的实物复查。不是运动中急停延迟测试。
+- A 编码器 P9/P8、I2C SDA/SCL R8/T7，B RPWM/LPWM T11/P11、共用物理使能 ibt_en=T12（BANK2）；T12 分接转换器 B3/B4，A3/A4 分别到 R_EN/L_EN。
+- B 旧 T6/P6/T8/T9 版本已按用户反馈完成锁定、清锁、点动后停止（CV）及锁定禁止启动复查；不是运动中急停延迟测试。2026-10-08 三脚版仅仿真/构建通过，尚未上板。
 - A 实板状态为 signed[31:0] 整数 mrad、mrad/s；ADC 128 SPS，两路角速度 20 ms 差分，无额外滤波。
 - ADS 模块输入 5 V、芯片 VDD≈5 V、总线各约 4.69 kΩ 上拉至约 3.3 V（用户新补充）。
 
@@ -14,9 +14,9 @@
 
 ### 1. 唯一整合工程和资源分配（A/B/C）
 
-保留以上已复查的信号引脚，整合时只保留一个顶层和一份统一 CST/SDC。核对基线 main@623c288 中的 B 仍是旧版，不能据此恢复 T7/R8 的电机输出。B 当前独立测试版本为 motor_control_v1_100ms，沿用相同新引脚；motor_protection_jog_ab_led3 是旧实测基线。
+整合时只保留一个顶层和一份统一 CST/SDC。B 当前使用 T11/P11/T12，独立测试版本为 motor_control_v1_bank2_3pin；联合程序使用其 integration 正式三脚执行链。main@623c288 与旧实验目录不是新引脚依据。旧四脚约束必须移除，摄像头及占用这三脚的外设不连接；C 须核对联合工程无重复占用。详见 [最新引脚说明](B_PINOUT_2026-10-08.md)。
 
-实际发现 N16 冲突后，用户明确选择调整 B：A 保留 LED2/N16，B 就绪灯改为 LED3/N14，运行灯 LED4/L14、锁定灯 LED5/L16。独立工程 motor_protection_jog_ab_led3 已完成构建、实际引脚报告检查、用户下载后的锁定/清除检查，以及实际点动“转动后停下，CV”；不需再次挪电机线。此前“把 N16 留给 B、取消 A 编码器灯”的建议被此用户选择取代。UART TX M11 仍应只有一个统一发送模块驱动。T9 已占用板载 RGB 数据功能，外部 MIC 阵列保持不接。
+实际发现 N16 冲突后，用户明确选择调整 B：A 保留 LED2/N16，B 就绪灯改为 LED3/N14，运行灯 LED4/L14、锁定灯 LED5/L16。独立工程 motor_protection_jog_ab_led3 已完成构建、实际引脚报告检查、用户下载后的锁定/清除检查，以及实际点动“转动后停下，CV”；该记录属于旧四脚版本，本次三脚接线以新表为准。此前“把 N16 留给 B、取消 A 编码器灯”的建议被此用户选择取代。UART TX M11 仍应只有一个统一发送模块驱动。B 新三脚版不再占用 T9；板载 RGB、MIC 等其他资源仍由联合工程统一分配。
 
 按键目前 S0 复位、S1 清锁/启动、S2 逻辑急停、S3 模拟故障；合板需统一职责，不能沿用旧 B 的 S3 换向解释。C 若加显示屏或其他外设，要先登记新增引脚。A/C/B 同一 FPGA 内部的四状态和 control_u 走内部连线，不需另分配外部 GPIO。
 
@@ -34,7 +34,7 @@
 
 已确认：signed[15:0] control_u，单位 0.1% PWM，范围 -300～+300；每 20 ms 的 control_valid 为 1 个 27 MHz 时钟周期；motor_enable=0 必须停止。补充约定采用 abs(control_u)/10 整数截断、100 ms 无有效更新停止，fault/estop/protection_locked 优先。
 
-新 motor_control_v1 已实现上述接口，核心无 200 ms 运行上限；独立 dock_motor_control_v1 顶层仍模拟 C 做正向 10%/200 ms 点动。旧 motor_protected 的 command/arm/duty_pct 端口不是新的 C 接口。四项仿真及构建通过；新版用户点动反馈“符合预期，CV”。
+当前正式 motor_control_u_chain_3pin 通过 control_u_adapter 连接原 motor_protected，核心无 200 ms 运行上限；独立 dock_motor_control_v1 顶层仍模拟 C 做正向 10%/200 ms 点动。原 motor_protected 的 command/arm/duty_pct 端口不能直接接 C 的三个协议输入。三脚版三项仿真及构建通过，尚未上板；此前“符合预期，CV”是旧四脚点动记录。
 
 须随包交接的 B 规则：超时锁定且人工清除；禁用清掉旧命令，再使能须新的 control_valid；小于 1% 的有效占空比请求按停止处理。**1 秒停止/换向等待仍保留**，进入平衡控制前必须共同确定并验证新的换向策略。机械正方向尚未定义。详细约定见 [C→B V1.0](CONTROL_INTERFACE_V1_2026-09-27.md)。
 
@@ -59,4 +59,4 @@ ADS 芯片 VDD≈5 V 与 3.3 V 上拉已明确。需由 A 确认板内是否存�
 三人需指定一位整合工程负责人，统一顶层、约束、接口文档和可下载版本，明确哪些位流仅供分模块调试。涉及以上共同资源、单位、周期、供电和保护的改动应先核对其他两组工程，再生成需换线/下载的操作步骤。源代码可查出的事实由代码审查处理，不推给用户或 A 重新填写。
 
 
-当前 B 交付入口：[成果汇总](../fpga/motor/PROGRESS_2026-09-27.md)。ADS1115 门限依据：[TI ADS1115 数据手册](https://www.ti.com/lit/ds/symlink/ads1115.pdf)，VIH 最低保证值 0.7×VDD；该值不能证明模块内部有无转换电路。
+当前 B 交付入口：[成果汇总](../fpga/motor/PROGRESS_2026-10-08.md)。ADS1115 门限依据：[TI ADS1115 数据手册](https://www.ti.com/lit/ds/symlink/ads1115.pdf)，VIH 最低保证值 0.7×VDD；该值不能证明模块内部有无转换电路。

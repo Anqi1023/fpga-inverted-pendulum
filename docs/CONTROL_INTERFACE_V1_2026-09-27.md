@@ -1,6 +1,7 @@
 # C→B 接口 V1.0：最新补充约定
 
-来源：用户转交的 C 接口截图、20 ms 周期确认，以及随后给出的六条 V1.0 补充约定。最新交接目录为 **motor_control_v1_100ms**；旧 motor_control_v1_20ms 留作刚完成用户实测的基线，不再作为最新接口参数。
+来源：用户与 C 确认的 V1.0 约定。2026-10-08 更新交接入口和物理引脚，命令单位、20 ms 更新、100 ms 超时不变。
+当前正式模块为 [motor_control_u_chain_3pin](../fpga/motor/experiments/motor_control_v1_bank2_3pin/integration/README.md)；旧 motor_control_v1_100ms 留作四脚历史基线。
 
 ## 已确认并实现的参数
 
@@ -24,16 +25,18 @@
 2. 普通禁用不锁定，但清掉旧命令；重新使能必须有新的 control_valid。使能与新命令可在同一拍到达。
 3. 使能且保护解除后，第一条命令缺失也计时；有效 0 命令刷新计时；禁用期间不计时。
 4. abs(control_u)<10 截断为 0，按 command=00 且四路驱动关闭处理。
-5. 清除要求 motor_enable=0、control_valid=0、故障解除，然后 clear_fault 给新上升沿；清除本身不启动。
+5. 清除要求 motor_enable=0、control_valid=0、故障解除，permit_in 恢复允许，然后给 clear_request 新上升沿（适配器产生 clear_fault）；清除本身不启动。
 6. 越界值先拦截后取绝对值，±301 和 -32768 等触发保护；valid 连续两拍为高视为协议错误。
 7. **1 秒停止/换向等待仍保留**，尚未验证高速正反向闭环。进入平衡控制前须与 C 确定并验证新的换向策略。
 
-## 程序交接
+## 程序交接（2026-10-08）
 
-- C 实例化 rtl/motor_control_v1.v，依赖 pwm_tenths.v、protection.v、ibt2_adapter.v。新核心直接接受三个 C 端口；不要在 C 端先截断一次再把整数百分比当 control_u 输入。
-- command/duty_pct 是新版核心内部的有效请求；PWM 与 duty_tenths_o 保留十分之一百分点计数接口，但本补充版只输出 10 的倍数。
-- 原 motor_protected 的 command/arm/permit_in/duty_pct 是旧接口，不等于已直接支持 C 的新接口。
-- dock_motor_control_v1 是独立模拟 C 的 10%/200 ms 点动顶层，没有实例化真实 A/C；不能作为三人联合控制顶层。
-- 引脚不变：RPWM=T6、LPWM=P6、R_EN=T8、L_EN=T9；LED3=N14；时钟 H11。A 的 P9/P8、R8/T7、N16 不被 B 占用。
+- C 实例化 integration/rtl/motor_control_u_chain_3pin.v，并加入该目录全部依赖。链路为 control_u_adapter → 原 motor_protected → 三个物理输出；原五个驱动模块未改。
+- C 输入仍为 control_u/control_valid/motor_enable；permit_in/fault/estop/clear_request 按正式模块接口连接，保护反馈链已包含在包装模块中。不能用 motor_enable 代替独立 permit_in。
+- command/duty_pct/arm/clear_fault 由适配器生成；C 不需要在外部重复转换或绕开保护。
+- 物理输出：rpwm=T11、lpwm=P11、ibt_en=T12，BANK2 / LVCMOS33。T12 分到转换器 B3/B4，A3/A4 分别接 R_EN/L_EN，不短接输出。
+- 联合顶层合并 integration/B_motor_bank2_3pin.cst，删除旧 B 四输出约束；摄像头及占用三脚的其他外设不接。
+- B 独立 dock_motor_control_v1 仍是模拟 C 的 10%/200 ms 点动顶层，不能作为 ABC 联合 TEST_U=0 顶层。正式集成模块没有 200 ms 运行限制。
+- 时钟 H11、LED3/N14 及原按键分配不变；其他联合资源由统一顶层和 CST 管理。
 
-本次修改的仿真、构建结果以 motor_control_v1_100ms/TEST_RESULTS.md 为准。旧版用户反馈单独记录于该包 BENCH_BASELINE.md，不转算为新补充版的硬件验证。实物下载和电源操作由用户完成。最新点动复测反馈为“符合预期，CV”；100 ms 失联和非整数输入截断以仿真为证据。
+本次三项仿真和构建结果见 [TEST_RESULTS](../fpga/motor/experiments/motor_control_v1_bank2_3pin/TEST_RESULTS.md)。**新三脚版本尚未上板**；旧四脚点动“符合预期，CV”是历史实物证据，不能转算为新引脚验收。1 秒停止/换向等待仍保留。
