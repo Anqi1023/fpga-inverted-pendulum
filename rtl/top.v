@@ -128,11 +128,6 @@ localparam MOTOR_INIT_READY      = 2'd3;
 reg [1:0]  motor_init_state;
 reg [21:0] motor_init_count;
 
-// 29 bit 足够计到 432,000,000
-reg [28:0] motor_test_count;
-
-wire motor_test_active;
-
 wire motor_clear_request;
 
 wire signed [15:0] control_u_safe;
@@ -162,23 +157,26 @@ control_fsm u_control_fsm (
 
 
 // =============================================================
-// C control_u source
+// C controller
 //
-// 当前调试阶段下面会使用 control_u_safe 强制测试，
-// 所以这里 TEST_U 保持为 0。
+// 正式控制链入口。
+// 当前 controller.v 为安全 V1：
+// RUN + sensor_valid 时按 1 kHz 发送 control_u = 0。
+// 先验证正式链路，后续再在 controller.v 中加入闭环算法。
 // =============================================================
-control_u_source #(
-    .TEST_U(0)
-)
-u_control_u_source (
+controller u_controller (
 
     .clk           (clk),
     .rst_n         (rst_n),
 
     .control_tick  (control_tick),
     .system_state  (system_state),
-
     .sensor_valid  (sensor_valid),
+
+    .theta         (theta),
+    .theta_dot     (theta_dot),
+    .alpha         (alpha),
+    .alpha_dot     (alpha_dot),
 
     .control_u     (control_u),
     .control_valid (control_valid),
@@ -275,101 +273,29 @@ assign motor_clear_request =
 
 
 // =============================================================
-// Repeating motor debug test
+// Formal controller -> B safe gate
 //
-// READY 后：
+// motor_init_state 未进入 READY 时：
+//   control_u     = 0
+//   control_valid = 0
+//   motor_enable  = 0
 //
-// 0 ~ 10 s
-//     停止
-//
-// 10 ~ 15 s
-//     +100，10% PWM
-//
-// 15 ~ 16 s
-//     停止
-//
-// 之后：
-//     5秒运行
-//     1秒停止
-//     无限循环
-// =============================================================
-always @(posedge clk) begin
-
-    if (!rst_n) begin
-
-        motor_test_count <= 29'd0;
-
-    end
-    else if (motor_init_state != MOTOR_INIT_READY) begin
-
-        motor_test_count <= 29'd0;
-
-    end
-    else begin
-
-        // 27 MHz × 16 s = 432,000,000
-        //
-        // 第一次：
-        // 0~10秒等待
-        // 10~15秒运行
-        // 15~16秒停止
-        //
-        // 到16秒后直接跳回10秒位置，
-        // 所以后续循环只有：
-        // 5秒运行 + 1秒停止
-
-        if (motor_test_count >= 29'd431999999) begin
-
-            motor_test_count <= 29'd270000000;
-
-        end
-        else begin
-
-            motor_test_count <= motor_test_count + 1'b1;
-
-        end
-
-    end
-
-end
-
-
-// =============================================================
-// Motor active window
-//
-// 27 MHz × 10 s = 270,000,000
-// 27 MHz × 15 s = 405,000,000
-//
-// 10~15秒：运行
-// 15~16秒：停止
-// =============================================================
-assign motor_test_active =
-       (motor_test_count >= 29'd270000000) &&
-       (motor_test_count <  29'd405000000);
-
-
-// =============================================================
-// Motor debug command
-//
-// +100 = +10.0% PWM
+// motor_init_state 进入 READY 后：
+//   正式接入 controller.v 的三个输出。
 // =============================================================
 assign control_u_safe =
-       motor_test_active
-       ? -16'sd100
+       (motor_init_state == MOTOR_INIT_READY)
+       ? control_u
        : 16'sd0;
 
-
-// READY 后持续按 control_tick 给 B 更新命令
 assign control_valid_safe =
        (motor_init_state == MOTOR_INIT_READY)
-       ? control_tick
+       ? control_valid
        : 1'b0;
 
-
-// READY 后保持整个电机执行链允许
 assign motor_enable_safe =
        (motor_init_state == MOTOR_INIT_READY)
-       ? 1'b1
+       ? motor_enable
        : 1'b0;
 
 
@@ -378,7 +304,11 @@ assign motor_enable_safe =
 // =============================================================
 motor_control_u_chain #(
     .CLK_HZ(27000000),
-    .PWM_HZ(1000)
+    .PWM_HZ(1000),
+
+    // 27 MHz × 0.002 s = 54,000
+    // 正反换向先停止约 2 ms
+    .STOP_CYCLES(54000)
 )
 u_motor_control_chain (
 

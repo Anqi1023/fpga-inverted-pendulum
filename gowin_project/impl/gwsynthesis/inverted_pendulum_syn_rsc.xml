@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Register="9" Alu="7" Lut="5" T_Register="84(9)" T_Alu="7(7)" T_Lut="246(5)">
- <SubModule name="u_uart_tx" Lut="1" T_Lut="1(1)"/>
- <SubModule name="u_sensor" T_Register="75(0)" T_Lut="240(0)">
-  <SubModule name="adc" Register="38" Lut="101" T_Register="75(38)" T_Lut="240(101)">
-   <SubModule name="engine" Register="37" Lut="139" T_Register="37(37)" T_Lut="139(139)"/>
+<Module name="top" Register="33" Alu="7" Lut="50" T_Register="682(33)" T_Alu="157(7)" T_Lut="1525(50)" T_MULT18X18="2(0)" T_MULTALU36X18="3(0)">
+ <SubModule name="u_control_tick" Register="16" Lut="28" T_Register="16(16)" T_Lut="28(28)"/>
+ <SubModule name="u_controller" Register="5" Lut="22" T_Register="5(5)" T_Lut="22(22)"/>
+ <SubModule name="u_motor_control_chain" T_Register="91(0)" T_Alu="50(0)" T_Lut="260(0)" T_MULT18X18="1(0)">
+  <SubModule name="adapter_i" Register="33" Alu="21" Lut="34" T_Register="33(33)" T_Alu="21(21)" T_Lut="34(34)"/>
+  <SubModule name="motor_i" T_Register="58(0)" T_Alu="29(0)" T_Lut="226(0)" T_MULT18X18="1(0)">
+   <SubModule name="protection_i" Register="2" Lut="2" T_Register="2(2)" T_Lut="2(2)"/>
+   <SubModule name="driver_i" Register="21" Lut="43" T_Register="52(21)" T_Alu="29(0)" T_Lut="217(43)" T_MULT18X18="1(0)">
+    <SubModule name="pwm_i" Register="31" Alu="29" Lut="174" MULT18X18="1" T_Register="31(31)" T_Alu="29(29)" T_Lut="174(174)" T_MULT18X18="1(1)"/>
+   </SubModule>
+   <SubModule name="adapter_i" Register="4" Lut="7" T_Register="4(4)" T_Lut="7(7)"/>
+  </SubModule>
+ </SubModule>
+ <SubModule name="u_sensor_packet" Register="160" Lut="576" T_Register="160(160)" T_Lut="576(576)"/>
+ <SubModule name="u_uart_tx" Register="46" Lut="83" T_Register="46(46)" T_Lut="83(83)"/>
+ <SubModule name="u_sensor" T_Register="331(0)" T_Alu="100(0)" T_Lut="506(0)" T_MULT18X18="1(0)" T_MULTALU36X18="3(0)">
+  <SubModule name="adc" Register="63" Lut="93" T_Register="108(63)" T_Lut="224(93)">
+   <SubModule name="engine" Register="45" Lut="131" T_Register="45(45)" T_Lut="131(131)"/>
+  </SubModule>
+  <SubModule name="path" Register="62" Alu="20" Lut="62" T_Register="223(62)" T_Alu="100(20)" T_Lut="282(62)" T_MULT18X18="1(0)" T_MULTALU36X18="3(0)">
+   <SubModule name="enc" Register="41" Lut="115" T_Register="41(41)" T_Lut="115(115)"/>
+   <SubModule name="math" Register="120" Alu="80" Lut="105" MULT18X18="1" MULTALU36X18="3" T_Register="120(120)" T_Alu="80(80)" T_Lut="105(105)" T_MULT18X18="1(1)" T_MULTALU36X18="3(3)"/>
   </SubModule>
  </SubModule>
 </Module>

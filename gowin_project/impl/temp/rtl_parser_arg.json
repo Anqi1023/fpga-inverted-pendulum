@@ -2,7 +2,7 @@
     "Device": "GW2A-18C",
     "Files": [
         {
-            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/top.v",
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/control/control_u_source.v",
             "Type": "verilog"
         },
         {
@@ -11,6 +11,46 @@
         },
         {
             "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/control_tick.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/monitor/sensor_packet.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/monitor/uart_packet.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/monitor/uart_tx.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/control_u_adapter.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/ibt2_adapter.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/motor_control_u_chain.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/motor_driver.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/motor_protected.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/protection.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/pwm_gen.v",
             "Type": "verilog"
         },
         {
@@ -42,15 +82,11 @@
             "Type": "verilog"
         },
         {
-            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/monitor/uart_packet.v",
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/top.v",
             "Type": "verilog"
         },
         {
-            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/monitor/uart_tx.v",
-            "Type": "verilog"
-        },
-        {
-            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/monitor/sensor_packet.v",
+            "Path": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/control/controller.v",
             "Type": "verilog"
         }
     ],

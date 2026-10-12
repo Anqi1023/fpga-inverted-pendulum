@@ -1,5 +1,29 @@
 [
     {
+        "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/control/control_u_source.v",
+        "InstLine": 1,
+        "InstName": "control_u_source",
+        "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/control/control_u_source.v",
+        "ModuleLine": 1,
+        "ModuleName": "control_u_source"
+    },
+    {
+        "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/monitor/uart_packet.v",
+        "InstLine": 1,
+        "InstName": "uart_packet",
+        "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/monitor/uart_packet.v",
+        "ModuleLine": 1,
+        "ModuleName": "uart_packet"
+    },
+    {
+        "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/sensor/velocity_estimator.v",
+        "InstLine": 6,
+        "InstName": "velocity_estimator",
+        "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/sensor/velocity_estimator.v",
+        "ModuleLine": 6,
+        "ModuleName": "velocity_estimator"
+    },
+    {
         "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/top.v",
         "InstLine": 1,
         "InstName": "top",
@@ -9,7 +33,7 @@
         "SubInsts": [
             {
                 "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/top.v",
-                "InstLine": 56,
+                "InstLine": 141,
                 "InstName": "u_control_tick",
                 "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/control_tick.v",
                 "ModuleLine": 1,
@@ -17,7 +41,7 @@
             },
             {
                 "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/top.v",
-                "InstLine": 66,
+                "InstLine": 151,
                 "InstName": "u_control_fsm",
                 "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/control_fsm.v",
                 "ModuleLine": 1,
@@ -25,7 +49,77 @@
             },
             {
                 "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/top.v",
-                "InstLine": 77,
+                "InstLine": 167,
+                "InstName": "u_controller",
+                "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/control/controller.v",
+                "ModuleLine": 3,
+                "ModuleName": "controller"
+            },
+            {
+                "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/top.v",
+                "InstLine": 313,
+                "InstName": "u_motor_control_chain",
+                "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/motor_control_u_chain.v",
+                "ModuleLine": 5,
+                "ModuleName": "motor_control_u_chain",
+                "SubInsts": [
+                    {
+                        "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/motor_control_u_chain.v",
+                        "InstLine": 26,
+                        "InstName": "adapter_i",
+                        "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/control_u_adapter.v",
+                        "ModuleLine": 5,
+                        "ModuleName": "control_u_adapter"
+                    },
+                    {
+                        "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/motor_control_u_chain.v",
+                        "InstLine": 34,
+                        "InstName": "motor_i",
+                        "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/motor_protected.v",
+                        "ModuleLine": 5,
+                        "ModuleName": "motor_protected",
+                        "SubInsts": [
+                            {
+                                "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/motor_protected.v",
+                                "InstLine": 36,
+                                "InstName": "protection_i",
+                                "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/protection.v",
+                                "ModuleLine": 6,
+                                "ModuleName": "protection"
+                            },
+                            {
+                                "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/motor_protected.v",
+                                "InstLine": 46,
+                                "InstName": "driver_i",
+                                "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/motor_driver.v",
+                                "ModuleLine": 4,
+                                "ModuleName": "motor_driver",
+                                "SubInsts": [
+                                    {
+                                        "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/motor_driver.v",
+                                        "InstLine": 31,
+                                        "InstName": "pwm_i",
+                                        "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/pwm_gen.v",
+                                        "ModuleLine": 3,
+                                        "ModuleName": "pwm_gen"
+                                    }
+                                ]
+                            },
+                            {
+                                "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/motor_protected.v",
+                                "InstLine": 51,
+                                "InstName": "adapter_i",
+                                "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/motor/ibt2_adapter.v",
+                                "ModuleLine": 4,
+                                "ModuleName": "ibt2_adapter"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/top.v",
+                "InstLine": 380,
                 "InstName": "u_sensor_packet",
                 "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/monitor/sensor_packet.v",
                 "ModuleLine": 1,
@@ -33,7 +127,7 @@
             },
             {
                 "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/top.v",
-                "InstLine": 102,
+                "InstLine": 409,
                 "InstName": "u_uart_tx",
                 "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/monitor/uart_tx.v",
                 "ModuleLine": 1,
@@ -41,7 +135,7 @@
             },
             {
                 "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/top.v",
-                "InstLine": 112,
+                "InstLine": 426,
                 "InstName": "u_sensor",
                 "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/sensor/sensor_top.v",
                 "ModuleLine": 1,
@@ -70,12 +164,12 @@
                         "InstLine": 42,
                         "InstName": "path",
                         "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/sensor/sensor_state.v",
-                        "ModuleLine": 4,
+                        "ModuleLine": 3,
                         "ModuleName": "sensor_state",
                         "SubInsts": [
                             {
                                 "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/sensor/sensor_state.v",
-                                "InstLine": 16,
+                                "InstLine": 58,
                                 "InstName": "enc",
                                 "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/sensor/quadrature_decoder.v",
                                 "ModuleLine": 8,
@@ -83,7 +177,7 @@
                             },
                             {
                                 "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/sensor/sensor_state.v",
-                                "InstLine": 18,
+                                "InstLine": 78,
                                 "InstName": "math",
                                 "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/sensor/sensor_math.v",
                                 "ModuleLine": 3,
@@ -94,21 +188,5 @@
                 ]
             }
         ]
-    },
-    {
-        "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/sensor/velocity_estimator.v",
-        "InstLine": 6,
-        "InstName": "velocity_estimator",
-        "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/sensor/velocity_estimator.v",
-        "ModuleLine": 6,
-        "ModuleName": "velocity_estimator"
-    },
-    {
-        "InstFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/monitor/uart_packet.v",
-        "InstLine": 1,
-        "InstName": "uart_packet",
-        "ModuleFile": "C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/monitor/uart_packet.v",
-        "ModuleLine": 1,
-        "ModuleName": "uart_packet"
     }
 ]

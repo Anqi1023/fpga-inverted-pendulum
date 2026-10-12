@@ -6,6 +6,7 @@
     <Device name="GW2A-18C" pn="GW2A-LV18PG256C8/I7">gw2a18c-011</Device>
     <FileList>
         <File path="C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/control/control_u_source.v" type="file.verilog" enable="1"/>
+        <File path="C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/control/controller.v" type="file.verilog" enable="1"/>
         <File path="C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/control_fsm.v" type="file.verilog" enable="1"/>
         <File path="C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/control_tick.v" type="file.verilog" enable="1"/>
         <File path="C:/Users/21889/Desktop/FPGA/program/fpga-inverted-pendulum/rtl/monitor/sensor_packet.v" type="file.verilog" enable="1"/>
