@@ -1,0 +1,149 @@
+*** GOWIN Tcl Command Line Console  *** 
+Open project C:/Users/hp/Documents/Codex/2026-11-04/error-pr0003-failed-to-place-with/work/pendulum-fixed/gowin_project/inverted_pendulum.gprj finished
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\cruise_recovery.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\cruise_parallel_feedback.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\arm_balance_coordinator_r15.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\arm_velocity_planner_r14m.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\arm_output_slew_r14m.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\arm_speed_loop.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\sensor\hybrid_arm_speed.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\monitor\uart_rx.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\config\uart_command_parser.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\config\serial_parameter_bank.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\controller.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control_fsm.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\monitor\sensor_packet.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\monitor\uart_tx.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\motor\control_u_adapter.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\motor\ibt2_adapter.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\motor\motor_control_u_chain.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\motor\motor_driver.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\motor\motor_protected.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\motor\protection.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\motor\pwm_gen.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\sensor\ads1115_reader.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\sensor\i2c_byte_master.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\sensor\quadrature_decoder.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\sensor\sensor_math.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\sensor\sensor_state.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\sensor\sensor_top.v'
+Analyzing Verilog file 'C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\top.v'
+Compiling module 'top'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\top.v":7)
+Compiling module 'control_fsm'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control_fsm.v":1)
+WARN  (EX3791) : Expression size 33 truncated to fit in target size 32("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\top.v":178)
+WARN  (EX3073) : Port 'state_update' remains unconnected for this instance("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\sensor\sensor_top.v":96)
+Compiling module 'sensor_top(ALPHA_SETPOINT_Q16=32'sb11111111111111111111111000001100)'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\sensor\sensor_top.v":3)
+Compiling module 'ads1115_reader'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\sensor\ads1115_reader.v":6)
+Compiling module 'i2c_byte_master(COMMAND_TIMEOUT_CYCLES=8640)'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\sensor\i2c_byte_master.v":8)
+Compiling module 'sensor_state(ALPHA_SETPOINT_Q16=32'sb11111111111111111111111000001100)'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\sensor\sensor_state.v":5)
+Compiling module 'quadrature_decoder'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\sensor\quadrature_decoder.v":8)
+Compiling module 'sensor_math(ALPHA_SETPOINT_Q16=32'sb11111111111111111111111000001100)'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\sensor\sensor_math.v":5)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 17("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\sensor\sensor_math.v":134)
+Compiling module 'hybrid_arm_speed(HANDOFF_CONTROL=1)'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\sensor\hybrid_arm_speed.v":6)
+Compiling module 'controller(DUAL_MODE=1,SPEED_HANDOFF_CONTROL=1,MOTION_LEAN_CONTROL=1,MOTION_CONTROL=1,MULTITURN_CONTROL=1,POINT_CONTROL=1,COORDINATED_CONTROL=1,LIVE_VELOCITY_BYPASS=1,R14M_ENABLE=1,LIVE_BRAKE_CONFIG=1,SPEED_LOOP_CONTROL=1,ARM_SLEW_U_PER_UPDATE=10,K_THETA_TENTHS=1,START_MODE_CONTROL=1,INDEPENDENT_RETURN_CAP=1,NEAR_CONTROL=1,SPEED_FILTER_CONTROL=1,LIVE_CONFIG=1,POSITION_CONTROL=1,BALANCE_SPEED_INPUT=1,PID_CONTROL=1,RETURN_CONTROL=1,RETURN_TRIM_ENABLE=0,AUTO_SWINGUP=1,SWING_SETPOINT_Q16=32'sb11111111111111111111111000001100,SWING_U=550,SWING_KICK_UPDATES=80,SWING_ARM_SPEED_GAIN=40,K_ALPHA=16'sd2300,K_ALPHA_DOT=16'sd105,K_THETA=16'sd8,K_THETA_DOT=16'sd35,ALPHA_ARM=32'sd39322)'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\controller.v":6)
+Compiling module 'arm_motion_reference_r15l'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\controller.v":1668)
+WARN  (EX3791) : Expression size 19 truncated to fit in target size 18("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\controller.v":1683)
+Compiling module 'cruise_recovery'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\cruise_recovery.v":5)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 20("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\controller.v":364)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 13("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\controller.v":371)
+Compiling module 'cruise_position_feedback'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\cruise_parallel_feedback.v":24)
+Compiling module 'return_cap_config'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\controller.v":1401)
+Compiling module 'balance_speed_filter'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\controller.v":1436)
+Compiling module 'arm_balance_coordinator_r15(POINT_CONTROL=1,TARGET_BITS=32,MOTION_CONTROL=1,MOTION_LEAN_CONTROL=1)'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\arm_balance_coordinator_r15.v":8)
+Compiling module 'arm_point_approach(TARGET_BITS=32)'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\arm_balance_coordinator_r15.v":260)
+Compiling module 'arm_output_slew_r14m(VELOCITY_TRANSITION=1)'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\arm_output_slew_r14m.v":3)
+Compiling module 'cruise_parallel_feedback'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\cruise_parallel_feedback.v":4)
+Compiling module 'balance_pid_integrator(COMPACT=1)'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\controller.v":1098)
+WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\controller.v":1128)
+Compiling module 'manual_balance_entry'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\controller.v":1554)
+Compiling module 'swingup_supervisor(LIVE_CONFIG=1,SETPOINT_Q16=32'sb11111111111111111111111000001100,SWING_U=550,KICK_UPDATES=80,ARM_SPEED_GAIN=40)'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":7)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 8("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":210)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":212)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":235)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":250)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 16("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":268)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":283)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 18("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":293)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 10("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":295)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 16("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":302)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 16("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":303)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":316)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":316)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":319)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":319)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 16("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":335)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":365)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":372)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":388)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":420)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 40("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\controller.v":907)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\controller.v":985)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\controller.v":986)
+Compiling module 'motor_control_u_chain(PWM_HZ=10000,STOP_CYCLES=2700,TIMEOUT_CYCLES=2700000,LIVE_FINE_DRIVE=1,LIVE_START_BOOST=1)'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\motor\motor_control_u_chain.v":5)
+Compiling module 'control_u_adapter(TIMEOUT_CYCLES=2700000,LIVE_FINE_DRIVE=1,LIVE_START_BOOST=1)'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\motor\control_u_adapter.v":5)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 4("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\motor\control_u_adapter.v":90)
+Compiling module 'motor_protected(PWM_HZ=10000,STOP_CYCLES=2700)'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\motor\motor_protected.v":5)
+Compiling module 'protection'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\motor\protection.v":6)
+Compiling module 'motor_driver(PWM_HZ=10000,STOP_CYCLES=2700)'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\motor\motor_driver.v":4)
+Compiling module 'pwm_gen(PWM_HZ=10000)'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\motor\pwm_gen.v":4)
+Compiling module 'ibt2_adapter'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\motor\ibt2_adapter.v":4)
+Compiling module 'sensor_packet_lite'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\monitor\sensor_packet.v":7)
+Compiling module 'uart_rx'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\monitor\uart_rx.v":4)
+Compiling module 'uart_command_parser'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\config\uart_command_parser.v":6)
+WARN  (EX3791) : Expression size 8 truncated to fit in target size 4("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\config\uart_command_parser.v":23)
+Compiling module 'serial_parameter_bank(EXT_POSITION=37,DEFAULT_KAD=60)'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\config\serial_parameter_bank.v":10)
+Compiling module 'uart_tx(BAUD_RATE=460800)'("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\monitor\uart_tx.v":1)
+NOTE  (EX0101) : Current top module is "top"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+WARN  (DI0004) : Register "pump_cap_positive[9]" has both asynchronous set and reset. Your design may not work on the board. GoWin recommends you change your RTL. This warning is only issued once, although it may apply to other registers as well("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\swingup_supervisor.v":324)
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+WARN  (NL0002) : The module "cruise_position_feedback" instantiated to "compact_parallel_position.compact_i" is swept in optimizing("C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\rtl\control\controller.v":421)
+[95%] Generate netlist file "C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\gowin_project\impl\gwsynthesis\inverted_pendulum.vg" completed
+[100%] Generate report file "C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\gowin_project\impl\gwsynthesis\inverted_pendulum_syn.rpt.html" completed
+GowinSynthesis finish
+Reading netlist file: "C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\gowin_project\impl\gwsynthesis\inverted_pendulum.vg"
+Parsing netlist file "C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\gowin_project\impl\gwsynthesis\inverted_pendulum.vg" completed
+Processing netlist completed
+Reading constraint file: "C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\constraints\inverted_pendulum.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\gowin_project\impl\pnr\inverted_pendulum.power.html" completed
+Generate file "C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\gowin_project\impl\pnr\inverted_pendulum.pin.html" completed
+Generate file "C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\gowin_project\impl\pnr\inverted_pendulum.rpt.html" completed
+Generate file "C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\gowin_project\impl\pnr\inverted_pendulum.rpt.txt" completed
+Generate file "C:\Users\hp\Documents\Codex\2026-11-04\error-pr0003-failed-to-place-with\work\pendulum-fixed\gowin_project\impl\pnr\inverted_pendulum.tr.html" completed
+Wed Nov  4 01:40:48 2026
+

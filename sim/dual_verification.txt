@@ -1,0 +1,30 @@
+PASS complete top elaboration (dual-mode project)
+PASS compact position 45754 exhaustive exact source comparisons, all bounded errors and both near states
+PASS compact integral 62615 exact reference comparisons, signed truncation, legal gains/gates, leak, windup and ready loss
+PASS dual-mode 1570 assertions: exact source outputs, stop-only switch, profiles, reset, recovery, protections
+PASS cruise supervisor 956 assertions: signed ramps, exact integration, disturbance hysteresis, resume, invalid speed, STOP, bounds
+PASS all RTL defaults/ranges and actual serial bytes match Python/UI metadata, profile38
+PASS dual parameter bank 9 assertions
+PASS motor_chain 13 assertions
+PASS ASCII UART target persistence 24 assertions: SET, GET POS, GET ALL, GET INFO, retarget, STOP
+REACHED 411775 after 3653 updates, intermediate zero samples=1
+REACHED -823550 after 10691 updates, intermediate zero samples=1
+REACHED 0 after 7173 updates, intermediate zero samples=1
+REACHED -411775 after 4093 updates, intermediate zero samples=0
+REACHED 823550 after 10391 updates, intermediate zero samples=0
+REACHED 2147483647 after 44 updates, intermediate zero samples=0
+REACHED -2147483647 after 44 updates, intermediate zero samples=0
+PASS motion reference 148012 assertions, 37002 updates; cumulative turns, smooth retarget, braking and rails
+PASS brake prediction budget 8 assertions, min/max acceleration and both velocity directions
+PASS motion restart 4 assertions: stationary offset, qualified restart, cumulative goal, moving rejection
+PASS motion lean 9 assertions: acceleration, braking, cap, reverse, recovery and permit
+PASS motion recovery 14 assertions: acceleration, braking, cap, reverse, recovery and permit
+PASS outer integral 1203 assertions; real effect, holding gates, anti-windup, symmetry and clear
+PASS dual-mode packet, CSV, Python/browser config import and chart units
+PASS both mode configs validate and round-trip with exact parameter identities
+PASS metadata synchronized and JavaScript syntax
+Gowin synthesis/placement/routing/timing and physical stability NOT VERIFIED.
+
+PASS production lite packet: actual UART handshake, both modes, signed extremes, snapshot and parser
+PASS control/sensor/parameter/motor RTL byte-for-byte identical to resource-fix1; top only changes telemetry instance
+Local Yosys LUT4 packet map:2010->856 LUT,1007->706 FF; NOT a Gowin whole-design result.

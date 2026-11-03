@@ -1,0 +1,4 @@
+双模式精简遥测版：删除非必需调试报文，保留控制、调参、基本曲线和保护。
+Gowin入口：gowin_project/inverted_pendulum.gprj
+网页：pc/start_web_panel.bat
+解压到新目录再综合。本版Gowin整机占用待验证。

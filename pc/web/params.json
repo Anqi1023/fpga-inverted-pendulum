@@ -1,0 +1,1393 @@
+{
+  "firmware": "D34",
+  "protocol": 1,
+  "baud": 460800,
+  "params": [
+    {
+      "id": 0,
+      "name": "K_ALPHA",
+      "default": 2300,
+      "min": 0,
+      "max": 5000,
+      "group": "摆杆平衡控制",
+      "label": "模式1：摆杆角度增益",
+      "unit": "",
+      "legacy_default": 2000,
+      "hidden": false
+    },
+    {
+      "id": 1,
+      "name": "K_ALPHA_DOT",
+      "default": 105,
+      "min": -500,
+      "max": 500,
+      "group": "摆杆平衡控制",
+      "label": "模式1：摆杆角速度增益",
+      "unit": "",
+      "legacy_default": 60,
+      "hidden": false
+    },
+    {
+      "id": 2,
+      "name": "K_THETA",
+      "default": 8,
+      "min": 8,
+      "max": 8,
+      "group": "已停用模式",
+      "label": "K_THETA 旧整数协议别名（小数时回读标记）（旧通道停用）",
+      "unit": "",
+      "hidden": true,
+      "legacy_default": 8
+    },
+    {
+      "id": 3,
+      "name": "K_THETA_DOT",
+      "default": 35,
+      "min": -200,
+      "max": 200,
+      "group": "模式0原反馈",
+      "label": "模式0：原横臂速度增益（70=0时使用）",
+      "unit": "",
+      "legacy_default": 35,
+      "hidden": false
+    },
+    {
+      "id": 4,
+      "name": "ALPHA_SETPOINT_Q16",
+      "default": -500,
+      "min": -10000,
+      "max": 10000,
+      "group": "摆杆平衡控制",
+      "label": "平衡点偏置",
+      "unit": "Q16 rad",
+      "legacy_default": -500,
+      "hidden": false
+    },
+    {
+      "id": 5,
+      "name": "SWING_U",
+      "default": 550,
+      "min": 100,
+      "max": 800,
+      "group": "起摆与顶部捕获",
+      "label": "启动及补能输出",
+      "unit": "‰",
+      "legacy_default": 550,
+      "hidden": false
+    },
+    {
+      "id": 6,
+      "name": "KICK_UPDATES",
+      "default": 80,
+      "min": 1,
+      "max": 200,
+      "group": "起摆与顶部捕获",
+      "label": "初始推动最长周期",
+      "unit": "×5 ms",
+      "legacy_default": 80,
+      "hidden": false
+    },
+    {
+      "id": 7,
+      "name": "KICK_END_SPEED_Q16",
+      "default": 262144,
+      "min": 32768,
+      "max": 458752,
+      "group": "内部保留（不显示）",
+      "label": "启动结束速度",
+      "unit": "Q16 rad/s",
+      "legacy_default": 262144,
+      "hidden": true
+    },
+    {
+      "id": 8,
+      "name": "ARM_SPEED_GAIN",
+      "default": 40,
+      "min": 0,
+      "max": 200,
+      "group": "起摆与顶部捕获",
+      "label": "横臂速度阻尼",
+      "unit": "",
+      "legacy_default": 40,
+      "hidden": false
+    },
+    {
+      "id": 9,
+      "name": "HORIZONTAL_CONFIRM_ENABLE",
+      "default": 1,
+      "min": 0,
+      "max": 1,
+      "group": "内部保留（不显示）",
+      "label": "水平区域加强确认",
+      "unit": "0/1",
+      "legacy_default": 1,
+      "hidden": true
+    },
+    {
+      "id": 10,
+      "name": "HORIZONTAL_CONFIRM_UPDATES",
+      "default": 8,
+      "min": 1,
+      "max": 32,
+      "group": "内部保留（不显示）",
+      "label": "水平区域确认周期",
+      "unit": "×5 ms",
+      "legacy_default": 8,
+      "hidden": true
+    },
+    {
+      "id": 11,
+      "name": "HORIZONTAL_AD_MAX_Q16",
+      "default": 262144,
+      "min": 32768,
+      "max": 655360,
+      "group": "内部保留（不显示）",
+      "label": "水平区域速度上界",
+      "unit": "Q16 rad/s",
+      "legacy_default": 262144,
+      "hidden": true
+    },
+    {
+      "id": 12,
+      "name": "DIRECTION_CONFIRM_UPDATES",
+      "default": 3,
+      "min": 1,
+      "max": 32,
+      "group": "测速与换向控制",
+      "label": "普通确认周期",
+      "unit": "×5 ms",
+      "legacy_default": 3,
+      "hidden": false
+    },
+    {
+      "id": 13,
+      "name": "MIN_DIRECTION_UPDATES",
+      "default": 6,
+      "min": 1,
+      "max": 40,
+      "group": "测速与换向控制",
+      "label": "方向最短保持周期",
+      "unit": "×5 ms",
+      "legacy_default": 6,
+      "hidden": false
+    },
+    {
+      "id": 14,
+      "name": "DIRECTION_AD_MIN_Q16",
+      "default": 32768,
+      "min": 6554,
+      "max": 131072,
+      "group": "测速与换向控制",
+      "label": "方向可信最低速度",
+      "unit": "Q16 rad/s",
+      "legacy_default": 32768,
+      "hidden": false
+    },
+    {
+      "id": 15,
+      "name": "TOP_BOOST_ENABLE",
+      "default": 1,
+      "min": 0,
+      "max": 1,
+      "group": "起摆与顶部捕获",
+      "label": "顶部补推开关",
+      "unit": "0/1",
+      "legacy_default": 1,
+      "hidden": false
+    },
+    {
+      "id": 16,
+      "name": "TOP_BOOST_ANGLE_Q16",
+      "default": 34315,
+      "min": 5719,
+      "max": 68629,
+      "group": "起摆与顶部捕获",
+      "label": "顶部补推角度",
+      "unit": "Q16 rad",
+      "legacy_default": 34315,
+      "hidden": false
+    },
+    {
+      "id": 17,
+      "name": "TOP_BOOST_UPDATES",
+      "default": 12,
+      "min": 1,
+      "max": 40,
+      "group": "起摆与顶部捕获",
+      "label": "顶部补推最长周期",
+      "unit": "×5 ms",
+      "legacy_default": 12,
+      "hidden": false
+    },
+    {
+      "id": 18,
+      "name": "CAPTURE_ANGLE_Q16",
+      "default": 11796,
+      "min": 2288,
+      "max": 22876,
+      "group": "起摆与顶部捕获",
+      "label": "稳摆捕获角度",
+      "unit": "Q16 rad",
+      "legacy_default": 11796,
+      "hidden": false
+    },
+    {
+      "id": 19,
+      "name": "CAPTURE_AD_Q16",
+      "default": 163840,
+      "min": 32768,
+      "max": 327680,
+      "group": "起摆与顶部捕获",
+      "label": "捕获摆杆速度上限",
+      "unit": "Q16 rad/s",
+      "legacy_default": 163840,
+      "hidden": false
+    },
+    {
+      "id": 20,
+      "name": "HORIZONTAL_COS_MAX_Q16",
+      "default": 11469,
+      "min": 4096,
+      "max": 32768,
+      "group": "内部保留（不显示）",
+      "label": "水平区域余弦阈值",
+      "unit": "Q16",
+      "legacy_default": 11469,
+      "hidden": true
+    },
+    {
+      "id": 21,
+      "name": "TOP_BOOST_REARM_Q16",
+      "default": 45753,
+      "min": 6863,
+      "max": 91506,
+      "group": "起摆与顶部捕获",
+      "label": "顶部补推重装角度",
+      "unit": "Q16 rad",
+      "legacy_default": 45753,
+      "hidden": false
+    },
+    {
+      "id": 22,
+      "name": "TOP_BOOST_U",
+      "default": 550,
+      "min": 100,
+      "max": 800,
+      "group": "起摆与顶部捕获",
+      "label": "顶部补推请求",
+      "unit": "‰",
+      "legacy_default": 550,
+      "hidden": false
+    },
+    {
+      "id": 23,
+      "name": "TOP_BOOST_AD_MIN_Q16",
+      "default": 32768,
+      "min": 6554,
+      "max": 131072,
+      "group": "起摆与顶部捕获",
+      "label": "顶部补推最低速度",
+      "unit": "Q16 rad/s",
+      "legacy_default": 32768,
+      "hidden": false
+    },
+    {
+      "id": 24,
+      "name": "TOP_BOOST_AD_MAX_Q16",
+      "default": 524288,
+      "min": 65536,
+      "max": 1310720,
+      "group": "起摆与顶部捕获",
+      "label": "顶部补推最高速度",
+      "unit": "Q16 rad/s",
+      "legacy_default": 524288,
+      "hidden": false
+    },
+    {
+      "id": 25,
+      "name": "FAST_CAP_RECOVERY_ENABLE",
+      "default": 1,
+      "min": 0,
+      "max": 1,
+      "group": "内部保留（不显示）",
+      "label": "快速输出恢复开关",
+      "unit": "0/1",
+      "legacy_default": 1,
+      "hidden": true
+    },
+    {
+      "id": 26,
+      "name": "PUMP_CAP_RELEASE_STEP",
+      "default": 20,
+      "min": 1,
+      "max": 100,
+      "group": "内部保留（不显示）",
+      "label": "普通输出恢复步长",
+      "unit": "‰/周期",
+      "legacy_default": 20,
+      "hidden": true
+    },
+    {
+      "id": 27,
+      "name": "PUMP_CAP_FAST_RELEASE_STEP",
+      "default": 60,
+      "min": 1,
+      "max": 200,
+      "group": "内部保留（不显示）",
+      "label": "快速输出恢复步长",
+      "unit": "‰/周期",
+      "legacy_default": 60,
+      "hidden": true
+    },
+    {
+      "id": 28,
+      "name": "PUMP_CAP_FAST_SPEED_Q16",
+      "default": 327680,
+      "min": 65536,
+      "max": 393216,
+      "group": "内部保留（不显示）",
+      "label": "快速恢复速度阈值",
+      "unit": "Q16 rad/s",
+      "legacy_default": 327680,
+      "hidden": true
+    },
+    {
+      "id": 29,
+      "name": "CAPTURE_TD_Q16",
+      "default": 163840,
+      "min": 65536,
+      "max": 524288,
+      "group": "起摆与顶部捕获",
+      "label": "捕获横臂速度上限",
+      "unit": "Q16 rad/s",
+      "legacy_default": 163840,
+      "hidden": false
+    },
+    {
+      "id": 30,
+      "name": "KINETIC_Q16",
+      "default": 280,
+      "min": 50,
+      "max": 1000,
+      "group": "内部保留（不显示）",
+      "label": "动能系数",
+      "unit": "",
+      "legacy_default": 280,
+      "hidden": true
+    },
+    {
+      "id": 31,
+      "name": "ENERGY_BAND_Q16",
+      "default": 655,
+      "min": 0,
+      "max": 6554,
+      "group": "内部保留（不显示）",
+      "label": "能量目标带",
+      "unit": "Q16",
+      "legacy_default": 655,
+      "hidden": true
+    },
+    {
+      "id": 32,
+      "name": "POSITION_U_LIMIT",
+      "default": 100,
+      "min": 0,
+      "max": 200,
+      "group": "内部保留（不显示）",
+      "label": "位置项硬上限（两模式共用）",
+      "unit": "‰",
+      "legacy_default": 100,
+      "hidden": true
+    },
+    {
+      "id": 33,
+      "name": "U_LIMIT",
+      "default": 1000,
+      "min": 100,
+      "max": 1000,
+      "group": "电机驱动与保护",
+      "label": "稳摆输出限幅",
+      "unit": "‰",
+      "legacy_default": 1000,
+      "hidden": false
+    },
+    {
+      "id": 34,
+      "name": "ALPHA_ARM",
+      "default": 39322,
+      "min": 11796,
+      "max": 39322,
+      "group": "电机驱动与保护",
+      "label": "稳摆角度窗口",
+      "unit": "Q16 rad",
+      "legacy_default": 39322,
+      "hidden": false
+    },
+    {
+      "id": 35,
+      "name": "ACTIVE_BRAKE_ENABLE",
+      "default": 0,
+      "min": 0,
+      "max": 1,
+      "group": "电机驱动与保护",
+      "label": "主动反向制动开关",
+      "unit": "0/1",
+      "legacy_default": 0,
+      "hidden": false
+    },
+    {
+      "id": 36,
+      "name": "PUMP_BRAKE_ON_Q16",
+      "default": 393216,
+      "min": 196608,
+      "max": 458752,
+      "group": "电机驱动与保护",
+      "label": "制动触发速度",
+      "unit": "Q16 rad/s",
+      "legacy_default": 393216,
+      "hidden": false
+    },
+    {
+      "id": 37,
+      "name": "PUMP_BRAKE_OFF_Q16",
+      "default": 262144,
+      "min": 32768,
+      "max": 393216,
+      "group": "电机驱动与保护",
+      "label": "制动退出速度",
+      "unit": "Q16 rad/s",
+      "legacy_default": 262144,
+      "hidden": false
+    },
+    {
+      "id": 38,
+      "name": "PUMP_BRAKE_MIN_U",
+      "default": 150,
+      "min": 100,
+      "max": 550,
+      "group": "电机驱动与保护",
+      "label": "最小反向制动输出",
+      "unit": "‰",
+      "legacy_default": 150,
+      "hidden": false
+    },
+    {
+      "id": 39,
+      "name": "MAX_UPDATES",
+      "default": 2400,
+      "min": 200,
+      "max": 2400,
+      "group": "电机驱动与保护",
+      "label": "起摆最长周期",
+      "unit": "×5 ms",
+      "legacy_default": 2400,
+      "hidden": false
+    },
+    {
+      "id": 41,
+      "name": "BALANCE_SPEED_SOURCE",
+      "default": 1,
+      "min": 0,
+      "max": 1,
+      "group": "测速与换向控制",
+      "label": "稳摆测速来源",
+      "unit": "",
+      "options": [
+        {
+          "value": 0,
+          "label": "0 原测速"
+        },
+        {
+          "value": 1,
+          "label": "1 混合测速"
+        }
+      ],
+      "legacy_default": 0,
+      "hidden": false
+    },
+    {
+      "id": 42,
+      "name": "SPEED_STOP_TIMEOUT_MS",
+      "default": 40,
+      "min": 10,
+      "max": 100,
+      "group": "测速与换向控制",
+      "label": "无脉冲归零超时",
+      "unit": "ms",
+      "legacy_default": 40,
+      "hidden": false
+    },
+    {
+      "id": 43,
+      "name": "START_BOOST_ENABLE",
+      "default": 0,
+      "min": 0,
+      "max": 1,
+      "group": "电机驱动与保护",
+      "label": "稳摆启动补偿模式",
+      "unit": "",
+      "options": [
+        {
+          "value": 0,
+          "label": "0 R9原执行方式"
+        },
+        {
+          "value": 1,
+          "label": "1 有限时启动补偿"
+        }
+      ],
+      "legacy_default": 0,
+      "hidden": false
+    },
+    {
+      "id": 44,
+      "name": "START_BOOST_U",
+      "default": 150,
+      "min": 80,
+      "max": 250,
+      "group": "电机驱动与保护",
+      "label": "启动补偿占空比",
+      "unit": "‰",
+      "legacy_default": 150,
+      "hidden": false
+    },
+    {
+      "id": 45,
+      "name": "START_BOOST_TICKS",
+      "default": 4,
+      "min": 1,
+      "max": 10,
+      "group": "电机驱动与保护",
+      "label": "启动补偿最长时间",
+      "unit": "×5 ms",
+      "legacy_default": 4,
+      "hidden": false
+    },
+    {
+      "id": 46,
+      "name": "SETTLE_ENABLE",
+      "default": 0,
+      "min": 0,
+      "max": 0,
+      "group": "内部保留（不显示）",
+      "label": "减速后锁零模式（R14停用）",
+      "unit": "",
+      "options": [
+        {
+          "value": 0,
+          "label": "0 原接摆位置定点"
+        },
+        {
+          "value": 1,
+          "label": "1 减速后一次锁零"
+        }
+      ],
+      "legacy_default": 0,
+      "hidden": true
+    },
+    {
+      "id": 47,
+      "name": "SETTLE_K_THETA_DOT",
+      "default": 35,
+      "min": 35,
+      "max": 35,
+      "group": "内部保留（不显示）",
+      "label": "减速阶段横臂速度增益（R14停用）",
+      "unit": "",
+      "legacy_default": 35,
+      "hidden": true
+    },
+    {
+      "id": 48,
+      "name": "LOCK_SPEED_Q16",
+      "default": 19661,
+      "min": 19661,
+      "max": 19661,
+      "group": "内部保留（不显示）",
+      "label": "锁零最高横臂速度（R14停用）",
+      "unit": "Q16 rad/s",
+      "legacy_default": 19661,
+      "hidden": true
+    },
+    {
+      "id": 49,
+      "name": "LOCK_ALPHA_Q16",
+      "default": 2288,
+      "min": 2288,
+      "max": 2288,
+      "group": "内部保留（不显示）",
+      "label": "锁零最大摆杆偏角（R14停用）",
+      "unit": "Q16 rad",
+      "legacy_default": 2288,
+      "hidden": true
+    },
+    {
+      "id": 50,
+      "name": "LOCK_ALPHA_DOT_Q16",
+      "default": 19661,
+      "min": 19661,
+      "max": 19661,
+      "group": "内部保留（不显示）",
+      "label": "锁零最大倾倒速度（R14停用）",
+      "unit": "Q16 rad/s",
+      "legacy_default": 19661,
+      "hidden": true
+    },
+    {
+      "id": 51,
+      "name": "LOCK_HOLD_TICKS",
+      "default": 60,
+      "min": 60,
+      "max": 60,
+      "group": "内部保留（不显示）",
+      "label": "连续停稳确认时间（R14停用）",
+      "unit": "×5 ms",
+      "legacy_default": 60,
+      "hidden": true
+    },
+    {
+      "id": 52,
+      "name": "SETTLE_GATE_ALPHA_Q16",
+      "default": 4575,
+      "min": 4575,
+      "max": 4575,
+      "group": "内部保留（不显示）",
+      "label": "允许减速增益的偏角范围（R14停用）",
+      "unit": "Q16 rad",
+      "legacy_default": 4575,
+      "hidden": true
+    },
+    {
+      "id": 53,
+      "name": "SETTLE_GATE_AD_Q16",
+      "default": 65536,
+      "min": 65536,
+      "max": 65536,
+      "group": "内部保留（不显示）",
+      "label": "允许减速增益的倾倒速度（R14停用）",
+      "unit": "Q16 rad/s",
+      "legacy_default": 65536,
+      "hidden": true
+    },
+    {
+      "id": 54,
+      "name": "K_ALPHA_I",
+      "default": 30,
+      "min": 0,
+      "max": 500,
+      "group": "模式0原反馈",
+      "label": "模式0姿态积分：摆杆积分增益 Ki（0为PD对照）",
+      "unit": "",
+      "legacy_default": 30,
+      "hidden": false
+    },
+    {
+      "id": 55,
+      "name": "ALPHA_I_LIMIT_U",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "group": "模式0原反馈",
+      "label": "模式0姿态积分：积分输出上限",
+      "unit": "‰",
+      "legacy_default": 20,
+      "hidden": false
+    },
+    {
+      "id": 56,
+      "name": "ALPHA_I_GATE_Q16",
+      "default": 3431,
+      "min": 572,
+      "max": 11438,
+      "group": "模式0原反馈",
+      "label": "模式0姿态积分：允许积分的摆杆偏角",
+      "unit": "Q16 rad",
+      "legacy_default": 3431,
+      "hidden": false
+    },
+    {
+      "id": 57,
+      "name": "FINE_DRIVE_ENABLE",
+      "default": 1,
+      "min": 0,
+      "max": 1,
+      "group": "电机驱动与保护",
+      "label": "细小驱动开关",
+      "unit": "",
+      "legacy_default": 0,
+      "hidden": false
+    },
+    {
+      "id": 58,
+      "name": "ARM_HOLD_ENABLE",
+      "default": 0,
+      "min": 0,
+      "max": 0,
+      "group": "内部保留（不显示）",
+      "label": "目标倾角收臂开关（R14停用）",
+      "unit": "",
+      "legacy_default": 0,
+      "hidden": true
+    },
+    {
+      "id": 59,
+      "name": "ARM_HOLD_KX_Q16",
+      "default": 14980,
+      "min": 14980,
+      "max": 14980,
+      "group": "内部保留（不显示）",
+      "label": "位置到目标速度增益（R14停用）",
+      "unit": "Q16 1/s",
+      "legacy_default": 14980,
+      "hidden": true
+    },
+    {
+      "id": 60,
+      "name": "ARM_HOLD_KV_Q16",
+      "default": 1147,
+      "min": 1147,
+      "max": 1147,
+      "group": "内部保留（不显示）",
+      "label": "速度误差到倾角增益（R14停用）",
+      "unit": "Q16 s",
+      "legacy_default": 1147,
+      "hidden": true
+    },
+    {
+      "id": 61,
+      "name": "ARM_HOLD_VMAX_Q16",
+      "default": 65536,
+      "min": 65536,
+      "max": 65536,
+      "group": "内部保留（不显示）",
+      "label": "回位目标速度上限（R14停用）",
+      "unit": "Q16 rad/s",
+      "legacy_default": 65536,
+      "hidden": true
+    },
+    {
+      "id": 62,
+      "name": "ARM_HOLD_AMAX_Q16",
+      "default": 2288,
+      "min": 2288,
+      "max": 2288,
+      "group": "内部保留（不显示）",
+      "label": "目标倾角上限（R14停用）",
+      "unit": "Q16 rad",
+      "legacy_default": 2288,
+      "hidden": true
+    },
+    {
+      "id": 63,
+      "name": "ARM_HOLD_RATE_Q16",
+      "default": 11438,
+      "min": 11438,
+      "max": 11438,
+      "group": "内部保留（不显示）",
+      "label": "目标倾角变化速度上限（R14停用）",
+      "unit": "Q16 rad/s",
+      "legacy_default": 11438,
+      "hidden": true
+    },
+    {
+      "id": 64,
+      "name": "POSITION_I_ENABLE",
+      "default": 1,
+      "min": 1,
+      "max": 1,
+      "group": "已停用模式",
+      "label": "位置积分模式（0关/1原版/2新门控）（旧通道已停用）",
+      "unit": "",
+      "legacy_default": 0,
+      "hidden": true
+    },
+    {
+      "id": 65,
+      "name": "K_POSITION_I",
+      "default": 0,
+      "min": 0,
+      "max": 0,
+      "group": "已停用模式",
+      "label": "位置积分增益（有符号）（旧通道已停用）",
+      "unit": "U/(rad·s)",
+      "legacy_default": 0,
+      "hidden": true
+    },
+    {
+      "id": 66,
+      "name": "POSITION_I_LIMIT_U",
+      "default": 10,
+      "min": 10,
+      "max": 10,
+      "group": "已停用模式",
+      "label": "位置积分输出上限（旧通道已停用）",
+      "unit": "‰",
+      "legacy_default": 10,
+      "hidden": true
+    },
+    {
+      "id": 67,
+      "name": "POSITION_I_ALPHA_GATE_Q16",
+      "default": 2288,
+      "min": 2288,
+      "max": 2288,
+      "group": "已停用模式",
+      "label": "积分允许摆杆偏角（旧通道已停用）",
+      "unit": "Q16 rad",
+      "legacy_default": 2288,
+      "hidden": true
+    },
+    {
+      "id": 68,
+      "name": "POSITION_I_AD_GATE_Q16",
+      "default": 32768,
+      "min": 32768,
+      "max": 32768,
+      "group": "已停用模式",
+      "label": "积分允许摆杆角速度（旧通道已停用）",
+      "unit": "Q16 rad/s",
+      "legacy_default": 32768,
+      "hidden": true
+    },
+    {
+      "id": 69,
+      "name": "POSITION_I_SPEED_GATE_Q16",
+      "default": 131072,
+      "min": 131072,
+      "max": 131072,
+      "group": "已停用模式",
+      "label": "积分允许旋转臂速度（旧通道已停用）",
+      "unit": "Q16 rad/s",
+      "legacy_default": 131072,
+      "hidden": true
+    },
+    {
+      "id": 70,
+      "name": "RETURN_COORD_ENABLE",
+      "default": 1,
+      "min": 0,
+      "max": 1,
+      "group": "模式0原反馈",
+      "label": "模式0：回程协调开关（0原版/1新模式）",
+      "unit": "",
+      "legacy_default": 0,
+      "hidden": false
+    },
+    {
+      "id": 71,
+      "name": "RETURN_SPEED_LIMIT_Q16",
+      "default": 234000,
+      "min": 16384,
+      "max": 262144,
+      "group": "内部保留（不显示）",
+      "label": "旧回程参考速度（R14F保留回读，不参与限幅）",
+      "unit": "Q16 rad/s",
+      "legacy_default": 187246,
+      "hidden": true
+    },
+    {
+      "id": 72,
+      "name": "RETURN_KV",
+      "default": 105,
+      "min": 1,
+      "max": 200,
+      "group": "模式0原反馈",
+      "label": "模式0：速度反馈增益（替代ID3）",
+      "unit": "",
+      "legacy_default": 35,
+      "hidden": false
+    },
+    {
+      "id": 73,
+      "name": "SPEED_FEEDBACK_MODE",
+      "default": 0,
+      "min": 0,
+      "max": 2,
+      "group": "模式0原反馈",
+      "label": "模式0：速度处理：0关闭 / 1轻度 / 2较强",
+      "unit": "",
+      "legacy_default": 0,
+      "hidden": false
+    },
+    {
+      "id": 74,
+      "name": "NEAR_RETURN_ENABLE",
+      "default": 1,
+      "min": 1,
+      "max": 1,
+      "group": "已停用模式",
+      "label": "模式0：近目标分区开关（0原R14D）（旧通道停用）",
+      "unit": "",
+      "legacy_default": 0,
+      "hidden": true
+    },
+    {
+      "id": 75,
+      "name": "NEAR_RETURN_RANGE_Q16",
+      "default": 11438,
+      "min": 11438,
+      "max": 11438,
+      "group": "已停用模式",
+      "label": "模式0：近目标范围（约1°～30°）（旧通道停用）",
+      "unit": "Q16 rad",
+      "legacy_default": 11438,
+      "hidden": true
+    },
+    {
+      "id": 76,
+      "name": "NEAR_RETURN_GAIN",
+      "default": 4,
+      "min": 4,
+      "max": 4,
+      "group": "已停用模式",
+      "label": "模式0：近目标位置增益（不大于ID2）（旧通道停用）",
+      "unit": "",
+      "legacy_default": 4,
+      "hidden": true
+    },
+    {
+      "id": 77,
+      "name": "K_THETA_X10",
+      "default": 80,
+      "min": 80,
+      "max": 80,
+      "group": "已停用模式",
+      "label": "模式0：横臂位置增益 K_THETA（步长0.1）（旧通道停用）",
+      "unit": "gain_x10",
+      "legacy_default": 80,
+      "hidden": true
+    },
+    {
+      "id": 78,
+      "name": "RETURN_POSITION_U_CAP",
+      "default": 60,
+      "min": 60,
+      "max": 60,
+      "group": "已停用模式",
+      "label": "模式0：回程位置P上限（60U=6%，80U=8%）（旧通道停用）",
+      "unit": "U",
+      "legacy_default": 60,
+      "hidden": true
+    },
+    {
+      "id": 79,
+      "name": "START_MODE",
+      "default": 1,
+      "min": 0,
+      "max": 1,
+      "group": "运行模式",
+      "label": "启动模式（停止后应用）",
+      "unit": "",
+      "options": [
+        {
+          "value": 0,
+          "label": "自动起摆"
+        },
+        {
+          "value": 1,
+          "label": "手动扶直平衡"
+        }
+      ],
+      "legacy_default": 0,
+      "hidden": false
+    },
+    {
+      "id": 80,
+      "name": "CONTROL_MODE",
+      "default": 1,
+      "min": 0,
+      "max": 1,
+      "group": "运行模式",
+      "label": "控制方案（停止后应用）",
+      "unit": "",
+      "hidden": false,
+      "options": [
+        {
+          "value": 0,
+          "label": "模式0：并联反馈·抗扰巡航"
+        },
+        {
+          "value": 1,
+          "label": "模式1：外环PI＋内环PD·定位运动"
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "name": "POSITION_TO_ANGLE_Q16",
+      "default": 0,
+      "min": -8192,
+      "max": 8192,
+      "group": "内外环协调",
+      "label": "定位→目标倾角系数（0先关闭定位）",
+      "unit": "Q16 ratio",
+      "hidden": false
+    },
+    {
+      "id": 82,
+      "name": "BALANCE_SPEED_KV",
+      "default": 160,
+      "min": 0,
+      "max": 200,
+      "group": "内外环协调",
+      "label": "全程横臂速度阻尼 Kv",
+      "unit": "U/(rad/s)",
+      "hidden": false
+    },
+    {
+      "id": 83,
+      "name": "OUTER_REVERSE",
+      "default": 0,
+      "min": 0,
+      "max": 1,
+      "group": "内外环协调",
+      "label": "外环整体方向映射",
+      "unit": "",
+      "hidden": false,
+      "options": [
+        {
+          "value": 0,
+          "label": "0 沿用原反馈方向"
+        },
+        {
+          "value": 1,
+          "label": "1 整体反向"
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "name": "OUTER_ANGLE_LIMIT_Q16",
+      "default": 2288,
+      "min": 572,
+      "max": 5719,
+      "group": "内外环协调",
+      "label": "仅定位目标倾角上限",
+      "unit": "Q16 rad",
+      "hidden": false
+    },
+    {
+      "id": 85,
+      "name": "OUTER_ANGLE_STEP_Q16",
+      "default": 128,
+      "min": 16,
+      "max": 512,
+      "group": "内外环协调",
+      "label": "目标倾角建立步长（每5ms）",
+      "unit": "Q16 rad/update",
+      "hidden": false
+    },
+    {
+      "id": 86,
+      "name": "HOLD_BAND_Q16",
+      "default": 11438,
+      "min": 2288,
+      "max": 22876,
+      "label": "目标附近状态范围（位置P保留）",
+      "unit": "Q16 rad",
+      "group": "内外环协调",
+      "hidden": false
+    },
+    {
+      "id": 87,
+      "name": "COORD_ALPHA_GATE_Q16",
+      "default": 3431,
+      "min": 1144,
+      "max": 11438,
+      "label": "定位减弱偏角 / 限速版紧急撤出",
+      "unit": "Q16 rad",
+      "group": "内外环协调",
+      "hidden": false
+    },
+    {
+      "id": 88,
+      "name": "COORD_AD_GATE_Q16",
+      "default": 32768,
+      "min": 6554,
+      "max": 131072,
+      "label": "定位减弱角速度 / 限速版紧急撤出",
+      "unit": "Q16 rad/s",
+      "group": "内外环协调",
+      "hidden": false
+    },
+    {
+      "id": 89,
+      "name": "BALANCE_SPEED_U_LIMIT",
+      "default": 300,
+      "min": 1,
+      "max": 500,
+      "label": "速度阻尼独立输出上限（300U=30%）",
+      "unit": "U",
+      "group": "内外环协调",
+      "hidden": false
+    },
+    {
+      "id": 90,
+      "name": "VELOCITY_SLEW_BYPASS",
+      "default": 1,
+      "min": 0,
+      "max": 1,
+      "group": "内外环协调",
+      "label": "速度项限速旁路（停机后应用）",
+      "unit": "",
+      "hidden": false,
+      "options": [
+        {
+          "value": 0,
+          "label": "0 保留R15C限速"
+        },
+        {
+          "value": 1,
+          "label": "1 旁路速度项限速"
+        }
+      ]
+    },
+    {
+      "id": 91,
+      "name": "POINT_APPROACH_ENABLE",
+      "default": 1,
+      "min": 0,
+      "max": 1,
+      "label": "接近目标减速协调",
+      "unit": "",
+      "group": "目标位置与减速",
+      "hidden": false,
+      "options": [
+        {
+          "value": 0,
+          "label": "0 关闭，对照H位置逻辑"
+        },
+        {
+          "value": 1,
+          "label": "1 开启距离与速度协调"
+        }
+      ]
+    },
+    {
+      "id": 92,
+      "name": "POINT_APPROACH_RANGE_Q16",
+      "default": 22876,
+      "min": 2288,
+      "max": 102944,
+      "label": "接近减速范围（±角度）",
+      "unit": "Q16 rad",
+      "group": "目标位置与减速",
+      "hidden": false
+    },
+    {
+      "id": 93,
+      "name": "POINT_APPROACH_SPEED_Q16",
+      "default": 23400,
+      "min": 3277,
+      "max": 65536,
+      "label": "范围边界的回程速度上限",
+      "unit": "Q16 rad/s",
+      "group": "目标位置与减速",
+      "hidden": false
+    },
+    {
+      "id": 94,
+      "name": "POINT_NEAR_KV",
+      "default": 160,
+      "min": 0,
+      "max": 200,
+      "label": "近目标速度阻尼Kv（至少取ID82）",
+      "unit": "U/(rad/s)",
+      "group": "目标位置与减速",
+      "hidden": false
+    },
+    {
+      "id": 95,
+      "name": "MOTION_REFERENCE_ENABLE",
+      "default": 1,
+      "min": 0,
+      "max": 1,
+      "label": "连续运动与减速规划",
+      "unit": "",
+      "options": [
+        {
+          "value": 0,
+          "label": "0 原直接位置目标"
+        },
+        {
+          "value": 1,
+          "label": "1 连续运动参考"
+        }
+      ],
+      "group": "连续运动与外环积分",
+      "hidden": false
+    },
+    {
+      "id": 96,
+      "name": "MOTION_MAX_STEP_Q24",
+      "default": 29952,
+      "min": 4194,
+      "max": 167772,
+      "label": "最大移动速度",
+      "unit": "Q24 rad/update",
+      "group": "连续运动与外环积分",
+      "hidden": false
+    },
+    {
+      "id": 97,
+      "name": "MOTION_ACCEL_STEP_Q24",
+      "default": 210,
+      "min": 16,
+      "max": 1024,
+      "label": "最大移动加速度",
+      "unit": "Q24 rad/update²",
+      "group": "连续运动与外环积分",
+      "hidden": false
+    },
+    {
+      "id": 98,
+      "name": "OUTER_ANGLE_I_ENABLE",
+      "default": 0,
+      "min": 0,
+      "max": 1,
+      "label": "模式1外环积分开关",
+      "unit": "",
+      "options": [
+        {
+          "value": 0,
+          "label": "0 关闭积分，对照"
+        },
+        {
+          "value": 1,
+          "label": "1 开启有界保持积分"
+        }
+      ],
+      "group": "连续运动与外环积分",
+      "hidden": false
+    },
+    {
+      "id": 99,
+      "name": "OUTER_ANGLE_I_TIME_SHIFT",
+      "default": 10,
+      "min": 6,
+      "max": 12,
+      "label": "积分时间档位（10约5.12秒，越大越慢）",
+      "unit": "档",
+      "group": "连续运动与外环积分",
+      "hidden": false
+    },
+    {
+      "id": 100,
+      "name": "OUTER_ANGLE_I_LIMIT_Q16",
+      "default": 286,
+      "min": 0,
+      "max": 1144,
+      "label": "外环积分目标倾角上限",
+      "unit": "Q16 rad",
+      "group": "连续运动与外环积分",
+      "hidden": false
+    },
+    {
+      "id": 101,
+      "name": "MOTION_FOLLOW_BAND_Q16",
+      "default": 11438,
+      "min": 2288,
+      "max": 34315,
+      "label": "轨迹落后偏差暂停范围",
+      "unit": "Q16 rad",
+      "group": "连续运动与外环积分",
+      "hidden": false
+    },
+    {
+      "id": 102,
+      "name": "CRUISE_SPEED_Q16",
+      "default": 23400,
+      "min": -65536,
+      "max": 65536,
+      "group": "抗扰恢复巡航",
+      "label": "巡航设定速度（正负表示方向）",
+      "unit": "Q16 rad/s",
+      "hidden": false
+    },
+    {
+      "id": 103,
+      "name": "CRUISE_ACCEL_STEP_Q16",
+      "default": 128,
+      "min": 16,
+      "max": 1024,
+      "group": "抗扰恢复巡航",
+      "label": "每次更新的参考速度变化上限",
+      "unit": "Q16 rad/s",
+      "hidden": false
+    },
+    {
+      "id": 104,
+      "name": "CRUISE_ALPHA_GATE_Q16",
+      "default": 3431,
+      "min": 1144,
+      "max": 11438,
+      "group": "抗扰恢复巡航",
+      "label": "接摆触发倾角",
+      "unit": "Q16 rad",
+      "hidden": false
+    },
+    {
+      "id": 105,
+      "name": "CRUISE_AD_GATE_Q16",
+      "default": 65536,
+      "min": 6554,
+      "max": 131072,
+      "group": "抗扰恢复巡航",
+      "label": "接摆触发摆杆角速度",
+      "unit": "Q16 rad/s",
+      "hidden": false
+    },
+    {
+      "id": 106,
+      "name": "CRUISE_SETTLE_TICKS",
+      "default": 100,
+      "min": 20,
+      "max": 400,
+      "group": "抗扰恢复巡航",
+      "label": "恢复巡航前稳定确认时间",
+      "unit": "×5 ms",
+      "hidden": false
+    },
+    {
+      "id": 107,
+      "name": "CRUISE_U_LIMIT",
+      "default": 100,
+      "min": 10,
+      "max": 200,
+      "group": "抗扰恢复巡航",
+      "label": "巡航位置与速度合成贡献上限",
+      "unit": "‰",
+      "hidden": false
+    },
+    {
+      "id": 108,
+      "name": "CRUISE_K_ALPHA",
+      "default": 2400,
+      "min": 0,
+      "max": 5000,
+      "group": "抗扰恢复巡航",
+      "label": "模式0：摆杆角度增益",
+      "unit": "",
+      "hidden": false
+    },
+    {
+      "id": 109,
+      "name": "CRUISE_K_ALPHA_DOT",
+      "default": 100,
+      "min": -500,
+      "max": 500,
+      "group": "抗扰恢复巡航",
+      "label": "模式0：摆杆角速度增益",
+      "unit": "",
+      "hidden": false
+    }
+  ],
+  "extensions": {
+    "available": false,
+    "reserved_ids": [
+      40
+    ],
+    "coordinate_profile": 30
+  },
+  "control_profile": "D34_dual_mode_v1"
+}

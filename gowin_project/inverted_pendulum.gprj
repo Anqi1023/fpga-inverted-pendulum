@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW2A-18C" pn="GW2A-LV18PG256C8/I7">gw2a18c-011</Device>
+    <FileList>
+        <File path="../rtl/control/cruise_recovery.v" type="file.verilog" enable="1" />
+        <File path="../rtl/control/cruise_parallel_feedback.v" type="file.verilog" enable="1" />
+        <File path="../rtl/control/arm_balance_coordinator_r15.v" type="file.verilog" enable="1" />
+        <File path="../rtl/control/arm_velocity_planner_r14m.v" type="file.verilog" enable="1" />
+        <File path="../rtl/control/arm_output_slew_r14m.v" type="file.verilog" enable="1" />
+        <File path="../rtl/control/arm_speed_loop.v" type="file.verilog" enable="1" />
+        <File path="../rtl/sensor/hybrid_arm_speed.v" type="file.verilog" enable="1" />
+        <File path="../rtl/monitor/uart_rx.v" type="file.verilog" enable="1" />
+        <File path="../rtl/config/uart_command_parser.v" type="file.verilog" enable="1" />
+        <File path="../rtl/config/serial_parameter_bank.v" type="file.verilog" enable="1" />
+        <File path="../rtl/control/swingup_supervisor.v" type="file.verilog" enable="1" />
+        <File path="../rtl/control/controller.v" type="file.verilog" enable="1" />
+        <File path="../rtl/control_fsm.v" type="file.verilog" enable="1" />
+        <File path="../rtl/monitor/sensor_packet.v" type="file.verilog" enable="1" />
+        <File path="../rtl/monitor/uart_tx.v" type="file.verilog" enable="1" />
+        <File path="../rtl/motor/control_u_adapter.v" type="file.verilog" enable="1" />
+        <File path="../rtl/motor/ibt2_adapter.v" type="file.verilog" enable="1" />
+        <File path="../rtl/motor/motor_control_u_chain.v" type="file.verilog" enable="1" />
+        <File path="../rtl/motor/motor_driver.v" type="file.verilog" enable="1" />
+        <File path="../rtl/motor/motor_protected.v" type="file.verilog" enable="1" />
+        <File path="../rtl/motor/protection.v" type="file.verilog" enable="1" />
+        <File path="../rtl/motor/pwm_gen.v" type="file.verilog" enable="1" />
+        <File path="../rtl/sensor/ads1115_reader.v" type="file.verilog" enable="1" />
+        <File path="../rtl/sensor/i2c_byte_master.v" type="file.verilog" enable="1" />
+        <File path="../rtl/sensor/quadrature_decoder.v" type="file.verilog" enable="1" />
+        <File path="../rtl/sensor/sensor_math.v" type="file.verilog" enable="1" />
+        <File path="../rtl/sensor/sensor_state.v" type="file.verilog" enable="1" />
+        <File path="../rtl/sensor/sensor_top.v" type="file.verilog" enable="1" />
+        <File path="../rtl/top.v" type="file.verilog" enable="1" />
+        <File path="../constraints/inverted_pendulum.cst" type="file.cst" enable="1" />
+        <File path="../constraints/inverted_pendulum.sdc" type="file.sdc" enable="1" />
+    </FileList>
+</Project>

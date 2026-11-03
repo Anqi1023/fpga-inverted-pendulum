@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top" Register="200" Alu="76" Lut="316" T_Register="5774(200)" T_Alu="3203(76)" T_Lut="16752(316)" T_MULT18X18="5(0)" T_MULT36X36="1(0)" T_MULTALU36X18="9(0)" T_MULTADDALU18X18="2(0)" T_ALU54D="4(0)">
+ <SubModule name="u_control_fsm" Register="12" Lut="20" T_Register="12(12)" T_Lut="20(20)"/>
+ <SubModule name="u_sensor_top" T_Register="650(0)" T_Alu="348(0)" T_Lut="2375(0)" T_MULTALU36X18="4(0)">
+  <SubModule name="adc" Register="48" Lut="57" T_Register="108(48)" T_Lut="223(57)">
+   <SubModule name="engine" Register="60" Lut="166" T_Register="60(60)" T_Lut="166(166)"/>
+  </SubModule>
+  <SubModule name="path" Register="145" Alu="98" Lut="363" T_Register="542(145)" T_Alu="348(98)" T_Lut="2152(363)" T_MULTALU36X18="4(0)">
+   <SubModule name="enc" Register="42" Lut="93" T_Register="42(42)" T_Lut="93(93)"/>
+   <SubModule name="math" Register="355" Alu="250" Lut="1696" MULTALU36X18="4" T_Register="355(355)" T_Alu="250(250)" T_Lut="1696(1696)" T_MULTALU36X18="4(4)"/>
+  </SubModule>
+ </SubModule>
+ <SubModule name="u_speed_estimator" Register="229" Alu="131" Lut="541" MULT18X18="1" T_Register="229(229)" T_Alu="131(131)" T_Lut="541(541)" T_MULT18X18="1(1)"/>
+ <SubModule name="u_controller" Register="551" Alu="494" Lut="3381" MULTALU36X18="3" T_Register="1682(551)" T_Alu="2363(494)" T_Lut="9312(3381)" T_MULT18X18="3(0)" T_MULT36X36="1(0)" T_MULTALU36X18="5(3)" T_MULTADDALU18X18="2(0)" T_ALU54D="4(0)">
+  <SubModule name="planned_motion.reference_i" Register="206" Alu="428" Lut="743" MULTALU36X18="1" T_Register="206(206)" T_Alu="428(428)" T_Lut="743(743)" T_MULTALU36X18="1(1)"/>
+  <SubModule name="dual_cruise.supervisor" Register="136" Alu="200" Lut="501" T_Register="136(136)" T_Alu="200(200)" T_Lut="501(501)"/>
+  <SubModule name="dual_return_cap.cap_i" Register="122" Alu="81" Lut="112" T_Register="122(122)" T_Alu="81(81)" T_Lut="112(112)"/>
+  <SubModule name="speed_filter_enabled.filter_i" Register="71" Alu="97" Lut="298" T_Register="71(71)" T_Alu="97(97)" T_Lut="298(298)"/>
+  <SubModule name="coordinated_outer_loop.coordinate_i" Register="113" Alu="322" Lut="1078" T_Register="305(113)" T_Alu="535(322)" T_Lut="1266(1078)">
+   <SubModule name="point_approach.approach_i" Register="192" Alu="213" Lut="188" T_Register="192(192)" T_Alu="213(213)" T_Lut="188(188)"/>
+  </SubModule>
+  <SubModule name="arm_slew_enabled.conservative_slew.slew_i" Register="49" Lut="748" ALU54D="3" T_Register="49(49)" T_Lut="748(748)" T_ALU54D="3(3)"/>
+  <SubModule name="parallel_request.combine_i" Alu="50" Lut="5" T_Alu="50(50)" T_Lut="5(5)"/>
+  <SubModule name="pid_enabled.pid_i" Register="32" Alu="145" Lut="466" MULT18X18="1" ALU54D="1" T_Register="32(32)" T_Alu="145(145)" T_Lut="466(466)" T_MULT18X18="1(1)" T_ALU54D="1(1)"/>
+  <SubModule name="manual_entry_enabled.entry_i" Register="7" Lut="22" T_Register="7(7)" T_Lut="22(22)"/>
+  <SubModule name="u_swingup" Register="203" Alu="333" Lut="1770" MULT18X18="2" MULT36X36="1" MULTALU36X18="1" MULTADDALU18X18="2" T_Register="203(203)" T_Alu="333(333)" T_Lut="1770(1770)" T_MULT18X18="2(2)" T_MULT36X36="1(1)" T_MULTALU36X18="1(1)" T_MULTADDALU18X18="2(2)"/>
+ </SubModule>
+ <SubModule name="u_motor_control_chain" T_Register="126(0)" T_Alu="76(0)" T_Lut="516(0)" T_MULT18X18="1(0)">
+  <SubModule name="adapter_i" Register="77" Alu="53" Lut="207" T_Register="77(77)" T_Alu="53(53)" T_Lut="207(207)"/>
+  <SubModule name="motor_i" T_Register="49(0)" T_Alu="23(0)" T_Lut="309(0)" T_MULT18X18="1(0)">
+   <SubModule name="protection_i" Register="3" Lut="8" T_Register="3(3)" T_Lut="8(8)"/>
+   <SubModule name="driver_i" Register="17" Lut="37" T_Register="42(17)" T_Alu="23(0)" T_Lut="294(37)" T_MULT18X18="1(0)">
+    <SubModule name="pwm_i" Register="25" Alu="23" Lut="257" MULT18X18="1" T_Register="25(25)" T_Alu="23(23)" T_Lut="257(257)" T_MULT18X18="1(1)"/>
+   </SubModule>
+   <SubModule name="adapter_i" Register="4" Lut="7" T_Register="4(4)" T_Lut="7(7)"/>
+  </SubModule>
+ </SubModule>
+ <SubModule name="u_sensor_packet" Register="596" Lut="645" T_Register="596(596)" T_Lut="645(645)"/>
+ <SubModule name="u_uart_rx" Register="31" Lut="32" T_Register="31(31)" T_Lut="32(32)"/>
+ <SubModule name="u_commands" Register="249" Alu="70" Lut="463" T_Register="249(249)" T_Alu="70(70)" T_Lut="463(463)"/>
+ <SubModule name="u_parameters" Register="1953" Alu="139" Lut="2452" T_Register="1953(1953)" T_Alu="139(139)" T_Lut="2452(2452)"/>
+ <SubModule name="u_uart_tx" Register="46" Lut="80" T_Register="46(46)" T_Lut="80(80)"/>
+</Module>

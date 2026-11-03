@@ -1,0 +1,9 @@
+{
+  "scope": "isolated posture integral and mode0 position arithmetic only; not whole top",
+  "tool": "Yosys 0.52 synth_gowin gw2a -noabc9 -nolutram",
+  "before_total_cells": 35388,
+  "after_total_cells": 2999,
+  "before_alu_cells": 5588,
+  "after_alu_cells": 793,
+  "warning": "Different mapper and isolated/unrestricted inputs. These counts are NOT Gowin equivalent logic usage and cannot certify 20736 limit or routing."
+}
